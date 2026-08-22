@@ -6,6 +6,7 @@ import yaml
 from jsonschema import Draft202012Validator
 
 from app.config import DATABASE_PATH, PROJECT_ROOT
+from app.main import DEMO_CASE_ALIASES, demo_ticket_alias, internal_ticket_id
 
 
 def test_external_openapi_contract_has_required_operations():
@@ -44,3 +45,9 @@ def test_untrusted_identity_fields_cannot_override_token(client, auth_headers):
         headers=auth_headers("USR-DOC-001"),
     )
     assert response.status_code == 403
+
+
+def test_demo_adapter_aliases_are_reversible():
+    assert DEMO_CASE_ALIASES["A20260001"] == "CASE-2026-0025"
+    assert demo_ticket_alias("TKT-RUN-00101") == "T20260101"
+    assert internal_ticket_id("T20260101") == "TKT-RUN-00101"

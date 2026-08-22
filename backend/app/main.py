@@ -73,6 +73,24 @@ def require_demo_adapter():
         raise AppError(404, "DEMO_ADAPTER_DISABLED", "Demo adapter is disabled.")
 
 
+DEMO_CASE_ALIASES = {
+    "A20260001": "CASE-2026-0025",
+    "A20260002": "CASE-2026-0019",
+}
+
+
+def demo_ticket_alias(ticket_id):
+    if ticket_id.startswith("TKT-RUN-"):
+        return f"T2026{int(ticket_id.rsplit('-', 1)[1]):04d}"
+    return ticket_id
+
+
+def internal_ticket_id(ticket_id):
+    if ticket_id.startswith("T2026") and len(ticket_id) == 9 and ticket_id[1:].isdigit():
+        return f"TKT-RUN-{int(ticket_id[-4:]):05d}"
+    return ticket_id
+
+
 @app.post("/v1/auth/token", response_model=TokenResponse)
 def token(payload: TokenRequest):
     with connection() as conn:
@@ -128,9 +146,11 @@ async def read_ticket(
 def demo_case_status(request: Request, case_id: str):
     """Dify-only adapter for synthetic data; production clients use JWT endpoints."""
     require_demo_adapter()
+    internal_case_id = DEMO_CASE_ALIASES.get(case_id, case_id)
     with connection() as conn:
-        case = authorize_case(conn, DEMO_USER_ID, case_id, request.state.trace_id)
+        case = authorize_case(conn, DEMO_USER_ID, internal_case_id, request.state.trace_id)
         data = case_response(case, request.state.trace_id)
+        data = {**data, "case_id": case_id, "internal_case_id": internal_case_id}
         return {"success": True, "data": data, "demo_identity": DEMO_USER_ID}
 
 
@@ -155,12 +175,16 @@ def demo_create_ticket(request: Request, response: Response, payload: dict = Bod
     with connection() as conn:
         ticket, created = create_ticket(conn, DEMO_USER_ID, normalized, idempotency_key, request.state.trace_id)
         response.status_code = 201 if created else 200
-        return {"success": True, **ticket, "data": ticket, "trace_id": request.state.trace_id}
+        alias = demo_ticket_alias(ticket["ticket_id"])
+        data = {**ticket, "ticket_id": alias, "internal_ticket_id": ticket["ticket_id"]}
+        return {"success": True, **data, "data": data, "trace_id": request.state.trace_id}
 
 
 @app.get("/v1/demo/tickets/{ticket_id}", include_in_schema=False)
 def demo_read_ticket(request: Request, ticket_id: str):
     require_demo_adapter()
+    internal_id = internal_ticket_id(ticket_id)
     with connection() as conn:
-        ticket = get_ticket(conn, DEMO_USER_ID, ticket_id, request.state.trace_id)
-        return {"success": True, **ticket, "data": ticket, "trace_id": request.state.trace_id}
+        ticket = get_ticket(conn, DEMO_USER_ID, internal_id, request.state.trace_id)
+        data = {**ticket, "ticket_id": ticket_id, "internal_ticket_id": internal_id}
+        return {"success": True, **data, "data": data, "trace_id": request.state.trace_id}
