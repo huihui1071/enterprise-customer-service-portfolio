@@ -2,6 +2,7 @@ import asyncio
 import hashlib
 import json
 import logging
+import re
 import time
 import uuid
 from contextlib import asynccontextmanager
@@ -158,7 +159,9 @@ def demo_case_status(request: Request, case_id: str):
 @app.post("/v1/demo/tickets", include_in_schema=False)
 def demo_create_ticket(request: Request, response: Response, payload: dict = Body(...)):
     require_demo_adapter()
-    display_case_id = payload.get("case_id") or None
+    raw_case_id = str(payload.get("case_id") or "")
+    case_match = re.search(r"(?:[AB]\d{8}|CASE-\d{4}-\d{4})", raw_case_id, re.IGNORECASE)
+    display_case_id = case_match.group(0).upper() if case_match else None
     case_id = DEMO_CASE_ALIASES.get(display_case_id, display_case_id)
     risk_signal = payload.get("risk_signal") or payload.get("problem_type") or ""
     risk_level = "high" if risk_signal else "medium"
