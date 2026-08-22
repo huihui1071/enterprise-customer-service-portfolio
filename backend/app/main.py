@@ -158,7 +158,8 @@ def demo_case_status(request: Request, case_id: str):
 @app.post("/v1/demo/tickets", include_in_schema=False)
 def demo_create_ticket(request: Request, response: Response, payload: dict = Body(...)):
     require_demo_adapter()
-    case_id = payload.get("case_id") or None
+    display_case_id = payload.get("case_id") or None
+    case_id = DEMO_CASE_ALIASES.get(display_case_id, display_case_id)
     risk_signal = payload.get("risk_signal") or payload.get("problem_type") or ""
     risk_level = "high" if risk_signal else "medium"
     normalized = TicketCreate(
