@@ -142,6 +142,7 @@ async def read_ticket(
         return {**ticket, "trace_id": request.state.trace_id}
 
 
+@app.get("/v1/demo/cases/{case_id}", include_in_schema=False)
 @app.get("/v1/demo/cases/{case_id}/status", include_in_schema=False)
 def demo_case_status(request: Request, case_id: str):
     """Dify-only adapter for synthetic data; production clients use JWT endpoints."""
