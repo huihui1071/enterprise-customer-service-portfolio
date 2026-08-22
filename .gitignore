@@ -1,0 +1,10 @@
+.DS_Store
+.venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+.env
+runtime/
+

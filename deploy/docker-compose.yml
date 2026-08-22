@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-60}
+      ENABLE_FAULT_INJECTION: ${ENABLE_FAULT_INJECTION:-false}
+      DATABASE_PATH: /app/runtime/customer_service.db
+    volumes:
+      - backend_runtime:/app/runtime
+    restart: unless-stopped
+
+volumes:
+  backend_runtime:

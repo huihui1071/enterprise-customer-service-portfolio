@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://portfolio.local/schemas/knowledge.schema.json",
+  "title": "KnowledgeDocument",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["doc_id", "title", "knowledge_domain", "applicable_roles", "risk_level", "effective_date", "version", "status", "content", "mock_reference"],
+  "properties": {
+    "doc_id": {"type": "string"},
+    "title": {"type": "string", "minLength": 1},
+    "knowledge_domain": {"enum": ["product", "service_flow", "system_usage", "clinical_term", "training"]},
+    "product_line": {"type": ["string", "null"]},
+    "applicable_roles": {"type": "array", "minItems": 1, "items": {"enum": ["doctor", "assistant", "support", "admin"]}},
+    "risk_level": {"enum": ["low", "medium", "high"]},
+    "effective_date": {"type": "string", "format": "date"},
+    "expires_at": {"type": ["string", "null"], "format": "date"},
+    "version": {"type": "string"},
+    "status": {"enum": ["active", "expired", "draft", "conflicted"]},
+    "content": {"type": "string", "minLength": 1},
+    "mock_reference": {"type": "string"}
+  }
+}

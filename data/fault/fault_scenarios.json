@@ -1,0 +1,53 @@
+[
+  {
+    "fault_id": "FAULT-TIMEOUT",
+    "mode": "timeout",
+    "http_status": null,
+    "delay_ms": 12000
+  },
+  {
+    "fault_id": "FAULT-400",
+    "mode": "http_error",
+    "http_status": 400
+  },
+  {
+    "fault_id": "FAULT-401",
+    "mode": "http_error",
+    "http_status": 401
+  },
+  {
+    "fault_id": "FAULT-403",
+    "mode": "http_error",
+    "http_status": 403
+  },
+  {
+    "fault_id": "FAULT-404",
+    "mode": "http_error",
+    "http_status": 404
+  },
+  {
+    "fault_id": "FAULT-409",
+    "mode": "http_error",
+    "http_status": 409
+  },
+  {
+    "fault_id": "FAULT-429",
+    "mode": "http_error",
+    "http_status": 429
+  },
+  {
+    "fault_id": "FAULT-500",
+    "mode": "http_error",
+    "http_status": 500
+  },
+  {
+    "fault_id": "FAULT-BAD-SCHEMA",
+    "mode": "invalid_response_schema",
+    "http_status": 200
+  },
+  {
+    "fault_id": "FAULT-DB-DOWN",
+    "mode": "database_unavailable",
+    "http_status": 503
+  }
+]

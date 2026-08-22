@@ -1,0 +1,1802 @@
+[
+  {
+    "case_id": "CASE-2026-0001",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-025",
+    "subject_ref": "SUBJ-00001",
+    "status": "materials_pending",
+    "created_at": "2026-01-02T09:01:00Z",
+    "updated_at": "2026-01-19T09:01:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0002",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-026",
+    "subject_ref": "SUBJ-00002",
+    "status": "designing",
+    "created_at": "2026-01-03T09:02:00Z",
+    "updated_at": "2026-01-07T09:02:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0003",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-027",
+    "subject_ref": "SUBJ-00003",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-04T09:03:00Z",
+    "updated_at": "2026-01-09T09:03:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0004",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-025",
+    "subject_ref": "SUBJ-00004",
+    "status": "production_pending",
+    "created_at": "2026-01-05T09:04:00Z",
+    "updated_at": "2026-01-24T09:04:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0005",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-026",
+    "subject_ref": "SUBJ-00005",
+    "status": "in_production",
+    "created_at": "2026-01-06T09:05:00Z",
+    "updated_at": "2026-01-11T09:05:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0006",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-028",
+    "subject_ref": "SUBJ-00006",
+    "status": "shipped",
+    "created_at": "2026-01-07T09:06:00Z",
+    "updated_at": "2026-01-12T09:06:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0007",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-029",
+    "subject_ref": "SUBJ-00007",
+    "status": "in_wear",
+    "created_at": "2026-01-08T09:07:00Z",
+    "updated_at": "2026-01-09T09:07:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0008",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-030",
+    "subject_ref": "SUBJ-00008",
+    "status": "materials_pending",
+    "created_at": "2026-01-09T09:08:00Z",
+    "updated_at": "2026-01-18T09:08:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0009",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-028",
+    "subject_ref": "SUBJ-00009",
+    "status": "designing",
+    "created_at": "2026-01-10T09:09:00Z",
+    "updated_at": "2026-01-21T09:09:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0010",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-029",
+    "subject_ref": "SUBJ-00010",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-11T09:10:00Z",
+    "updated_at": "2026-01-19T09:10:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0011",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00011",
+    "status": "production_pending",
+    "created_at": "2026-01-12T09:11:00Z",
+    "updated_at": "2026-01-15T09:11:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0012",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00012",
+    "status": "in_production",
+    "created_at": "2026-01-13T09:12:00Z",
+    "updated_at": "2026-01-29T09:12:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0013",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00013",
+    "status": "shipped",
+    "created_at": "2026-01-14T09:13:00Z",
+    "updated_at": "2026-01-31T09:13:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0014",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00014",
+    "status": "in_wear",
+    "created_at": "2026-01-15T09:14:00Z",
+    "updated_at": "2026-02-04T09:14:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0015",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00015",
+    "status": "materials_pending",
+    "created_at": "2026-01-16T09:15:00Z",
+    "updated_at": "2026-01-17T09:15:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0016",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00016",
+    "status": "designing",
+    "created_at": "2026-01-17T09:16:00Z",
+    "updated_at": "2026-01-29T09:16:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0017",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00017",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-18T09:17:00Z",
+    "updated_at": "2026-01-31T09:17:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0018",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00018",
+    "status": "production_pending",
+    "created_at": "2026-01-19T09:18:00Z",
+    "updated_at": "2026-01-21T09:18:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0019",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00019",
+    "status": "in_production",
+    "created_at": "2026-01-20T09:19:00Z",
+    "updated_at": "2026-02-08T09:19:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0020",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00020",
+    "status": "shipped",
+    "created_at": "2026-01-21T09:20:00Z",
+    "updated_at": "2026-01-26T09:20:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0021",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00021",
+    "status": "in_wear",
+    "created_at": "2026-01-22T09:21:00Z",
+    "updated_at": "2026-02-02T09:21:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0022",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00022",
+    "status": "materials_pending",
+    "created_at": "2026-01-23T09:22:00Z",
+    "updated_at": "2026-01-27T09:22:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0023",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00023",
+    "status": "designing",
+    "created_at": "2026-01-24T09:23:00Z",
+    "updated_at": "2026-02-02T09:23:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0024",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00024",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-25T09:24:00Z",
+    "updated_at": "2026-02-11T09:24:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0025",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00025",
+    "status": "production_pending",
+    "created_at": "2026-01-26T09:25:00Z",
+    "updated_at": "2026-01-27T09:25:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0026",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00026",
+    "status": "in_production",
+    "created_at": "2026-01-27T09:26:00Z",
+    "updated_at": "2026-02-09T09:26:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0027",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00027",
+    "status": "shipped",
+    "created_at": "2026-01-28T09:27:00Z",
+    "updated_at": "2026-01-29T09:27:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0028",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00028",
+    "status": "in_wear",
+    "created_at": "2026-01-29T09:28:00Z",
+    "updated_at": "2026-02-09T09:28:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0029",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00029",
+    "status": "materials_pending",
+    "created_at": "2026-01-30T09:29:00Z",
+    "updated_at": "2026-02-19T09:29:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0030",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00030",
+    "status": "designing",
+    "created_at": "2026-01-31T09:30:00Z",
+    "updated_at": "2026-02-02T09:30:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0031",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00031",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-02-01T09:31:00Z",
+    "updated_at": "2026-02-07T09:31:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0032",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00032",
+    "status": "production_pending",
+    "created_at": "2026-02-02T09:32:00Z",
+    "updated_at": "2026-02-09T09:32:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0033",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00033",
+    "status": "in_production",
+    "created_at": "2026-02-03T09:33:00Z",
+    "updated_at": "2026-02-15T09:33:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0034",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00034",
+    "status": "shipped",
+    "created_at": "2026-02-04T09:34:00Z",
+    "updated_at": "2026-02-22T09:34:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0035",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00035",
+    "status": "in_wear",
+    "created_at": "2026-02-05T09:35:00Z",
+    "updated_at": "2026-02-15T09:35:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0036",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00036",
+    "status": "materials_pending",
+    "created_at": "2026-02-06T09:36:00Z",
+    "updated_at": "2026-02-11T09:36:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0037",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00037",
+    "status": "designing",
+    "created_at": "2026-02-07T09:37:00Z",
+    "updated_at": "2026-02-18T09:37:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0038",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00038",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-02-08T09:38:00Z",
+    "updated_at": "2026-02-25T09:38:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0039",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00039",
+    "status": "production_pending",
+    "created_at": "2026-02-09T09:39:00Z",
+    "updated_at": "2026-02-12T09:39:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0040",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00040",
+    "status": "in_production",
+    "created_at": "2026-02-10T09:40:00Z",
+    "updated_at": "2026-02-27T09:40:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0041",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00041",
+    "status": "shipped",
+    "created_at": "2026-02-11T09:41:00Z",
+    "updated_at": "2026-02-13T09:41:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0042",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00042",
+    "status": "in_wear",
+    "created_at": "2026-02-12T09:42:00Z",
+    "updated_at": "2026-02-26T09:42:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0043",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00043",
+    "status": "materials_pending",
+    "created_at": "2026-02-13T09:43:00Z",
+    "updated_at": "2026-02-27T09:43:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0044",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00044",
+    "status": "designing",
+    "created_at": "2026-02-14T09:44:00Z",
+    "updated_at": "2026-02-27T09:44:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0045",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00045",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-02-15T09:45:00Z",
+    "updated_at": "2026-02-22T09:45:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0046",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00046",
+    "status": "production_pending",
+    "created_at": "2026-02-16T09:46:00Z",
+    "updated_at": "2026-02-23T09:46:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0047",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00047",
+    "status": "in_production",
+    "created_at": "2026-02-17T09:47:00Z",
+    "updated_at": "2026-02-26T09:47:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0048",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00048",
+    "status": "shipped",
+    "created_at": "2026-02-18T09:48:00Z",
+    "updated_at": "2026-03-01T09:48:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0049",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00049",
+    "status": "in_wear",
+    "created_at": "2026-02-19T09:49:00Z",
+    "updated_at": "2026-02-25T09:49:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0050",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00050",
+    "status": "materials_pending",
+    "created_at": "2026-02-20T09:50:00Z",
+    "updated_at": "2026-02-24T09:50:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0051",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00051",
+    "status": "designing",
+    "created_at": "2026-02-21T09:51:00Z",
+    "updated_at": "2026-03-10T09:51:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0052",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00052",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-02-22T09:52:00Z",
+    "updated_at": "2026-02-28T09:52:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0053",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00053",
+    "status": "production_pending",
+    "created_at": "2026-02-23T09:53:00Z",
+    "updated_at": "2026-03-07T09:53:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0054",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00054",
+    "status": "in_production",
+    "created_at": "2026-02-24T09:54:00Z",
+    "updated_at": "2026-03-11T09:54:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0055",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00055",
+    "status": "shipped",
+    "created_at": "2026-02-25T09:55:00Z",
+    "updated_at": "2026-03-06T09:55:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0056",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00056",
+    "status": "in_wear",
+    "created_at": "2026-02-26T09:56:00Z",
+    "updated_at": "2026-03-10T09:56:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0057",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00057",
+    "status": "materials_pending",
+    "created_at": "2026-02-27T09:57:00Z",
+    "updated_at": "2026-03-08T09:57:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0058",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00058",
+    "status": "designing",
+    "created_at": "2026-02-28T09:58:00Z",
+    "updated_at": "2026-03-20T09:58:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0059",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00059",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-01T09:59:00Z",
+    "updated_at": "2026-03-11T09:59:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0060",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00060",
+    "status": "production_pending",
+    "created_at": "2026-03-02T10:00:00Z",
+    "updated_at": "2026-03-05T10:00:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0061",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00061",
+    "status": "in_production",
+    "created_at": "2026-03-03T10:01:00Z",
+    "updated_at": "2026-03-14T10:01:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0062",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00062",
+    "status": "shipped",
+    "created_at": "2026-03-04T10:02:00Z",
+    "updated_at": "2026-03-19T10:02:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0063",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00063",
+    "status": "in_wear",
+    "created_at": "2026-03-05T10:03:00Z",
+    "updated_at": "2026-03-22T10:03:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0064",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00064",
+    "status": "materials_pending",
+    "created_at": "2026-03-06T10:04:00Z",
+    "updated_at": "2026-03-20T10:04:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0065",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00065",
+    "status": "designing",
+    "created_at": "2026-03-07T10:05:00Z",
+    "updated_at": "2026-03-17T10:05:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0066",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00066",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-08T10:06:00Z",
+    "updated_at": "2026-03-27T10:06:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0067",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00067",
+    "status": "production_pending",
+    "created_at": "2026-03-09T10:07:00Z",
+    "updated_at": "2026-03-11T10:07:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0068",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00068",
+    "status": "in_production",
+    "created_at": "2026-03-10T10:08:00Z",
+    "updated_at": "2026-03-12T10:08:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0069",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00069",
+    "status": "shipped",
+    "created_at": "2026-03-11T10:09:00Z",
+    "updated_at": "2026-03-29T10:09:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0070",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00070",
+    "status": "in_wear",
+    "created_at": "2026-03-12T10:10:00Z",
+    "updated_at": "2026-03-14T10:10:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0071",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00071",
+    "status": "materials_pending",
+    "created_at": "2026-03-13T10:11:00Z",
+    "updated_at": "2026-03-19T10:11:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0072",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00072",
+    "status": "designing",
+    "created_at": "2026-03-14T10:12:00Z",
+    "updated_at": "2026-03-28T10:12:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0073",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00073",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-15T10:13:00Z",
+    "updated_at": "2026-03-24T10:13:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0074",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00074",
+    "status": "production_pending",
+    "created_at": "2026-03-16T10:14:00Z",
+    "updated_at": "2026-03-29T10:14:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0075",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00075",
+    "status": "in_production",
+    "created_at": "2026-03-17T10:15:00Z",
+    "updated_at": "2026-04-05T10:15:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0076",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00076",
+    "status": "shipped",
+    "created_at": "2026-03-18T10:16:00Z",
+    "updated_at": "2026-03-29T10:16:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0077",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00077",
+    "status": "in_wear",
+    "created_at": "2026-03-19T10:17:00Z",
+    "updated_at": "2026-03-26T10:17:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0078",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00078",
+    "status": "materials_pending",
+    "created_at": "2026-03-20T10:18:00Z",
+    "updated_at": "2026-03-22T10:18:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0079",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00079",
+    "status": "designing",
+    "created_at": "2026-03-21T10:19:00Z",
+    "updated_at": "2026-04-02T10:19:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0080",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00080",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-22T10:20:00Z",
+    "updated_at": "2026-04-10T10:20:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0081",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00081",
+    "status": "production_pending",
+    "created_at": "2026-03-23T10:21:00Z",
+    "updated_at": "2026-03-31T10:21:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0082",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00082",
+    "status": "in_production",
+    "created_at": "2026-03-24T10:22:00Z",
+    "updated_at": "2026-04-13T10:22:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0083",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00083",
+    "status": "shipped",
+    "created_at": "2026-03-25T10:23:00Z",
+    "updated_at": "2026-04-06T10:23:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0084",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00084",
+    "status": "in_wear",
+    "created_at": "2026-03-26T10:24:00Z",
+    "updated_at": "2026-03-31T10:24:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0085",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00085",
+    "status": "materials_pending",
+    "created_at": "2026-03-27T10:25:00Z",
+    "updated_at": "2026-04-09T10:25:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0086",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00086",
+    "status": "designing",
+    "created_at": "2026-03-28T10:26:00Z",
+    "updated_at": "2026-04-11T10:26:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0087",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00087",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-29T10:27:00Z",
+    "updated_at": "2026-04-18T10:27:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0088",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00088",
+    "status": "production_pending",
+    "created_at": "2026-03-30T10:28:00Z",
+    "updated_at": "2026-04-10T10:28:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0089",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00089",
+    "status": "in_production",
+    "created_at": "2026-03-31T10:29:00Z",
+    "updated_at": "2026-04-17T10:29:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0090",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00090",
+    "status": "shipped",
+    "created_at": "2026-04-01T10:30:00Z",
+    "updated_at": "2026-04-15T10:30:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0091",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00091",
+    "status": "in_wear",
+    "created_at": "2026-04-02T10:31:00Z",
+    "updated_at": "2026-04-11T10:31:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0092",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00092",
+    "status": "materials_pending",
+    "created_at": "2026-04-03T10:32:00Z",
+    "updated_at": "2026-04-14T10:32:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0093",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00093",
+    "status": "designing",
+    "created_at": "2026-04-04T10:33:00Z",
+    "updated_at": "2026-04-24T10:33:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0094",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00094",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-04-05T10:34:00Z",
+    "updated_at": "2026-04-11T10:34:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0095",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00095",
+    "status": "production_pending",
+    "created_at": "2026-04-06T10:35:00Z",
+    "updated_at": "2026-04-17T10:35:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0096",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00096",
+    "status": "in_production",
+    "created_at": "2026-04-07T10:36:00Z",
+    "updated_at": "2026-04-26T10:36:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0097",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00097",
+    "status": "shipped",
+    "created_at": "2026-04-08T10:37:00Z",
+    "updated_at": "2026-04-27T10:37:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0098",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00098",
+    "status": "in_wear",
+    "created_at": "2026-04-09T10:38:00Z",
+    "updated_at": "2026-04-26T10:38:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0099",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00099",
+    "status": "materials_pending",
+    "created_at": "2026-04-10T10:39:00Z",
+    "updated_at": "2026-04-14T10:39:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0100",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00100",
+    "status": "designing",
+    "created_at": "2026-04-11T10:40:00Z",
+    "updated_at": "2026-04-20T10:40:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0101",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00101",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-04-12T10:41:00Z",
+    "updated_at": "2026-04-29T10:41:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0102",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00102",
+    "status": "production_pending",
+    "created_at": "2026-04-13T10:42:00Z",
+    "updated_at": "2026-04-25T10:42:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0103",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00103",
+    "status": "in_production",
+    "created_at": "2026-04-14T10:43:00Z",
+    "updated_at": "2026-04-25T10:43:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0104",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00104",
+    "status": "shipped",
+    "created_at": "2026-04-15T10:44:00Z",
+    "updated_at": "2026-04-29T10:44:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0105",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00105",
+    "status": "in_wear",
+    "created_at": "2026-04-16T10:45:00Z",
+    "updated_at": "2026-04-30T10:45:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0106",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00106",
+    "status": "materials_pending",
+    "created_at": "2026-04-17T10:46:00Z",
+    "updated_at": "2026-05-07T10:46:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0107",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00107",
+    "status": "designing",
+    "created_at": "2026-04-18T10:47:00Z",
+    "updated_at": "2026-04-23T10:47:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0108",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00108",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-04-19T10:48:00Z",
+    "updated_at": "2026-04-28T10:48:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0109",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00109",
+    "status": "production_pending",
+    "created_at": "2026-04-20T10:49:00Z",
+    "updated_at": "2026-05-06T10:49:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0110",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00110",
+    "status": "in_production",
+    "created_at": "2026-04-21T10:50:00Z",
+    "updated_at": "2026-05-11T10:50:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0111",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00111",
+    "status": "shipped",
+    "created_at": "2026-04-22T10:51:00Z",
+    "updated_at": "2026-04-27T10:51:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0112",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00112",
+    "status": "in_wear",
+    "created_at": "2026-04-23T10:52:00Z",
+    "updated_at": "2026-05-05T10:52:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0113",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00113",
+    "status": "materials_pending",
+    "created_at": "2026-04-24T10:53:00Z",
+    "updated_at": "2026-05-14T10:53:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0114",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00114",
+    "status": "designing",
+    "created_at": "2026-04-25T10:54:00Z",
+    "updated_at": "2026-05-11T10:54:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0115",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00115",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-04-26T10:55:00Z",
+    "updated_at": "2026-04-27T10:55:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0116",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00116",
+    "status": "production_pending",
+    "created_at": "2026-04-27T10:56:00Z",
+    "updated_at": "2026-05-07T10:56:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0117",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00117",
+    "status": "in_production",
+    "created_at": "2026-04-28T10:57:00Z",
+    "updated_at": "2026-05-05T10:57:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0118",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00118",
+    "status": "shipped",
+    "created_at": "2026-04-29T10:58:00Z",
+    "updated_at": "2026-05-14T10:58:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0119",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00119",
+    "status": "in_wear",
+    "created_at": "2026-04-30T10:59:00Z",
+    "updated_at": "2026-05-17T10:59:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0120",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00120",
+    "status": "materials_pending",
+    "created_at": "2026-01-01T11:00:00Z",
+    "updated_at": "2026-01-05T11:00:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0121",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00121",
+    "status": "designing",
+    "created_at": "2026-01-02T11:01:00Z",
+    "updated_at": "2026-01-11T11:01:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0122",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00122",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-03T11:02:00Z",
+    "updated_at": "2026-01-19T11:02:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0123",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00123",
+    "status": "production_pending",
+    "created_at": "2026-01-04T11:03:00Z",
+    "updated_at": "2026-01-09T11:03:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0124",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00124",
+    "status": "in_production",
+    "created_at": "2026-01-05T11:04:00Z",
+    "updated_at": "2026-01-20T11:04:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0125",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00125",
+    "status": "shipped",
+    "created_at": "2026-01-06T11:05:00Z",
+    "updated_at": "2026-01-19T11:05:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0126",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00126",
+    "status": "in_wear",
+    "created_at": "2026-01-07T11:06:00Z",
+    "updated_at": "2026-01-08T11:06:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0127",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00127",
+    "status": "materials_pending",
+    "created_at": "2026-01-08T11:07:00Z",
+    "updated_at": "2026-01-24T11:07:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0128",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00128",
+    "status": "designing",
+    "created_at": "2026-01-09T11:08:00Z",
+    "updated_at": "2026-01-15T11:08:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0129",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00129",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-10T11:09:00Z",
+    "updated_at": "2026-01-15T11:09:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0130",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00130",
+    "status": "production_pending",
+    "created_at": "2026-01-11T11:10:00Z",
+    "updated_at": "2026-01-15T11:10:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0131",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00131",
+    "status": "in_production",
+    "created_at": "2026-01-12T11:11:00Z",
+    "updated_at": "2026-01-18T11:11:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0132",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00132",
+    "status": "shipped",
+    "created_at": "2026-01-13T11:12:00Z",
+    "updated_at": "2026-01-30T11:12:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0133",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00133",
+    "status": "in_wear",
+    "created_at": "2026-01-14T11:13:00Z",
+    "updated_at": "2026-01-22T11:13:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0134",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00134",
+    "status": "materials_pending",
+    "created_at": "2026-01-15T11:14:00Z",
+    "updated_at": "2026-01-28T11:14:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0135",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00135",
+    "status": "designing",
+    "created_at": "2026-01-16T11:15:00Z",
+    "updated_at": "2026-01-22T11:15:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0136",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00136",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-01-17T11:16:00Z",
+    "updated_at": "2026-01-19T11:16:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0137",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00137",
+    "status": "production_pending",
+    "created_at": "2026-01-18T11:17:00Z",
+    "updated_at": "2026-01-24T11:17:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0138",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00138",
+    "status": "in_production",
+    "created_at": "2026-01-19T11:18:00Z",
+    "updated_at": "2026-02-04T11:18:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0139",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00139",
+    "status": "shipped",
+    "created_at": "2026-01-20T11:19:00Z",
+    "updated_at": "2026-01-24T11:19:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0140",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00140",
+    "status": "in_wear",
+    "created_at": "2026-01-21T11:20:00Z",
+    "updated_at": "2026-01-30T11:20:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0141",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00141",
+    "status": "paused",
+    "created_at": "2026-01-22T11:21:00Z",
+    "updated_at": "2026-02-07T11:21:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0142",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00142",
+    "status": "paused",
+    "created_at": "2026-01-23T11:22:00Z",
+    "updated_at": "2026-02-12T11:22:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0143",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00143",
+    "status": "paused",
+    "created_at": "2026-01-24T11:23:00Z",
+    "updated_at": "2026-02-13T11:23:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0144",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00144",
+    "status": "paused",
+    "created_at": "2026-01-25T11:24:00Z",
+    "updated_at": "2026-02-04T11:24:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0145",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00145",
+    "status": "paused",
+    "created_at": "2026-01-26T11:25:00Z",
+    "updated_at": "2026-02-02T11:25:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0146",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00146",
+    "status": "paused",
+    "created_at": "2026-01-27T11:26:00Z",
+    "updated_at": "2026-02-16T11:26:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0147",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00147",
+    "status": "paused",
+    "created_at": "2026-01-28T11:27:00Z",
+    "updated_at": "2026-02-11T11:27:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0148",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00148",
+    "status": "paused",
+    "created_at": "2026-01-29T11:28:00Z",
+    "updated_at": "2026-02-03T11:28:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0149",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00149",
+    "status": "paused",
+    "created_at": "2026-01-30T11:29:00Z",
+    "updated_at": "2026-02-04T11:29:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0150",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00150",
+    "status": "paused",
+    "created_at": "2026-01-31T11:30:00Z",
+    "updated_at": "2026-02-19T11:30:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0151",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00151",
+    "status": "paused",
+    "created_at": "2026-02-01T11:31:00Z",
+    "updated_at": "2026-02-07T11:31:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0152",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00152",
+    "status": "paused",
+    "created_at": "2026-02-02T11:32:00Z",
+    "updated_at": "2026-02-17T11:32:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0153",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00153",
+    "status": "paused",
+    "created_at": "2026-02-03T11:33:00Z",
+    "updated_at": "2026-02-05T11:33:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0154",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00154",
+    "status": "paused",
+    "created_at": "2026-02-04T11:34:00Z",
+    "updated_at": "2026-02-17T11:34:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0155",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00155",
+    "status": "paused",
+    "created_at": "2026-02-05T11:35:00Z",
+    "updated_at": "2026-02-06T11:35:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0156",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00156",
+    "status": "cancelled",
+    "created_at": "2026-02-06T11:36:00Z",
+    "updated_at": "2026-02-11T11:36:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0157",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00157",
+    "status": "cancelled",
+    "created_at": "2026-02-07T11:37:00Z",
+    "updated_at": "2026-02-23T11:37:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0158",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00158",
+    "status": "cancelled",
+    "created_at": "2026-02-08T11:38:00Z",
+    "updated_at": "2026-02-15T11:38:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0159",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00159",
+    "status": "cancelled",
+    "created_at": "2026-02-09T11:39:00Z",
+    "updated_at": "2026-02-19T11:39:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0160",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00160",
+    "status": "cancelled",
+    "created_at": "2026-02-10T11:40:00Z",
+    "updated_at": "2026-02-20T11:40:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0161",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00161",
+    "status": "cancelled",
+    "created_at": "2026-02-11T11:41:00Z",
+    "updated_at": "2026-02-16T11:41:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0162",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00162",
+    "status": "cancelled",
+    "created_at": "2026-02-12T11:42:00Z",
+    "updated_at": "2026-02-27T11:42:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0163",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00163",
+    "status": "cancelled",
+    "created_at": "2026-02-13T11:43:00Z",
+    "updated_at": "2026-02-22T11:43:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0164",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00164",
+    "status": "cancelled",
+    "created_at": "2026-02-14T11:44:00Z",
+    "updated_at": "2026-02-22T11:44:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0165",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00165",
+    "status": "cancelled",
+    "created_at": "2026-02-15T11:45:00Z",
+    "updated_at": "2026-03-03T11:45:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0166",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00166",
+    "status": "completed",
+    "created_at": "2026-02-16T11:46:00Z",
+    "updated_at": "2026-02-20T11:46:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0167",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00167",
+    "status": "completed",
+    "created_at": "2026-02-17T11:47:00Z",
+    "updated_at": "2026-03-02T11:47:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0168",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00168",
+    "status": "completed",
+    "created_at": "2026-02-18T11:48:00Z",
+    "updated_at": "2026-02-26T11:48:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0169",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00169",
+    "status": "completed",
+    "created_at": "2026-02-19T11:49:00Z",
+    "updated_at": "2026-02-20T11:49:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0170",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00170",
+    "status": "completed",
+    "created_at": "2026-02-20T11:50:00Z",
+    "updated_at": "2026-03-02T11:50:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0171",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00171",
+    "status": "completed",
+    "created_at": "2026-02-21T11:51:00Z",
+    "updated_at": "2026-02-27T11:51:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0172",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00172",
+    "status": "completed",
+    "created_at": "2026-02-22T11:52:00Z",
+    "updated_at": "2026-03-14T11:52:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0173",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00173",
+    "status": "completed",
+    "created_at": "2026-02-23T11:53:00Z",
+    "updated_at": "2026-03-11T11:53:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0174",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00174",
+    "status": "completed",
+    "created_at": "2026-02-24T11:54:00Z",
+    "updated_at": "2026-02-28T11:54:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0175",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00175",
+    "status": "completed",
+    "created_at": "2026-02-25T11:55:00Z",
+    "updated_at": "2026-03-10T11:55:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0176",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00176",
+    "status": "completed",
+    "created_at": "2026-02-26T11:56:00Z",
+    "updated_at": "2026-03-05T11:56:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0177",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-009",
+    "subject_ref": "SUBJ-00177",
+    "status": "completed",
+    "created_at": "2026-02-27T11:57:00Z",
+    "updated_at": "2026-03-02T11:57:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0178",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-010",
+    "subject_ref": "SUBJ-00178",
+    "status": "completed",
+    "created_at": "2026-02-28T11:58:00Z",
+    "updated_at": "2026-03-14T11:58:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0179",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-011",
+    "subject_ref": "SUBJ-00179",
+    "status": "completed",
+    "created_at": "2026-03-01T11:59:00Z",
+    "updated_at": "2026-03-11T11:59:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0180",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-012",
+    "subject_ref": "SUBJ-00180",
+    "status": "completed",
+    "created_at": "2026-03-02T12:00:00Z",
+    "updated_at": "2026-03-04T12:00:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0181",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-013",
+    "subject_ref": "SUBJ-00181",
+    "status": "completed",
+    "created_at": "2026-03-03T12:01:00Z",
+    "updated_at": "2026-03-05T12:01:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0182",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-014",
+    "subject_ref": "SUBJ-00182",
+    "status": "completed",
+    "created_at": "2026-03-04T12:02:00Z",
+    "updated_at": "2026-03-10T12:02:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0183",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-015",
+    "subject_ref": "SUBJ-00183",
+    "status": "completed",
+    "created_at": "2026-03-05T12:03:00Z",
+    "updated_at": "2026-03-22T12:03:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0184",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-016",
+    "subject_ref": "SUBJ-00184",
+    "status": "completed",
+    "created_at": "2026-03-06T12:04:00Z",
+    "updated_at": "2026-03-07T12:04:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0185",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-017",
+    "subject_ref": "SUBJ-00185",
+    "status": "completed",
+    "created_at": "2026-03-07T12:05:00Z",
+    "updated_at": "2026-03-08T12:05:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0186",
+    "organization_id": "ORG-009",
+    "primary_doctor_user_id": "USR-DOC-018",
+    "subject_ref": "SUBJ-00186",
+    "status": "production_pending",
+    "created_at": "2026-03-08T12:06:00Z",
+    "updated_at": "2026-03-27T12:06:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0187",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-019",
+    "subject_ref": "SUBJ-00187",
+    "status": "in_production",
+    "created_at": "2026-03-09T12:07:00Z",
+    "updated_at": "2026-03-19T12:07:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0188",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-020",
+    "subject_ref": "SUBJ-00188",
+    "status": "shipped",
+    "created_at": "2026-03-10T12:08:00Z",
+    "updated_at": "2026-03-27T12:08:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0189",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-021",
+    "subject_ref": "SUBJ-00189",
+    "status": "in_wear",
+    "created_at": "2026-03-11T12:09:00Z",
+    "updated_at": "2026-03-17T12:09:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0190",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-022",
+    "subject_ref": "SUBJ-00190",
+    "status": "materials_pending",
+    "created_at": "2026-03-12T12:10:00Z",
+    "updated_at": "2026-03-21T12:10:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0191",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-023",
+    "subject_ref": "SUBJ-00191",
+    "status": "designing",
+    "created_at": "2026-03-13T12:11:00Z",
+    "updated_at": "2026-04-01T12:11:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0192",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-024",
+    "subject_ref": "SUBJ-00192",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-14T12:12:00Z",
+    "updated_at": "2026-03-23T12:12:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0193",
+    "organization_id": "ORG-001",
+    "primary_doctor_user_id": "USR-DOC-001",
+    "subject_ref": "SUBJ-00193",
+    "status": "production_pending",
+    "created_at": "2026-03-15T12:13:00Z",
+    "updated_at": "2026-03-23T12:13:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0194",
+    "organization_id": "ORG-002",
+    "primary_doctor_user_id": "USR-DOC-002",
+    "subject_ref": "SUBJ-00194",
+    "status": "in_production",
+    "created_at": "2026-03-16T12:14:00Z",
+    "updated_at": "2026-03-25T12:14:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0195",
+    "organization_id": "ORG-003",
+    "primary_doctor_user_id": "USR-DOC-003",
+    "subject_ref": "SUBJ-00195",
+    "status": "shipped",
+    "created_at": "2026-03-17T12:15:00Z",
+    "updated_at": "2026-04-03T12:15:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0196",
+    "organization_id": "ORG-004",
+    "primary_doctor_user_id": "USR-DOC-004",
+    "subject_ref": "SUBJ-00196",
+    "status": "in_wear",
+    "created_at": "2026-03-18T12:16:00Z",
+    "updated_at": "2026-04-04T12:16:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0197",
+    "organization_id": "ORG-005",
+    "primary_doctor_user_id": "USR-DOC-005",
+    "subject_ref": "SUBJ-00197",
+    "status": "materials_pending",
+    "created_at": "2026-03-19T12:17:00Z",
+    "updated_at": "2026-04-08T12:17:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0198",
+    "organization_id": "ORG-006",
+    "primary_doctor_user_id": "USR-DOC-006",
+    "subject_ref": "SUBJ-00198",
+    "status": "designing",
+    "created_at": "2026-03-20T12:18:00Z",
+    "updated_at": "2026-04-03T12:18:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0199",
+    "organization_id": "ORG-007",
+    "primary_doctor_user_id": "USR-DOC-007",
+    "subject_ref": "SUBJ-00199",
+    "status": "design_pending_confirmation",
+    "created_at": "2026-03-21T12:19:00Z",
+    "updated_at": "2026-03-30T12:19:00Z"
+  },
+  {
+    "case_id": "CASE-2026-0200",
+    "organization_id": "ORG-008",
+    "primary_doctor_user_id": "USR-DOC-008",
+    "subject_ref": "SUBJ-00200",
+    "status": "production_pending",
+    "created_at": "2026-03-22T12:20:00Z",
+    "updated_at": "2026-04-10T12:20:00Z"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "test_id": "AUTH-001",
+    "actor_user_id": "USR-DOC-001",
+    "case_id": "CASE-2026-0025",
+    "expected": "allow"
+  },
+  {
+    "test_id": "AUTH-002",
+    "actor_user_id": "USR-DOC-001",
+    "case_id": "CASE-2026-0019",
+    "expected": "deny",
+    "reason": "CASE_ACCESS_DENIED"
+  },
+  {
+    "test_id": "AUTH-003",
+    "actor_user_id": "USR-AST-001",
+    "case_id": "CASE-2026-0025",
+    "expected": "allow"
+  },
+  {
+    "test_id": "AUTH-004",
+    "actor_user_id": "USR-AST-012",
+    "case_id": "CASE-2026-0025",
+    "expected": "deny",
+    "reason": "ASSIGNMENT_REQUIRED"
+  },
+  {
+    "test_id": "AUTH-005",
+    "actor_user_id": "USR-DOC-025",
+    "case_id": "CASE-2026-0001",
+    "expected": "deny",
+    "reason": "MEMBERSHIP_INACTIVE"
+  },
+  {
+    "test_id": "AUTH-006",
+    "actor_user_id": "USR-DOC-028",
+    "case_id": "CASE-2026-0006",
+    "expected": "deny",
+    "reason": "ACCOUNT_FROZEN"
+  },
+  {
+    "test_id": "AUTH-007",
+    "actor_user_id": "USR-DOC-001",
+    "case_id": "CASE-2026-0020",
+    "expected": "deny",
+    "reason": "CROSS_ORG_ACCESS_DENIED"
+  },
+  {
+    "test_id": "AUTH-008",
+    "actor_user_id": "USR-DOC-001",
+    "case_id": "CASE-9999-9999",
+    "expected": "deny",
+    "reason": "CASE_NOT_FOUND"
+  }
+]

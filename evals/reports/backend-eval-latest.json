@@ -1,0 +1,77 @@
+{
+  "report_type": "backend_eval",
+  "metric_status": "measured",
+  "generated_at": "2026-08-22T10:59:01.620683+00:00",
+  "dataset_version": "synthetic-v1",
+  "summary": {
+    "access_decision_accuracy": 1.0,
+    "access_cases_passed": 8,
+    "access_cases_total": 8,
+    "unauthorized_access_successes": 0,
+    "idempotency_passed": true,
+    "high_risk_assignment_passed": true
+  },
+  "limitations": [
+    "Only the deterministic Mock Backend is measured in this report.",
+    "AI route accuracy, RAG quality, and high-risk recall remain unmeasured until Dify batch evaluation runs.",
+    "All users, organizations, cases, and tickets are synthetic."
+  ],
+  "access_results": [
+    {
+      "test_id": "AUTH-001",
+      "expected": "allow",
+      "actual": "allow",
+      "http_status": 200,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-002",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 403,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-003",
+      "expected": "allow",
+      "actual": "allow",
+      "http_status": 200,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-004",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 403,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-005",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 403,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-006",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 403,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-007",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 403,
+      "passed": true
+    },
+    {
+      "test_id": "AUTH-008",
+      "expected": "deny",
+      "actual": "deny",
+      "http_status": 404,
+      "passed": true
+    }
+  ]
+}

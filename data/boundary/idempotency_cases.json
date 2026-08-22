@@ -1,0 +1,8 @@
+[
+  {
+    "test_id": "IDEM-001",
+    "idempotency_key": "idem-retry-demo-001",
+    "request_count": 2,
+    "expected_created_ticket_count": 1
+  }
+]

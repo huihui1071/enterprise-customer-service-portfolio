@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: enterprise-customer-service-mock-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRE_MINUTES
+        value: "1440"
+      - key: DATABASE_PATH
+        value: /tmp/customer_service.db
+      - key: ENABLE_FAULT_INJECTION
+        value: "false"
+

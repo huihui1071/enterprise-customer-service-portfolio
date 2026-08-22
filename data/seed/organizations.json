@@ -1,0 +1,82 @@
+[
+  {
+    "organization_id": "ORG-001",
+    "organization_code": "CLINIC-001",
+    "organization_name": "模拟正畸中心01",
+    "status": "active",
+    "created_at": "2023-10-25T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-002",
+    "organization_code": "CLINIC-002",
+    "organization_name": "模拟正畸中心02",
+    "status": "active",
+    "created_at": "2023-10-26T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-003",
+    "organization_code": "CLINIC-003",
+    "organization_name": "模拟正畸中心03",
+    "status": "active",
+    "created_at": "2023-10-27T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-004",
+    "organization_code": "CLINIC-004",
+    "organization_name": "模拟正畸中心04",
+    "status": "active",
+    "created_at": "2023-10-28T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-005",
+    "organization_code": "CLINIC-005",
+    "organization_name": "模拟正畸中心05",
+    "status": "active",
+    "created_at": "2023-10-29T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-006",
+    "organization_code": "CLINIC-006",
+    "organization_name": "模拟正畸中心06",
+    "status": "active",
+    "created_at": "2023-10-30T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-007",
+    "organization_code": "CLINIC-007",
+    "organization_name": "模拟正畸中心07",
+    "status": "active",
+    "created_at": "2023-10-31T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-008",
+    "organization_code": "CLINIC-008",
+    "organization_name": "模拟正畸中心08",
+    "status": "active",
+    "created_at": "2023-11-01T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-009",
+    "organization_code": "CLINIC-009",
+    "organization_name": "模拟正畸中心09",
+    "status": "active",
+    "created_at": "2023-11-02T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "organization_id": "ORG-010",
+    "organization_code": "CLINIC-010",
+    "organization_name": "模拟正畸中心10",
+    "status": "suspended",
+    "created_at": "2023-11-03T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  }
+]

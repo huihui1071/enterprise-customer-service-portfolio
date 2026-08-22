@@ -1,0 +1,32 @@
+[
+  {
+    "entity": "case",
+    "from": "designing",
+    "to": "in_production",
+    "allowed": false
+  },
+  {
+    "entity": "case",
+    "from": "design_pending_confirmation",
+    "to": "production_pending",
+    "allowed": true
+  },
+  {
+    "entity": "case",
+    "from": "cancelled",
+    "to": "in_production",
+    "allowed": false
+  },
+  {
+    "entity": "ticket",
+    "from": "resolved",
+    "to": "processing",
+    "allowed": true
+  },
+  {
+    "entity": "ticket",
+    "from": "closed",
+    "to": "processing",
+    "allowed": false
+  }
+]

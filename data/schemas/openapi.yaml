@@ -1,0 +1,202 @@
+openapi: 3.0.3
+info:
+  title: Enterprise Customer Service Mock API
+  version: 1.0.0
+  description: Synthetic portfolio API. No real patient or company data.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      operationId: healthCheck
+      security: []
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, version]
+                properties:
+                  status: {type: string, enum: [ok]}
+                  version: {type: string}
+  /v1/auth/token:
+    post:
+      operationId: createMockToken
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [user_id]
+              properties:
+                user_id: {type: string}
+      responses:
+        "200":
+          description: Mock JWT for a synthetic user
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [access_token, token_type, expires_in]
+                properties:
+                  access_token: {type: string}
+                  token_type: {type: string, enum: [bearer]}
+                  expires_in: {type: integer}
+        "401": {$ref: "#/components/responses/Error"}
+  /v1/cases/{case_id}:
+    get:
+      operationId: getCaseStatus
+      parameters:
+        - name: case_id
+          in: path
+          required: true
+          schema: {type: string, pattern: '^CASE-[0-9]{4}-[0-9]{4}$'}
+        - $ref: "#/components/parameters/TraceId"
+        - $ref: "#/components/parameters/FaultMode"
+      responses:
+        "200":
+          description: Authorized minimal case status
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/CaseStatusResponse"}
+        "400": {$ref: "#/components/responses/Error"}
+        "401": {$ref: "#/components/responses/Error"}
+        "403": {$ref: "#/components/responses/ProtectedCaseError"}
+        "404": {$ref: "#/components/responses/ProtectedCaseError"}
+        "429": {$ref: "#/components/responses/Error"}
+        "500": {$ref: "#/components/responses/Error"}
+  /v1/tickets:
+    post:
+      operationId: createTicket
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema: {type: string, minLength: 8, maxLength: 128}
+        - $ref: "#/components/parameters/TraceId"
+        - $ref: "#/components/parameters/FaultMode"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: "#/components/schemas/TicketCreate"}
+      responses:
+        "201":
+          description: Ticket created
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/TicketResponse"}
+        "200":
+          description: Existing ticket returned for an idempotent retry
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/TicketResponse"}
+        "400": {$ref: "#/components/responses/Error"}
+        "401": {$ref: "#/components/responses/Error"}
+        "403": {$ref: "#/components/responses/Error"}
+        "409": {$ref: "#/components/responses/Error"}
+        "429": {$ref: "#/components/responses/Error"}
+        "500": {$ref: "#/components/responses/Error"}
+  /v1/tickets/{ticket_id}:
+    get:
+      operationId: getTicket
+      parameters:
+        - name: ticket_id
+          in: path
+          required: true
+          schema: {type: string}
+        - $ref: "#/components/parameters/TraceId"
+        - $ref: "#/components/parameters/FaultMode"
+      responses:
+        "200":
+          description: Authorized ticket summary
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/TicketResponse"}
+        "401": {$ref: "#/components/responses/Error"}
+        "403": {$ref: "#/components/responses/Error"}
+        "404": {$ref: "#/components/responses/Error"}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    TraceId:
+      name: X-Trace-ID
+      in: header
+      required: false
+      schema: {type: string}
+    FaultMode:
+      name: X-Fault-Mode
+      in: header
+      required: false
+      description: Test-only fault injection; disabled outside test mode.
+      schema: {type: string}
+  responses:
+    Error:
+      description: Structured error
+      content:
+        application/json:
+          schema: {$ref: "#/components/schemas/ErrorResponse"}
+    ProtectedCaseError:
+      description: Case missing and case forbidden use the same public message.
+      content:
+        application/json:
+          schema: {$ref: "#/components/schemas/ErrorResponse"}
+  schemas:
+    CaseStatusResponse:
+      type: object
+      required: [case_id, status, status_label, updated_at, next_step, trace_id]
+      properties:
+        case_id: {type: string}
+        status: {type: string}
+        status_label: {type: string}
+        updated_at: {type: string, format: date-time}
+        next_step: {type: string}
+        trace_id: {type: string}
+    TicketCreate:
+      type: object
+      required: [ticket_type, organization_id, summary, description, risk_level, source]
+      properties:
+        ticket_type: {type: string}
+        organization_id: {type: string}
+        case_id: {type: string, nullable: true}
+        summary: {type: string, minLength: 1, maxLength: 200}
+        description: {type: string, minLength: 1, maxLength: 4000}
+        evidence: {type: array, items: {type: string}}
+        risk_level: {type: string, enum: [low, medium, high, critical]}
+        source: {type: string, enum: [dify, web, api]}
+    TicketResponse:
+      type: object
+      required: [ticket_id, status, priority, organization_id, summary, created_at, trace_id]
+      properties:
+        ticket_id: {type: string}
+        status: {type: string}
+        priority: {type: string, enum: [P0, P1, P2]}
+        organization_id: {type: string}
+        case_id: {type: string, nullable: true}
+        summary: {type: string}
+        assignee_team: {type: string, nullable: true}
+        created_at: {type: string, format: date-time}
+        updated_at: {type: string, format: date-time}
+        trace_id: {type: string}
+    ErrorResponse:
+      type: object
+      required: [error, trace_id]
+      properties:
+        error:
+          type: object
+          required: [code, message, retryable]
+          properties:
+            code: {type: string}
+            message: {type: string}
+            retryable: {type: boolean}
+        trace_id: {type: string}
+security:
+  - bearerAuth: []

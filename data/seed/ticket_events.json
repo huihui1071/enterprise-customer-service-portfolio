@@ -1,0 +1,2342 @@
+[
+  {
+    "event_id": "TKE-000001",
+    "ticket_id": "TKT-2026-0001",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-030",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-01T09:01:00Z",
+    "trace_id": "trace-ticket-0001-create"
+  },
+  {
+    "event_id": "TKE-000002",
+    "ticket_id": "TKT-2026-0002",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-015",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-02T09:02:00Z",
+    "trace_id": "trace-ticket-0002-create"
+  },
+  {
+    "event_id": "TKE-000003",
+    "ticket_id": "TKT-2026-0002",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-02T09:12:00Z",
+    "trace_id": "trace-ticket-0002-seed"
+  },
+  {
+    "event_id": "TKE-000004",
+    "ticket_id": "TKT-2026-0003",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-022",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-03T09:03:00Z",
+    "trace_id": "trace-ticket-0003-create"
+  },
+  {
+    "event_id": "TKE-000005",
+    "ticket_id": "TKT-2026-0003",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-03T09:13:00Z",
+    "trace_id": "trace-ticket-0003-seed"
+  },
+  {
+    "event_id": "TKE-000006",
+    "ticket_id": "TKT-2026-0004",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-005",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-04T09:04:00Z",
+    "trace_id": "trace-ticket-0004-create"
+  },
+  {
+    "event_id": "TKE-000007",
+    "ticket_id": "TKT-2026-0004",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-04T09:14:00Z",
+    "trace_id": "trace-ticket-0004-seed"
+  },
+  {
+    "event_id": "TKE-000008",
+    "ticket_id": "TKT-2026-0005",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-012",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-05T09:05:00Z",
+    "trace_id": "trace-ticket-0005-create"
+  },
+  {
+    "event_id": "TKE-000009",
+    "ticket_id": "TKT-2026-0005",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-05T09:15:00Z",
+    "trace_id": "trace-ticket-0005-seed"
+  },
+  {
+    "event_id": "TKE-000010",
+    "ticket_id": "TKT-2026-0006",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-019",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-06T09:06:00Z",
+    "trace_id": "trace-ticket-0006-create"
+  },
+  {
+    "event_id": "TKE-000011",
+    "ticket_id": "TKT-2026-0007",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-002",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-07T09:07:00Z",
+    "trace_id": "trace-ticket-0007-create"
+  },
+  {
+    "event_id": "TKE-000012",
+    "ticket_id": "TKT-2026-0007",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-07T09:17:00Z",
+    "trace_id": "trace-ticket-0007-seed"
+  },
+  {
+    "event_id": "TKE-000013",
+    "ticket_id": "TKT-2026-0008",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-009",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-08T09:08:00Z",
+    "trace_id": "trace-ticket-0008-create"
+  },
+  {
+    "event_id": "TKE-000014",
+    "ticket_id": "TKT-2026-0008",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-08T09:18:00Z",
+    "trace_id": "trace-ticket-0008-seed"
+  },
+  {
+    "event_id": "TKE-000015",
+    "ticket_id": "TKT-2026-0009",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-016",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-09T09:09:00Z",
+    "trace_id": "trace-ticket-0009-create"
+  },
+  {
+    "event_id": "TKE-000016",
+    "ticket_id": "TKT-2026-0009",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-09T09:19:00Z",
+    "trace_id": "trace-ticket-0009-seed"
+  },
+  {
+    "event_id": "TKE-000017",
+    "ticket_id": "TKT-2026-0010",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-023",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-10T09:10:00Z",
+    "trace_id": "trace-ticket-0010-create"
+  },
+  {
+    "event_id": "TKE-000018",
+    "ticket_id": "TKT-2026-0010",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-10T09:20:00Z",
+    "trace_id": "trace-ticket-0010-seed"
+  },
+  {
+    "event_id": "TKE-000019",
+    "ticket_id": "TKT-2026-0011",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-006",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-11T09:11:00Z",
+    "trace_id": "trace-ticket-0011-create"
+  },
+  {
+    "event_id": "TKE-000020",
+    "ticket_id": "TKT-2026-0012",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-013",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-12T09:12:00Z",
+    "trace_id": "trace-ticket-0012-create"
+  },
+  {
+    "event_id": "TKE-000021",
+    "ticket_id": "TKT-2026-0012",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-12T09:22:00Z",
+    "trace_id": "trace-ticket-0012-seed"
+  },
+  {
+    "event_id": "TKE-000022",
+    "ticket_id": "TKT-2026-0013",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-020",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-13T09:13:00Z",
+    "trace_id": "trace-ticket-0013-create"
+  },
+  {
+    "event_id": "TKE-000023",
+    "ticket_id": "TKT-2026-0013",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-13T09:23:00Z",
+    "trace_id": "trace-ticket-0013-seed"
+  },
+  {
+    "event_id": "TKE-000024",
+    "ticket_id": "TKT-2026-0014",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-003",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-14T09:14:00Z",
+    "trace_id": "trace-ticket-0014-create"
+  },
+  {
+    "event_id": "TKE-000025",
+    "ticket_id": "TKT-2026-0014",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-14T09:24:00Z",
+    "trace_id": "trace-ticket-0014-seed"
+  },
+  {
+    "event_id": "TKE-000026",
+    "ticket_id": "TKT-2026-0015",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-010",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-15T09:15:00Z",
+    "trace_id": "trace-ticket-0015-create"
+  },
+  {
+    "event_id": "TKE-000027",
+    "ticket_id": "TKT-2026-0015",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-15T09:25:00Z",
+    "trace_id": "trace-ticket-0015-seed"
+  },
+  {
+    "event_id": "TKE-000028",
+    "ticket_id": "TKT-2026-0016",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-017",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-16T09:16:00Z",
+    "trace_id": "trace-ticket-0016-create"
+  },
+  {
+    "event_id": "TKE-000029",
+    "ticket_id": "TKT-2026-0017",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-024",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-17T09:17:00Z",
+    "trace_id": "trace-ticket-0017-create"
+  },
+  {
+    "event_id": "TKE-000030",
+    "ticket_id": "TKT-2026-0017",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-17T09:27:00Z",
+    "trace_id": "trace-ticket-0017-seed"
+  },
+  {
+    "event_id": "TKE-000031",
+    "ticket_id": "TKT-2026-0018",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-007",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-18T09:18:00Z",
+    "trace_id": "trace-ticket-0018-create"
+  },
+  {
+    "event_id": "TKE-000032",
+    "ticket_id": "TKT-2026-0018",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-18T09:28:00Z",
+    "trace_id": "trace-ticket-0018-seed"
+  },
+  {
+    "event_id": "TKE-000033",
+    "ticket_id": "TKT-2026-0019",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-014",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-19T09:19:00Z",
+    "trace_id": "trace-ticket-0019-create"
+  },
+  {
+    "event_id": "TKE-000034",
+    "ticket_id": "TKT-2026-0019",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-19T09:29:00Z",
+    "trace_id": "trace-ticket-0019-seed"
+  },
+  {
+    "event_id": "TKE-000035",
+    "ticket_id": "TKT-2026-0020",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-021",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-20T09:20:00Z",
+    "trace_id": "trace-ticket-0020-create"
+  },
+  {
+    "event_id": "TKE-000036",
+    "ticket_id": "TKT-2026-0020",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-20T09:30:00Z",
+    "trace_id": "trace-ticket-0020-seed"
+  },
+  {
+    "event_id": "TKE-000037",
+    "ticket_id": "TKT-2026-0021",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-004",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-21T09:21:00Z",
+    "trace_id": "trace-ticket-0021-create"
+  },
+  {
+    "event_id": "TKE-000038",
+    "ticket_id": "TKT-2026-0022",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-011",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-22T09:22:00Z",
+    "trace_id": "trace-ticket-0022-create"
+  },
+  {
+    "event_id": "TKE-000039",
+    "ticket_id": "TKT-2026-0022",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-22T09:32:00Z",
+    "trace_id": "trace-ticket-0022-seed"
+  },
+  {
+    "event_id": "TKE-000040",
+    "ticket_id": "TKT-2026-0023",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-018",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-23T09:23:00Z",
+    "trace_id": "trace-ticket-0023-create"
+  },
+  {
+    "event_id": "TKE-000041",
+    "ticket_id": "TKT-2026-0023",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-23T09:33:00Z",
+    "trace_id": "trace-ticket-0023-seed"
+  },
+  {
+    "event_id": "TKE-000042",
+    "ticket_id": "TKT-2026-0024",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-001",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-24T09:24:00Z",
+    "trace_id": "trace-ticket-0024-create"
+  },
+  {
+    "event_id": "TKE-000043",
+    "ticket_id": "TKT-2026-0024",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-24T09:34:00Z",
+    "trace_id": "trace-ticket-0024-seed"
+  },
+  {
+    "event_id": "TKE-000044",
+    "ticket_id": "TKT-2026-0025",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-008",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-25T09:25:00Z",
+    "trace_id": "trace-ticket-0025-create"
+  },
+  {
+    "event_id": "TKE-000045",
+    "ticket_id": "TKT-2026-0025",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-25T09:35:00Z",
+    "trace_id": "trace-ticket-0025-seed"
+  },
+  {
+    "event_id": "TKE-000046",
+    "ticket_id": "TKT-2026-0026",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-015",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-26T09:26:00Z",
+    "trace_id": "trace-ticket-0026-create"
+  },
+  {
+    "event_id": "TKE-000047",
+    "ticket_id": "TKT-2026-0027",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-022",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-27T09:27:00Z",
+    "trace_id": "trace-ticket-0027-create"
+  },
+  {
+    "event_id": "TKE-000048",
+    "ticket_id": "TKT-2026-0027",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-27T09:37:00Z",
+    "trace_id": "trace-ticket-0027-seed"
+  },
+  {
+    "event_id": "TKE-000049",
+    "ticket_id": "TKT-2026-0028",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-005",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-28T09:28:00Z",
+    "trace_id": "trace-ticket-0028-create"
+  },
+  {
+    "event_id": "TKE-000050",
+    "ticket_id": "TKT-2026-0028",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-28T09:38:00Z",
+    "trace_id": "trace-ticket-0028-seed"
+  },
+  {
+    "event_id": "TKE-000051",
+    "ticket_id": "TKT-2026-0029",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-025",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-29T09:29:00Z",
+    "trace_id": "trace-ticket-0029-create"
+  },
+  {
+    "event_id": "TKE-000052",
+    "ticket_id": "TKT-2026-0029",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-29T09:39:00Z",
+    "trace_id": "trace-ticket-0029-seed"
+  },
+  {
+    "event_id": "TKE-000053",
+    "ticket_id": "TKT-2026-0030",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-011",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-06-30T09:30:00Z",
+    "trace_id": "trace-ticket-0030-create"
+  },
+  {
+    "event_id": "TKE-000054",
+    "ticket_id": "TKT-2026-0030",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-06-30T09:40:00Z",
+    "trace_id": "trace-ticket-0030-seed"
+  },
+  {
+    "event_id": "TKE-000055",
+    "ticket_id": "TKT-2026-0031",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-018",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-01T09:31:00Z",
+    "trace_id": "trace-ticket-0031-create"
+  },
+  {
+    "event_id": "TKE-000056",
+    "ticket_id": "TKT-2026-0032",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-001",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-02T09:32:00Z",
+    "trace_id": "trace-ticket-0032-create"
+  },
+  {
+    "event_id": "TKE-000057",
+    "ticket_id": "TKT-2026-0032",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-02T09:42:00Z",
+    "trace_id": "trace-ticket-0032-seed"
+  },
+  {
+    "event_id": "TKE-000058",
+    "ticket_id": "TKT-2026-0033",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-008",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-03T09:33:00Z",
+    "trace_id": "trace-ticket-0033-create"
+  },
+  {
+    "event_id": "TKE-000059",
+    "ticket_id": "TKT-2026-0033",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-03T09:43:00Z",
+    "trace_id": "trace-ticket-0033-seed"
+  },
+  {
+    "event_id": "TKE-000060",
+    "ticket_id": "TKT-2026-0034",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-015",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-04T09:34:00Z",
+    "trace_id": "trace-ticket-0034-create"
+  },
+  {
+    "event_id": "TKE-000061",
+    "ticket_id": "TKT-2026-0034",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-04T09:44:00Z",
+    "trace_id": "trace-ticket-0034-seed"
+  },
+  {
+    "event_id": "TKE-000062",
+    "ticket_id": "TKT-2026-0035",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-022",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-05T09:35:00Z",
+    "trace_id": "trace-ticket-0035-create"
+  },
+  {
+    "event_id": "TKE-000063",
+    "ticket_id": "TKT-2026-0035",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-05T09:45:00Z",
+    "trace_id": "trace-ticket-0035-seed"
+  },
+  {
+    "event_id": "TKE-000064",
+    "ticket_id": "TKT-2026-0036",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-005",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-06T09:36:00Z",
+    "trace_id": "trace-ticket-0036-create"
+  },
+  {
+    "event_id": "TKE-000065",
+    "ticket_id": "TKT-2026-0037",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-012",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-07T09:37:00Z",
+    "trace_id": "trace-ticket-0037-create"
+  },
+  {
+    "event_id": "TKE-000066",
+    "ticket_id": "TKT-2026-0037",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-07T09:47:00Z",
+    "trace_id": "trace-ticket-0037-seed"
+  },
+  {
+    "event_id": "TKE-000067",
+    "ticket_id": "TKT-2026-0038",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-019",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-08T09:38:00Z",
+    "trace_id": "trace-ticket-0038-create"
+  },
+  {
+    "event_id": "TKE-000068",
+    "ticket_id": "TKT-2026-0038",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-08T09:48:00Z",
+    "trace_id": "trace-ticket-0038-seed"
+  },
+  {
+    "event_id": "TKE-000069",
+    "ticket_id": "TKT-2026-0039",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-002",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-09T09:39:00Z",
+    "trace_id": "trace-ticket-0039-create"
+  },
+  {
+    "event_id": "TKE-000070",
+    "ticket_id": "TKT-2026-0039",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-09T09:49:00Z",
+    "trace_id": "trace-ticket-0039-seed"
+  },
+  {
+    "event_id": "TKE-000071",
+    "ticket_id": "TKT-2026-0040",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-009",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-10T09:40:00Z",
+    "trace_id": "trace-ticket-0040-create"
+  },
+  {
+    "event_id": "TKE-000072",
+    "ticket_id": "TKT-2026-0040",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-10T09:50:00Z",
+    "trace_id": "trace-ticket-0040-seed"
+  },
+  {
+    "event_id": "TKE-000073",
+    "ticket_id": "TKT-2026-0041",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-016",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-11T09:41:00Z",
+    "trace_id": "trace-ticket-0041-create"
+  },
+  {
+    "event_id": "TKE-000074",
+    "ticket_id": "TKT-2026-0042",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-023",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-12T09:42:00Z",
+    "trace_id": "trace-ticket-0042-create"
+  },
+  {
+    "event_id": "TKE-000075",
+    "ticket_id": "TKT-2026-0042",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-12T09:52:00Z",
+    "trace_id": "trace-ticket-0042-seed"
+  },
+  {
+    "event_id": "TKE-000076",
+    "ticket_id": "TKT-2026-0043",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-006",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-13T09:43:00Z",
+    "trace_id": "trace-ticket-0043-create"
+  },
+  {
+    "event_id": "TKE-000077",
+    "ticket_id": "TKT-2026-0043",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-13T09:53:00Z",
+    "trace_id": "trace-ticket-0043-seed"
+  },
+  {
+    "event_id": "TKE-000078",
+    "ticket_id": "TKT-2026-0044",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-013",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-14T09:44:00Z",
+    "trace_id": "trace-ticket-0044-create"
+  },
+  {
+    "event_id": "TKE-000079",
+    "ticket_id": "TKT-2026-0044",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-14T09:54:00Z",
+    "trace_id": "trace-ticket-0044-seed"
+  },
+  {
+    "event_id": "TKE-000080",
+    "ticket_id": "TKT-2026-0045",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-020",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-15T09:45:00Z",
+    "trace_id": "trace-ticket-0045-create"
+  },
+  {
+    "event_id": "TKE-000081",
+    "ticket_id": "TKT-2026-0045",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-15T09:55:00Z",
+    "trace_id": "trace-ticket-0045-seed"
+  },
+  {
+    "event_id": "TKE-000082",
+    "ticket_id": "TKT-2026-0046",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-003",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-16T09:46:00Z",
+    "trace_id": "trace-ticket-0046-create"
+  },
+  {
+    "event_id": "TKE-000083",
+    "ticket_id": "TKT-2026-0047",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-010",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-17T09:47:00Z",
+    "trace_id": "trace-ticket-0047-create"
+  },
+  {
+    "event_id": "TKE-000084",
+    "ticket_id": "TKT-2026-0047",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-17T09:57:00Z",
+    "trace_id": "trace-ticket-0047-seed"
+  },
+  {
+    "event_id": "TKE-000085",
+    "ticket_id": "TKT-2026-0048",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-017",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-18T09:48:00Z",
+    "trace_id": "trace-ticket-0048-create"
+  },
+  {
+    "event_id": "TKE-000086",
+    "ticket_id": "TKT-2026-0048",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-18T09:58:00Z",
+    "trace_id": "trace-ticket-0048-seed"
+  },
+  {
+    "event_id": "TKE-000087",
+    "ticket_id": "TKT-2026-0049",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-024",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-19T09:49:00Z",
+    "trace_id": "trace-ticket-0049-create"
+  },
+  {
+    "event_id": "TKE-000088",
+    "ticket_id": "TKT-2026-0049",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-19T09:59:00Z",
+    "trace_id": "trace-ticket-0049-seed"
+  },
+  {
+    "event_id": "TKE-000089",
+    "ticket_id": "TKT-2026-0050",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-007",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-20T09:50:00Z",
+    "trace_id": "trace-ticket-0050-create"
+  },
+  {
+    "event_id": "TKE-000090",
+    "ticket_id": "TKT-2026-0050",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-20T10:00:00Z",
+    "trace_id": "trace-ticket-0050-seed"
+  },
+  {
+    "event_id": "TKE-000091",
+    "ticket_id": "TKT-2026-0051",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-014",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-21T09:51:00Z",
+    "trace_id": "trace-ticket-0051-create"
+  },
+  {
+    "event_id": "TKE-000092",
+    "ticket_id": "TKT-2026-0052",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-021",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-22T09:52:00Z",
+    "trace_id": "trace-ticket-0052-create"
+  },
+  {
+    "event_id": "TKE-000093",
+    "ticket_id": "TKT-2026-0052",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-22T10:02:00Z",
+    "trace_id": "trace-ticket-0052-seed"
+  },
+  {
+    "event_id": "TKE-000094",
+    "ticket_id": "TKT-2026-0053",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-004",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-23T09:53:00Z",
+    "trace_id": "trace-ticket-0053-create"
+  },
+  {
+    "event_id": "TKE-000095",
+    "ticket_id": "TKT-2026-0053",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-23T10:03:00Z",
+    "trace_id": "trace-ticket-0053-seed"
+  },
+  {
+    "event_id": "TKE-000096",
+    "ticket_id": "TKT-2026-0054",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-011",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-24T09:54:00Z",
+    "trace_id": "trace-ticket-0054-create"
+  },
+  {
+    "event_id": "TKE-000097",
+    "ticket_id": "TKT-2026-0054",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-24T10:04:00Z",
+    "trace_id": "trace-ticket-0054-seed"
+  },
+  {
+    "event_id": "TKE-000098",
+    "ticket_id": "TKT-2026-0055",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-018",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-25T09:55:00Z",
+    "trace_id": "trace-ticket-0055-create"
+  },
+  {
+    "event_id": "TKE-000099",
+    "ticket_id": "TKT-2026-0055",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-25T10:05:00Z",
+    "trace_id": "trace-ticket-0055-seed"
+  },
+  {
+    "event_id": "TKE-000100",
+    "ticket_id": "TKT-2026-0056",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-001",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-26T09:56:00Z",
+    "trace_id": "trace-ticket-0056-create"
+  },
+  {
+    "event_id": "TKE-000101",
+    "ticket_id": "TKT-2026-0057",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-008",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-27T09:57:00Z",
+    "trace_id": "trace-ticket-0057-create"
+  },
+  {
+    "event_id": "TKE-000102",
+    "ticket_id": "TKT-2026-0057",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-27T10:07:00Z",
+    "trace_id": "trace-ticket-0057-seed"
+  },
+  {
+    "event_id": "TKE-000103",
+    "ticket_id": "TKT-2026-0058",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-029",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-28T09:58:00Z",
+    "trace_id": "trace-ticket-0058-create"
+  },
+  {
+    "event_id": "TKE-000104",
+    "ticket_id": "TKT-2026-0058",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-28T10:08:00Z",
+    "trace_id": "trace-ticket-0058-seed"
+  },
+  {
+    "event_id": "TKE-000105",
+    "ticket_id": "TKT-2026-0059",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-014",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-29T09:59:00Z",
+    "trace_id": "trace-ticket-0059-create"
+  },
+  {
+    "event_id": "TKE-000106",
+    "ticket_id": "TKT-2026-0059",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-29T10:09:00Z",
+    "trace_id": "trace-ticket-0059-seed"
+  },
+  {
+    "event_id": "TKE-000107",
+    "ticket_id": "TKT-2026-0060",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-021",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-30T10:00:00Z",
+    "trace_id": "trace-ticket-0060-create"
+  },
+  {
+    "event_id": "TKE-000108",
+    "ticket_id": "TKT-2026-0060",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-07-30T10:10:00Z",
+    "trace_id": "trace-ticket-0060-seed"
+  },
+  {
+    "event_id": "TKE-000109",
+    "ticket_id": "TKT-2026-0061",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-004",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-07-31T10:01:00Z",
+    "trace_id": "trace-ticket-0061-create"
+  },
+  {
+    "event_id": "TKE-000110",
+    "ticket_id": "TKT-2026-0062",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-011",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-01T10:02:00Z",
+    "trace_id": "trace-ticket-0062-create"
+  },
+  {
+    "event_id": "TKE-000111",
+    "ticket_id": "TKT-2026-0062",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-01T10:12:00Z",
+    "trace_id": "trace-ticket-0062-seed"
+  },
+  {
+    "event_id": "TKE-000112",
+    "ticket_id": "TKT-2026-0063",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-018",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-02T10:03:00Z",
+    "trace_id": "trace-ticket-0063-create"
+  },
+  {
+    "event_id": "TKE-000113",
+    "ticket_id": "TKT-2026-0063",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-02T10:13:00Z",
+    "trace_id": "trace-ticket-0063-seed"
+  },
+  {
+    "event_id": "TKE-000114",
+    "ticket_id": "TKT-2026-0064",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-001",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-03T10:04:00Z",
+    "trace_id": "trace-ticket-0064-create"
+  },
+  {
+    "event_id": "TKE-000115",
+    "ticket_id": "TKT-2026-0064",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-03T10:14:00Z",
+    "trace_id": "trace-ticket-0064-seed"
+  },
+  {
+    "event_id": "TKE-000116",
+    "ticket_id": "TKT-2026-0065",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-008",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-04T10:05:00Z",
+    "trace_id": "trace-ticket-0065-create"
+  },
+  {
+    "event_id": "TKE-000117",
+    "ticket_id": "TKT-2026-0065",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-04T10:15:00Z",
+    "trace_id": "trace-ticket-0065-seed"
+  },
+  {
+    "event_id": "TKE-000118",
+    "ticket_id": "TKT-2026-0066",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-015",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-05T10:06:00Z",
+    "trace_id": "trace-ticket-0066-create"
+  },
+  {
+    "event_id": "TKE-000119",
+    "ticket_id": "TKT-2026-0067",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-022",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-06T10:07:00Z",
+    "trace_id": "trace-ticket-0067-create"
+  },
+  {
+    "event_id": "TKE-000120",
+    "ticket_id": "TKT-2026-0067",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-06T10:17:00Z",
+    "trace_id": "trace-ticket-0067-seed"
+  },
+  {
+    "event_id": "TKE-000121",
+    "ticket_id": "TKT-2026-0068",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-005",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-07T10:08:00Z",
+    "trace_id": "trace-ticket-0068-create"
+  },
+  {
+    "event_id": "TKE-000122",
+    "ticket_id": "TKT-2026-0068",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-07T10:18:00Z",
+    "trace_id": "trace-ticket-0068-seed"
+  },
+  {
+    "event_id": "TKE-000123",
+    "ticket_id": "TKT-2026-0069",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-012",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-08T10:09:00Z",
+    "trace_id": "trace-ticket-0069-create"
+  },
+  {
+    "event_id": "TKE-000124",
+    "ticket_id": "TKT-2026-0069",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-08T10:19:00Z",
+    "trace_id": "trace-ticket-0069-seed"
+  },
+  {
+    "event_id": "TKE-000125",
+    "ticket_id": "TKT-2026-0070",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-019",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-09T10:10:00Z",
+    "trace_id": "trace-ticket-0070-create"
+  },
+  {
+    "event_id": "TKE-000126",
+    "ticket_id": "TKT-2026-0070",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-09T10:20:00Z",
+    "trace_id": "trace-ticket-0070-seed"
+  },
+  {
+    "event_id": "TKE-000127",
+    "ticket_id": "TKT-2026-0071",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-002",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-10T10:11:00Z",
+    "trace_id": "trace-ticket-0071-create"
+  },
+  {
+    "event_id": "TKE-000128",
+    "ticket_id": "TKT-2026-0072",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-009",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-11T10:12:00Z",
+    "trace_id": "trace-ticket-0072-create"
+  },
+  {
+    "event_id": "TKE-000129",
+    "ticket_id": "TKT-2026-0072",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-11T10:22:00Z",
+    "trace_id": "trace-ticket-0072-seed"
+  },
+  {
+    "event_id": "TKE-000130",
+    "ticket_id": "TKT-2026-0073",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-016",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-12T10:13:00Z",
+    "trace_id": "trace-ticket-0073-create"
+  },
+  {
+    "event_id": "TKE-000131",
+    "ticket_id": "TKT-2026-0073",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-12T10:23:00Z",
+    "trace_id": "trace-ticket-0073-seed"
+  },
+  {
+    "event_id": "TKE-000132",
+    "ticket_id": "TKT-2026-0074",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-023",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-13T10:14:00Z",
+    "trace_id": "trace-ticket-0074-create"
+  },
+  {
+    "event_id": "TKE-000133",
+    "ticket_id": "TKT-2026-0074",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-13T10:24:00Z",
+    "trace_id": "trace-ticket-0074-seed"
+  },
+  {
+    "event_id": "TKE-000134",
+    "ticket_id": "TKT-2026-0075",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-006",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-14T10:15:00Z",
+    "trace_id": "trace-ticket-0075-create"
+  },
+  {
+    "event_id": "TKE-000135",
+    "ticket_id": "TKT-2026-0075",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-14T10:25:00Z",
+    "trace_id": "trace-ticket-0075-seed"
+  },
+  {
+    "event_id": "TKE-000136",
+    "ticket_id": "TKT-2026-0076",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-013",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-15T10:16:00Z",
+    "trace_id": "trace-ticket-0076-create"
+  },
+  {
+    "event_id": "TKE-000137",
+    "ticket_id": "TKT-2026-0077",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-020",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-16T10:17:00Z",
+    "trace_id": "trace-ticket-0077-create"
+  },
+  {
+    "event_id": "TKE-000138",
+    "ticket_id": "TKT-2026-0077",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-16T10:27:00Z",
+    "trace_id": "trace-ticket-0077-seed"
+  },
+  {
+    "event_id": "TKE-000139",
+    "ticket_id": "TKT-2026-0078",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-003",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-17T10:18:00Z",
+    "trace_id": "trace-ticket-0078-create"
+  },
+  {
+    "event_id": "TKE-000140",
+    "ticket_id": "TKT-2026-0078",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-17T10:28:00Z",
+    "trace_id": "trace-ticket-0078-seed"
+  },
+  {
+    "event_id": "TKE-000141",
+    "ticket_id": "TKT-2026-0079",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-010",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-18T10:19:00Z",
+    "trace_id": "trace-ticket-0079-create"
+  },
+  {
+    "event_id": "TKE-000142",
+    "ticket_id": "TKT-2026-0079",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-18T10:29:00Z",
+    "trace_id": "trace-ticket-0079-seed"
+  },
+  {
+    "event_id": "TKE-000143",
+    "ticket_id": "TKT-2026-0080",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-017",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-19T10:20:00Z",
+    "trace_id": "trace-ticket-0080-create"
+  },
+  {
+    "event_id": "TKE-000144",
+    "ticket_id": "TKT-2026-0080",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-19T10:30:00Z",
+    "trace_id": "trace-ticket-0080-seed"
+  },
+  {
+    "event_id": "TKE-000145",
+    "ticket_id": "TKT-2026-0081",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-024",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-20T10:21:00Z",
+    "trace_id": "trace-ticket-0081-create"
+  },
+  {
+    "event_id": "TKE-000146",
+    "ticket_id": "TKT-2026-0082",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-007",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-21T10:22:00Z",
+    "trace_id": "trace-ticket-0082-create"
+  },
+  {
+    "event_id": "TKE-000147",
+    "ticket_id": "TKT-2026-0082",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-21T10:32:00Z",
+    "trace_id": "trace-ticket-0082-seed"
+  },
+  {
+    "event_id": "TKE-000148",
+    "ticket_id": "TKT-2026-0083",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-014",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-22T10:23:00Z",
+    "trace_id": "trace-ticket-0083-create"
+  },
+  {
+    "event_id": "TKE-000149",
+    "ticket_id": "TKT-2026-0083",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-22T10:33:00Z",
+    "trace_id": "trace-ticket-0083-seed"
+  },
+  {
+    "event_id": "TKE-000150",
+    "ticket_id": "TKT-2026-0084",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-021",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-23T10:24:00Z",
+    "trace_id": "trace-ticket-0084-create"
+  },
+  {
+    "event_id": "TKE-000151",
+    "ticket_id": "TKT-2026-0084",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-23T10:34:00Z",
+    "trace_id": "trace-ticket-0084-seed"
+  },
+  {
+    "event_id": "TKE-000152",
+    "ticket_id": "TKT-2026-0085",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-004",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-24T10:25:00Z",
+    "trace_id": "trace-ticket-0085-create"
+  },
+  {
+    "event_id": "TKE-000153",
+    "ticket_id": "TKT-2026-0085",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-24T10:35:00Z",
+    "trace_id": "trace-ticket-0085-seed"
+  },
+  {
+    "event_id": "TKE-000154",
+    "ticket_id": "TKT-2026-0086",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-027",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-25T10:26:00Z",
+    "trace_id": "trace-ticket-0086-create"
+  },
+  {
+    "event_id": "TKE-000155",
+    "ticket_id": "TKT-2026-0087",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-029",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-26T10:27:00Z",
+    "trace_id": "trace-ticket-0087-create"
+  },
+  {
+    "event_id": "TKE-000156",
+    "ticket_id": "TKT-2026-0087",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-26T10:37:00Z",
+    "trace_id": "trace-ticket-0087-seed"
+  },
+  {
+    "event_id": "TKE-000157",
+    "ticket_id": "TKT-2026-0088",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-017",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-27T10:28:00Z",
+    "trace_id": "trace-ticket-0088-create"
+  },
+  {
+    "event_id": "TKE-000158",
+    "ticket_id": "TKT-2026-0088",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-008",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-27T10:38:00Z",
+    "trace_id": "trace-ticket-0088-seed"
+  },
+  {
+    "event_id": "TKE-000159",
+    "ticket_id": "TKT-2026-0089",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-024",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-28T10:29:00Z",
+    "trace_id": "trace-ticket-0089-create"
+  },
+  {
+    "event_id": "TKE-000160",
+    "ticket_id": "TKT-2026-0089",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-28T10:39:00Z",
+    "trace_id": "trace-ticket-0089-seed"
+  },
+  {
+    "event_id": "TKE-000161",
+    "ticket_id": "TKT-2026-0090",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-007",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-29T10:30:00Z",
+    "trace_id": "trace-ticket-0090-create"
+  },
+  {
+    "event_id": "TKE-000162",
+    "ticket_id": "TKT-2026-0090",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-29T10:40:00Z",
+    "trace_id": "trace-ticket-0090-seed"
+  },
+  {
+    "event_id": "TKE-000163",
+    "ticket_id": "TKT-2026-0091",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-019",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-30T10:31:00Z",
+    "trace_id": "trace-ticket-0091-create"
+  },
+  {
+    "event_id": "TKE-000164",
+    "ticket_id": "TKT-2026-0092",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-020",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-08-31T10:32:00Z",
+    "trace_id": "trace-ticket-0092-create"
+  },
+  {
+    "event_id": "TKE-000165",
+    "ticket_id": "TKT-2026-0092",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-08-31T10:42:00Z",
+    "trace_id": "trace-ticket-0092-seed"
+  },
+  {
+    "event_id": "TKE-000166",
+    "ticket_id": "TKT-2026-0093",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-021",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-01T10:33:00Z",
+    "trace_id": "trace-ticket-0093-create"
+  },
+  {
+    "event_id": "TKE-000167",
+    "ticket_id": "TKT-2026-0093",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-005",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-01T10:43:00Z",
+    "trace_id": "trace-ticket-0093-seed"
+  },
+  {
+    "event_id": "TKE-000168",
+    "ticket_id": "TKT-2026-0094",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-022",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-02T10:34:00Z",
+    "trace_id": "trace-ticket-0094-create"
+  },
+  {
+    "event_id": "TKE-000169",
+    "ticket_id": "TKT-2026-0094",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-006",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-02T10:44:00Z",
+    "trace_id": "trace-ticket-0094-seed"
+  },
+  {
+    "event_id": "TKE-000170",
+    "ticket_id": "TKT-2026-0095",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-023",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-03T10:35:00Z",
+    "trace_id": "trace-ticket-0095-create"
+  },
+  {
+    "event_id": "TKE-000171",
+    "ticket_id": "TKT-2026-0095",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-007",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-03T10:45:00Z",
+    "trace_id": "trace-ticket-0095-seed"
+  },
+  {
+    "event_id": "TKE-000172",
+    "ticket_id": "TKT-2026-0096",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-024",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-04T10:36:00Z",
+    "trace_id": "trace-ticket-0096-create"
+  },
+  {
+    "event_id": "TKE-000173",
+    "ticket_id": "TKT-2026-0097",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-001",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-05T10:37:00Z",
+    "trace_id": "trace-ticket-0097-create"
+  },
+  {
+    "event_id": "TKE-000174",
+    "ticket_id": "TKT-2026-0097",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-001",
+    "from_status": "open",
+    "to_status": "processing",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-05T10:47:00Z",
+    "trace_id": "trace-ticket-0097-seed"
+  },
+  {
+    "event_id": "TKE-000175",
+    "ticket_id": "TKT-2026-0098",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-002",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-06T10:38:00Z",
+    "trace_id": "trace-ticket-0098-create"
+  },
+  {
+    "event_id": "TKE-000176",
+    "ticket_id": "TKT-2026-0098",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-002",
+    "from_status": "open",
+    "to_status": "pending_user",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-06T10:48:00Z",
+    "trace_id": "trace-ticket-0098-seed"
+  },
+  {
+    "event_id": "TKE-000177",
+    "ticket_id": "TKT-2026-0099",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-003",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-07T10:39:00Z",
+    "trace_id": "trace-ticket-0099-create"
+  },
+  {
+    "event_id": "TKE-000178",
+    "ticket_id": "TKT-2026-0099",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-003",
+    "from_status": "open",
+    "to_status": "resolved",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-07T10:49:00Z",
+    "trace_id": "trace-ticket-0099-seed"
+  },
+  {
+    "event_id": "TKE-000179",
+    "ticket_id": "TKT-2026-0100",
+    "event_type": "created",
+    "operator_user_id": "USR-DOC-004",
+    "from_status": null,
+    "to_status": "open",
+    "event_detail": {
+      "source": "mock_seed"
+    },
+    "created_at": "2026-09-08T10:40:00Z",
+    "trace_id": "trace-ticket-0100-create"
+  },
+  {
+    "event_id": "TKE-000180",
+    "ticket_id": "TKT-2026-0100",
+    "event_type": "seed_state_projection",
+    "operator_user_id": "USR-SPT-004",
+    "from_status": "open",
+    "to_status": "closed",
+    "event_detail": {
+      "reason": "portfolio_state_coverage"
+    },
+    "created_at": "2026-09-08T10:50:00Z",
+    "trace_id": "trace-ticket-0100-seed"
+  }
+]

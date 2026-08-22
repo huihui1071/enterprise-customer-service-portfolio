@@ -1,0 +1,2563 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: 时代天使智能客服
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.19@5b68617c637b62d31e7f33a9f5677b76e88f81868fb04a728e208588564b72ea
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.9@76eb0772e08503769a19a4161bffafb5a90c4d4e0fee17b98c57c374404deae3
+    version: null
+kind: app
+version: 0.7.0
+workflow:
+  conversation_variables:
+  - description: 当前任务已进行的澄清次数，达到2次后进入兜底或转人工
+    id: 7a80bd40-0ac1-457d-b3c1-23cbf16e5568
+    name: clarify_count
+    selector:
+    - conversation
+    - clarify_count
+    value: 0
+    value_type: integer
+  - description: 上一知识主题，用于追问改写
+    id: 8f0e00d0-4303-4660-94a9-5b523a2f309b
+    name: last_topic
+    selector:
+    - conversation
+    - last_topic
+    value: ''
+    value_type: string
+  - description: 上一知识问答领域，用于连续追问
+    id: f905b87b-2138-45c7-91e3-ef21a6a849fd
+    name: last_domain
+    selector:
+    - conversation
+    - last_domain
+    value: ''
+    value_type: string
+  - description: 跨轮累积的转人工问题摘要
+    id: 92068af6-eb74-4c57-9782-a3a32bdae490
+    name: problem_summary
+    selector:
+    - conversation
+    - problem_summary
+    value: ''
+    value_type: string
+  - description: 当前工单号
+    id: 6af5c174-dd23-4531-9f73-8724d9ab7803
+    name: ticket_id
+    selector:
+    - conversation
+    - ticket_id
+    value: ''
+    value_type: string
+  - description: 用户明确确认、可用于权限校验的病例号
+    id: c40a5fd2-915e-4d51-8ea8-a557967e3fd8
+    name: confirmed_case_id
+    selector:
+    - conversation
+    - confirmed_case_id
+    value: ''
+    value_type: string
+  - description: 已提取但尚未确认的病例号候选
+    id: ffe746e2-98fe-4d2d-b6cb-a31768d1ac94
+    name: case_id_candidate
+    selector:
+    - conversation
+    - case_id_candidate
+    value: ''
+    value_type: string
+  - description: 任务状态：idle/collecting_slots/waiting_confirmation/ready_to_execute/completed/handoff
+    id: 7e3d83e9-6c3e-435d-b211-dda1cb6fed9d
+    name: task_status
+    selector:
+    - conversation
+    - task_status
+    value: ''
+    value_type: string
+  - description: 下一轮等待用户补充或确认的动作
+    id: 281b86cb-e19a-40d5-b78c-5fb70ab0b3f3
+    name: pending_action
+    selector:
+    - conversation
+    - pending_action
+    value: ''
+    value_type: string
+  - description: 当前未完成任务的意图
+    id: bf2814da-b6c2-442c-93bd-f1099a80c8bf
+    name: active_intent
+    selector:
+    - conversation
+    - active_intent
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        knowledge_file_size_limit: 15
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1775198510819-source-1775198658847-target
+      source: '1775198510819'
+      sourceHandle: source
+      target: '1775198658847'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1775198658847-source-1775198903995-target
+      source: '1775198658847'
+      sourceHandle: source
+      target: '1775198903995'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1775198903995-true-1775199127316-target
+      source: '1775198903995'
+      sourceHandle: 'true'
+      target: '1775199127316'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: if-else
+      id: 1775199127316-source-1775202753283-target
+      source: '1775199127316'
+      sourceHandle: source
+      target: '1775202753283'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1775202753283-true-1775202941341-target
+      source: '1775202753283'
+      sourceHandle: 'true'
+      target: '1775202941341'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1775202753283-de586755-69e5-4469-8d31-939ff93d5886-1775202941341-target
+      source: '1775202753283'
+      sourceHandle: de586755-69e5-4469-8d31-939ff93d5886
+      target: '1775202941341'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775202941341-source-1775203533685-target
+      source: '1775202941341'
+      sourceHandle: source
+      target: '1775203533685'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1775202753283-false-1775203653498-target
+      source: '1775202753283'
+      sourceHandle: 'false'
+      target: '1775203653498'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1775203653498-source-1775206481863-target
+      source: '1775203653498'
+      sourceHandle: source
+      target: '1775206481863'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775206481863-source-1775206549928-target
+      selected: false
+      source: '1775206481863'
+      sourceHandle: source
+      target: '1775206549928'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1775198903995-false-1775206658174-target
+      source: '1775198903995'
+      sourceHandle: 'false'
+      target: '1775206658174'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1775206658174-true-1775206743061-target
+      source: '1775206658174'
+      sourceHandle: 'true'
+      target: '1775206743061'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1775206743061-source-1775206856286-target
+      source: '1775206743061'
+      sourceHandle: source
+      target: '1775206856286'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775206856286-source-1775206906076-target
+      source: '1775206856286'
+      sourceHandle: source
+      target: '1775206906076'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1775206658174-false-1775206931856-target
+      source: '1775206658174'
+      sourceHandle: 'false'
+      target: '1775206931856'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1775206931856-true-1775207082686-target
+      source: '1775206931856'
+      sourceHandle: 'true'
+      target: '1775207082686'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1775207082686-source-1775207125790-target
+      source: '1775207082686'
+      sourceHandle: source
+      target: '1775207125790'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775207125790-source-1775207173840-target
+      source: '1775207125790'
+      sourceHandle: source
+      target: '1775207173840'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: question-classifier
+      id: 1775206931856-false-1775207219951-target
+      source: '1775206931856'
+      sourceHandle: 'false'
+      target: '1775207219951'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: parameter-extractor
+      id: 1775207219951-1-1775207424567-target
+      source: '1775207219951'
+      sourceHandle: '1'
+      target: '1775207424567'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: parameter-extractor
+      id: 1775207219951-2-1775208153067-target
+      source: '1775207219951'
+      sourceHandle: '2'
+      target: '1775208153067'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: parameter-extractor
+      id: 1775207219951-1775207276663-1775208252842-target
+      source: '1775207219951'
+      sourceHandle: '1775207276663'
+      target: '1775208252842'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: parameter-extractor
+      id: 1775207219951-1775207300771-1775208290395-target
+      source: '1775207219951'
+      sourceHandle: '1775207300771'
+      target: '1775208290395'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: parameter-extractor
+      id: 1775207219951-1775207310512-1775208410953-target
+      source: '1775207219951'
+      sourceHandle: '1775207310512'
+      target: '1775208410953'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1775207424567-source-1775208561516-target
+      source: '1775207424567'
+      sourceHandle: source
+      target: '1775208561516'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1775208153067-source-1775209753735-target
+      source: '1775208153067'
+      sourceHandle: source
+      target: '1775209753735'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1775208252842-source-1775209778258-target
+      source: '1775208252842'
+      sourceHandle: source
+      target: '1775209778258'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1775208290395-source-1775209798566-target
+      source: '1775208290395'
+      sourceHandle: source
+      target: '1775209798566'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1775208410953-source-1775209826304-target
+      source: '1775208410953'
+      sourceHandle: source
+      target: '1775209826304'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1775208561516-source-1775209939978-target
+      source: '1775208561516'
+      sourceHandle: source
+      target: '1775209939978'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1775209753735-source-1775210009282-target
+      source: '1775209753735'
+      sourceHandle: source
+      target: '1775210009282'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1775209778258-source-1775210042250-target
+      source: '1775209778258'
+      sourceHandle: source
+      target: '1775210042250'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1775209798566-source-1775210079783-target
+      source: '1775209798566'
+      sourceHandle: source
+      target: '1775210079783'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1775209826304-source-1775210111569-target
+      source: '1775209826304'
+      sourceHandle: source
+      target: '1775210111569'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775209939978-source-1775210149941-target
+      source: '1775209939978'
+      sourceHandle: source
+      target: '1775210149941'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775210009282-source-1775210174295-target
+      source: '1775210009282'
+      sourceHandle: source
+      target: '1775210174295'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775210042250-source-1775210223869-target
+      source: '1775210042250'
+      sourceHandle: source
+      target: '1775210223869'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775210079783-source-1775210237711-target
+      source: '1775210079783'
+      sourceHandle: source
+      target: '1775210237711'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775210111569-source-1775210255411-target
+      source: '1775210111569'
+      sourceHandle: source
+      target: '1775210255411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1775207219951-1775207319105-1775210286495-target
+      source: '1775207219951'
+      sourceHandle: '1775207319105'
+      target: '1775210286495'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1775210286495-source-1775210327598-target
+      source: '1775210286495'
+      sourceHandle: source
+      target: '1775210327598'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1775206931856-6f5ed3ac-fe30-4b90-941e-aaae9b3e0fee-1787306593330-target
+      selected: false
+      source: '1775206931856'
+      sourceHandle: 6f5ed3ac-fe30-4b90-941e-aaae9b3e0fee
+      target: '1787306593330'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1787306593330--1787306628367-target
+      source: '1787306593330'
+      sourceHandle: source
+      target: '1787306628367'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables:
+        - default: '100'
+          hint: ''
+          label: doctor_id
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: false
+          type: text-input
+          variable: doctor_id
+        - default: '100'
+          hint: ''
+          label: doctor_name
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: false
+          type: text-input
+          variable: doctor_name
+        - default: '100'
+          hint: ''
+          label: org_name
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: false
+          type: text-input
+          variable: org_name
+        - default: '100'
+          hint: ''
+          label: channel
+          max_length: 100
+          options: []
+          placeholder: ''
+          required: false
+          type: text-input
+          variable: channel
+      height: 187
+      id: '1775198510819'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "function main(input) {\n  var raw = String((input && input.query) ||\
+          \ \"\").trim();\n  var normalized = raw.toLowerCase();\n  var activeIntent\
+          \ = String((input && input.active_intent) || \"\");\n  var pendingAction\
+          \ = String((input && input.pending_action) || \"\");\n  var candidate =\
+          \ String((input && input.case_id_candidate) || \"\");\n  var confirmed =\
+          \ String((input && input.confirmed_case_id) || \"\");\n\n  var caseMatch\
+          \ = raw.match(/(?:CASE-AA-\\d{4}|[AB]\\d{8}|ERR500|TIMEOUT)/i);\n  var ticketMatch\
+          \ = raw.match(/(?:TK-\\d{8}-\\d{3}|T\\d{8})/i);\n  var extractedCase = caseMatch\
+          \ ? caseMatch[0].toUpperCase() : \"\";\n  var extractedTicket = ticketMatch\
+          \ ? ticketMatch[0].toUpperCase() : \"\";\n\n  var riskRules = [\n    { reason:\
+          \ \"治疗异常\", words: [\"剧烈疼痛\",\"持续疼痛\",\"出血\",\"脸肿\",\"过敏\",\"吞下\",\"牙齿松动\"\
+          ] },\n    { reason: \"个体临床决策\", words: [\"拔牙还是不拔牙\",\"多少量的ipr\",\"修改治疗方案\"\
+          ,\"继续戴吗\"] },\n    { reason: \"投诉赔付\", words: [\"投诉\",\"赔付\",\"退款\",\"补偿\"\
+          ,\"起诉\"] },\n    { reason: \"疗效责任\", words: [\"保证效果\",\"一定达到\",\"医生操作失误\"\
+          ,\"谁负责\"] }\n  ];\n  var hits = [];\n  var riskHit = false;\n  var riskReason\
+          \ = \"\";\n  for (var i = 0; i < riskRules.length; i++) {\n    var matched\
+          \ = riskRules[i].words.filter(function(word){ return raw.indexOf(word) !==\
+          \ -1; });\n    if (matched.length) {\n      riskHit = true;\n      riskReason\
+          \ = riskRules[i].reason;\n      hits = hits.concat(matched);\n      break;\n\
+          \    }\n  }\n\n  var statusWords = [\"病例进度\",\"病例状态\",\"到哪一步\",\"审核通过\"\
+          ,\"进入生产\",\"发货\",\"最新状态\",\"什么时候\"];\n  var statusMatched = statusWords.filter(function(word){\
+          \ return raw.indexOf(word) !== -1; });\n  var isContinuation = activeIntent\
+          \ === \"ask_case_id\" || pendingAction === \"ask_case_id\" ||\n    (activeIntent\
+          \ === \"case_status_query\" && [\"wait_case_id\",\"confirm_case_id\"].indexOf(pendingAction)\
+          \ !== -1);\n  var statusHint = statusMatched.length > 0 || isContinuation;\n\
+          \  var effectiveCase = extractedCase || (isContinuation ? (candidate ||\
+          \ confirmed) : \"\");\n  var needsCaseId = statusHint && !effectiveCase;\n\
+          \  var nextAction = \"route_new_intent\";\n\n  if (riskHit) nextAction =\
+          \ \"handoff\";\n  else if (needsCaseId) nextAction = \"ask_case_id\";\n\
+          \  else if (statusHint && effectiveCase) nextAction = \"authorize_and_query\"\
+          ;\n  else if (extractedTicket) nextAction = \"query_ticket\";\n\n  return\
+          \ {\n    query_norm: normalized,\n    case_id: effectiveCase,\n    ticket_id:\
+          \ extractedTicket,\n    risk_hit: riskHit,\n    risk_reason: riskReason,\n\
+          \    status_query_hint: statusHint,\n    matched_keywords: hits.concat(statusMatched).filter(function(v,i,a){\
+          \ return a.indexOf(v)===i; }).join(\",\"),\n    needs_case_id: needsCaseId,\n\
+          \    is_task_continuation: isContinuation,\n    next_action: nextAction\n\
+          \  };\n}"
+        code_language: javascript
+        outputs:
+          case_id:
+            children: null
+            type: string
+          is_task_continuation:
+            children: null
+            type: boolean
+          matched_keywords:
+            children: null
+            type: string
+          needs_case_id:
+            children: null
+            type: boolean
+          next_action:
+            children: null
+            type: string
+          query_norm:
+            children: null
+            type: string
+          risk_hit:
+            children: null
+            type: boolean
+          risk_reason:
+            children: null
+            type: string
+          status_query_hint:
+            children: null
+            type: boolean
+          ticket_id:
+            children: null
+            type: string
+        selected: true
+        title: 归一化与识别
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: query
+        - value_selector:
+          - conversation
+          - active_intent
+          value_type: string
+          variable: active_intent
+        - value_selector:
+          - conversation
+          - pending_action
+          value_type: string
+          variable: pending_action
+        - value_selector:
+          - conversation
+          - case_id_candidate
+          value_type: string
+          variable: task_status
+        - value_selector:
+          - conversation
+          - case_id_candidate
+          value_type: string
+          variable: case_id_candidate
+        - value_selector:
+          - conversation
+          - confirmed_case_id
+          value_type: string
+          variable: confirmed_case_id
+      height: 52
+      id: '1775198658847'
+      position:
+        x: 382
+        y: 282
+      positionAbsolute:
+        x: 382
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 3953a303-56af-49ff-a0ea-8d8b266ce8e7
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1775198658847'
+            - risk_hit
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 高风险分流
+        type: if-else
+      height: 124
+      id: '1775198903995'
+      position:
+        x: 676
+        y: 271.61114653835716
+      positionAbsolute:
+        x: 676
+        y: 271.61114653835716
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        instruction: '1. 优先使用输入中的`case_id_hint`
+
+          2. 如果原问题中没有明确病例号，则 `case_id` 返回空
+
+          3. `problem_summary` 必须压缩成一句话
+
+          4. 不要把分析过程写进字段，只输出字段值'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-reasoner
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 如果用户提到病例号，抽取标准格式
+          name: case_id
+          required: false
+          type: string
+        - description: 如经典版、冠军版、儿童版、COMFOS
+          name: product_line
+          required: false
+          type: string
+        - description: 如佩戴中、医生待审批、已发货
+          name: current_stage
+          required: false
+          type: string
+        - description: 用一句话概括用户核心问题
+          name: problem_summary
+          required: false
+          type: string
+        - description: 患者不适、设计争议、投诉赔付等
+          name: risk_signal
+          required: false
+          type: string
+        - description: 是否需要人工回拨，true 或 false
+          name: need_callback
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 转人工字段提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775199127316'
+      position:
+        x: 986
+        y: 282
+      positionAbsolute:
+        x: 986
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 68a87ccd-f1b4-4dd9-8b57-d56528a99404
+            value: ''
+            varType: string
+            variable_selector:
+            - '1775198658847'
+            - ticket_id
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 工单查询分流
+        type: if-else
+      height: 124
+      id: '1775206658174'
+      position:
+        x: 986
+        y: 501.20859177910665
+      positionAbsolute:
+        x: 986
+        y: 501.20859177910665
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: ee719b9c-03f8-4b39-b8c4-b1ca6b048036
+            value: ''
+            varType: string
+            variable_selector:
+            - '1775199127316'
+            - case_id
+          id: 'true'
+          logical_operator: and
+        - case_id: de586755-69e5-4469-8d31-939ff93d5886
+          conditions:
+          - comparison_operator: empty
+            id: 62392d8f-aa60-4f6f-87e1-5e195a470709
+            value: ''
+            varType: string
+            variable_selector:
+            - '1775199127316'
+            - problem_summary
+          id: de586755-69e5-4469-8d31-939ff93d5886
+          logical_operator: and
+        selected: false
+        title: 转人工字段校验
+        type: if-else
+      height: 188
+      id: '1775202753283'
+      position:
+        x: 1285.0498648442767
+        y: 138.9184449474178
+      positionAbsolute:
+        x: 1285.0498648442767
+        y: 138.9184449474178
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 7a68db70-44f9-4d4f-93d6-7fb43716197f
+          role: system
+          text: '你是医生服务智能客服。
+
+
+
+            当前问题已命中高风险规则，不能直接给结论。
+
+
+
+            你的任务：
+
+            1. 明确说明该问题需要人工介入。
+
+            2. 只追问一个最关键的缺失字段。
+
+            3. 如果缺病例号，就优先追问病例号。
+
+            4. 如果已有病例号但没有问题摘要，就让用户补一句最关键的异常描述。
+
+            5. 不做临床判断，不给赔付承诺。
+
+
+
+            用户问题：
+
+            {{#sys.query#}}
+
+
+
+            已识别风险：
+
+            {{#1775198658847.risk_reason#}}
+
+
+
+            已抽取字段：
+
+            - case_id: {{#1775199127316.case_id#}}{{extract_handoff_slots.case_id}}
+
+            - product_line: {{#1775199127316.product_line#}}{{extract_handoff_slots.product_line}}
+
+            - current_stage: {{#1775199127316.current_stage#}}{{extract_handoff_slots.current_stage}}
+
+            - problem_summary: {{#1775199127316.problem_summary#}}{{extract_handoff_slots.problem_summary}}'
+        selected: false
+        title: 转人工补充追问
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775202941341'
+      position:
+        x: 1579.6745269549683
+        y: 68.11520121005748
+      positionAbsolute:
+        x: 1579.6745269549683
+        y: 68.11520121005748
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-83
+            key: ''
+            type: text
+            value: "{\n  \"source\": \"ai_service_bot\",\n  \"doctor_id\": \"{{#1775198510819.doctor_id#}}{{doctor_id}}\"\
+              ,\n  \"doctor_name\": \"{{#1775198510819.doctor_name#}}{{doctor_name}}\"\
+              ,\n  \"org_name\": \"{{#1775198510819.org_name#}}{{org_name}}\",\n \
+              \ \"case_id\": \"{{#1775199127316.case_id#}}{{extract_handoff_slots.case_id}}\"\
+              ,\n  \"product_line\": \"{{#1775199127316.product_line#}}{{extract_handoff_slots.product_line}}\"\
+              ,\n  \"problem_type\": \"{{#1775198658847.risk_reason#}}{{normalize_and_detect.risk_reason}}\"\
+              ,\n  \"problem_summary\": \"{{#1775199127316.problem_summary#}}{{extract_handoff_slots.problem_summary}}\"\
+              ,\n  \"risk_signal\": \"{{#1775199127316.risk_signal#}}{{extract_handoff_slots.risk_signal}}\"\
+              ,\n  \"current_stage\": \"{{#1775199127316.current_stage#}}{{extract_handoff_slots.current_stage}}\"\
+              ,\n  \"conversation_excerpt\": \"{{#sys.query#}}{{userinput.query}}\"\
+              \n}"
+          type: json
+        headers: ''
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 创建工单
+        type: http-request
+        url: https://angel-aligner-customer-service-mock.onrender.com/tickets
+        variables: []
+      height: 153
+      id: '1775203653498'
+      position:
+        x: 1587.0498648442767
+        y: 271.61114653835716
+      positionAbsolute:
+        x: 1587.0498648442767
+        y: 271.61114653835716
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775202941341.text#}}'
+        selected: false
+        title: 转人工追问输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775203533685'
+      position:
+        x: 1903.8005406228935
+        y: 40.088917230685695
+      positionAbsolute:
+        x: 1903.8005406228935
+        y: 40.088917230685695
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: fd051889-ac62-44bd-85ef-49fa367ce2b9
+          role: system
+          text: '你是医生服务智能客服。
+
+
+
+            当前问题已命中高风险规则，且已经成功创建人工工单。
+
+
+
+            请按以下结构回复：
+
+            【结论】说明已转人工
+
+            【工单信息】工单号、处理团队、优先级
+
+            【下一步】请用户补充什么材料或等待什么动作
+
+
+
+            不要给临床结论，不要扩展推测。
+
+
+
+            用户问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            风险原因：
+
+            {{#1775198658847.risk_reason#}}{{normalize_and_detect.risk_reason}}
+
+
+
+            建单结果：
+
+            {{#1775203653498.body#}}{{create_ticket.body}}'
+        selected: false
+        title: 转人工结果生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775206481863'
+      position:
+        x: 1877.2493242213832
+        y: 271.61114653835716
+      positionAbsolute:
+        x: 1877.2493242213832
+        y: 271.61114653835716
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775206481863.text#}}'
+        selected: false
+        title: 转人工结果输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775206549928'
+      position:
+        x: 2187.7130505605155
+        y: 271.61114653835716
+      positionAbsolute:
+        x: 2187.7130505605155
+        y: 271.61114653835716
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 查询工单
+        type: http-request
+        url: https://angel-aligner-customer-service-mock.onrender.com/tickets/{{归一化与识别.ticket_id}}
+        variables: []
+      height: 169
+      id: '1775206743061'
+      position:
+        x: 1311.8255062008525
+        y: 474.1126183598675
+      positionAbsolute:
+        x: 1311.8255062008525
+        y: 474.1126183598675
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服。
+
+
+
+            你只能解释工单接口返回的结果，不能猜测不存在的信息。
+
+
+
+            按以下结构回复：
+
+            【当前状态】
+
+            【处理团队】
+
+            【最新进展】
+
+            【下一步】
+
+
+
+            用户问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            工单结果：
+
+            {{#1775206743061.body#}}{{get_ticket.body}}'
+        selected: false
+        title: 工单结果生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775206856286'
+      position:
+        x: 1613.8255062008525
+        y: 474.1126183598675
+      positionAbsolute:
+        x: 1613.8255062008525
+        y: 474.1126183598675
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775206856286.text#}}'
+        selected: false
+        title: 工单结果输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775206906076'
+      position:
+        x: 1903.8005406228935
+        y: 474.1126183598675
+      positionAbsolute:
+        x: 1903.8005406228935
+        y: 474.1126183598675
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 6b2aa96d-f006-4541-8562-4e8690cb8e22
+            value: ''
+            varType: string
+            variable_selector:
+            - '1775198658847'
+            - case_id
+          - comparison_operator: is
+            id: 720cad6e-c1d4-48f4-a9aa-7d27f4dc24e9
+            value: 'true'
+            varType: string
+            variable_selector:
+            - '1775198658847'
+            - status_query_hint
+          id: 'true'
+          logical_operator: and
+        - case_id: 6f5ed3ac-fe30-4b90-941e-aaae9b3e0fee
+          conditions:
+          - comparison_operator: is
+            id: 7af31431-77a2-477b-a373-b51a80dc931a
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1775198658847'
+            - needs_case_id
+          id: 6f5ed3ac-fe30-4b90-941e-aaae9b3e0fee
+          logical_operator: and
+        selected: false
+        title: 病例状态分流
+        type: if-else
+      height: 246
+      id: '1775206931856'
+      position:
+        x: 1311.8255062008525
+        y: 662.6865172388366
+      positionAbsolute:
+        x: 1311.8255062008525
+        y: 662.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: X-Doctor-Id:{{#1775198510819.doctor_id#}}
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: 查询病例状态
+        type: http-request
+        url: https://angel-aligner-customer-service-mock.onrender.com/cases/{{归一化与识别.case_id}}/status
+        variables: []
+      height: 169
+      id: '1775207082686'
+      position:
+        x: 1613.8255062008525
+        y: 662.6865172388366
+      positionAbsolute:
+        x: 1613.8255062008525
+        y: 662.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: d4901c81-c3f2-4f6e-8c02-27ad79129833
+          role: system
+          text: '你是医生服务智能客服，只能根据病例接口返回结果作答，禁止使用常识猜测病例状态。
+
+
+            先解析接口JSON：
+
+            1. success=true：只使用 data.case_id、data.stage、data.status、data.updated_at、data.next_action。
+
+            2. error_code=IDENTITY_REQUIRED：回复“当前登录身份无法完成校验，请重新登录或联系人工客服”，不得披露病例信息。
+
+            3. error_code=CASE_FORBIDDEN：固定回复“当前账号无权查看该病例，请核对病例归属或联系人工客服”，不得透露病例是否存在、阶段或更新时间。
+
+            4. error_code=CASE_NOT_FOUND：回复“未找到该病例，请核对病例号”，不要推荐相似病例。
+
+            5. error_code=UPSTREAM_ERROR 或 UPSTREAM_TIMEOUT，或接口内容为空：回复“病例系统暂时不可用，建议稍后重试或转人工”，不得编造状态。
+
+            6. 不认识的返回结构：按系统异常处理，不得猜测。
+
+
+            成功时按以下结构回复：
+
+            【当前状态】
+
+            【状态解释】
+
+            【更新时间】
+
+            【下一步】
+
+
+            用户问题：
+
+            {{userinput.query}}
+
+
+            病例接口结果：
+
+            {{get_case_status.body}}'
+        selected: false
+        title: 病例状态结果生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775207125790'
+      position:
+        x: 1915.8255062008525
+        y: 662.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 662.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775207125790.text#}}'
+        selected: false
+        title: 病例状态输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775207173840'
+      position:
+        x: 2217.8255062008525
+        y: 662.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 662.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        classes:
+        - id: '1'
+          name: product_info/
+        - id: '2'
+          name: service_flow
+        - id: '1775207276663'
+          name: system_usage
+        - id: '1775207300771'
+          name: clinical_term
+        - id: '1775207310512'
+          name: training
+        - id: '1775207319105'
+          name: fallback
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        selected: false
+        title: 意图分类
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 346
+      id: '1775207219951'
+      position:
+        x: 1592.8690080692372
+        y: 1076.8253974339573
+      positionAbsolute:
+        x: 1592.8690080692372
+        y: 1076.8253974339573
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 产品区别、产品定位、型号和方案能力说明
+          name: product_line
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 产品条件提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775207424567'
+      position:
+        x: 1915.8255062008525
+        y: 854.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 854.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 病例提交、审批流程、发货流程、精调售后流程
+          name: service_flow
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 流程条件提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775208153067'
+      position:
+        x: 1915.8255062008525
+        y: 981.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 981.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: iOrtho、AI 分析报告、口扫同步、系统功能入口
+          name: system_usage
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 系统条件提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775208252842'
+      position:
+        x: 1915.8255062008525
+        y: 1108.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 1108.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 临床术语解释、设计说明概念、依从性和附件的基础解释
+          name: clinical_term
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 术语条件提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775208290395'
+      position:
+        x: 1915.8255062008525
+        y: 1235.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 1235.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: webinar、课程、培训活动入口
+          name: training
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 培训条件提取
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 88
+      id: '1775208410953'
+      position:
+        x: 1915.8255062008525
+        y: 1362.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 1362.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - urAyE7EOrwTkrWJf+c7y7HpX+O3sKFmkPqXr5Av+1ot7F9/xVGRcHGgvD0tVKfn5
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 检索产品知识库
+        type: knowledge-retrieval
+      height: 90
+      id: '1775208561516'
+      position:
+        x: 2217.8255062008525
+        y: 854.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 854.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - t5L6SIWlryjcjhFRHy4o3ZLwTbFQnbuqjpYzOspwq50KHwg6y/FFd63HW2ynJevs
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 检索流程知识库
+        type: knowledge-retrieval
+      height: 90
+      id: '1775209753735'
+      position:
+        x: 2217.8255062008525
+        y: 981.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 981.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - McuLJk1SLGvb0Usz/9Q7p4B/+zXA6cVXuwd30oxGjoIgWzXNvrexL6U5eyNh1PSh
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 检索系统知识库
+        type: knowledge-retrieval
+      height: 90
+      id: '1775209778258'
+      position:
+        x: 2217.8255062008525
+        y: 1108.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 1108.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - XBZIgh3gRAuSYmezrWUD/NwzTbJYKN+lz5Np7c0FLTeIAPcqMjsZoCwxbvNNbjQM
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 检索术语知识库
+        type: knowledge-retrieval
+      height: 90
+      id: '1775209798566'
+      position:
+        x: 2217.8255062008525
+        y: 1235.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 1235.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        dataset_ids:
+        - p+p35Z/rZcWYPoTbtAcqviCxkYpXBVDKSTqGkrVTilu1TxorWR2lHfSLJI9wwGRS
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: qwen3-rerank
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_attachment_selector: []
+        query_variable_selector:
+        - '1775198510819'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 检索培训知识库
+        type: knowledge-retrieval
+      height: 90
+      id: '1775209826304'
+      position:
+        x: 2217.8255062008525
+        y: 1362.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 1362.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1775208561516'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 21e8d6ff-fda9-4058-b050-37bc51b4c267
+          role: system
+          text: '你是医生服务智能客服，服务对象是口腔正畸合作医生和诊所助理。
+
+
+
+            你的职责：
+
+            1. 仅依据召回知识回答问题，不得使用未提供的外部事实。
+
+            2. 如果召回内容不足以支持明确回答，直接说明信息不足，并提出一个最关键的澄清问题。
+
+            3. 如果问题涉及个案临床决策、疗效判断、患者风险、赔付投诉，不给结论，建议转人工。
+
+
+
+            回答格式固定为：
+
+            【结论】
+
+            一句话先回答用户问题。
+
+
+
+            【解释】
+
+            基于召回内容，用 2 到 4 句话说明原因或差异点。
+
+
+
+            【下一步】
+
+            告诉用户接下来最合理的动作。
+
+
+
+            【来源】
+
+            列出 1 到 3 个来源标题。
+
+
+
+            当前问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            召回知识：
+
+            {{#context#}}'
+        selected: false
+        title: 产品答案生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775209939978'
+      position:
+        x: 2519.8255062008525
+        y: 854.6865172388366
+      positionAbsolute:
+        x: 2519.8255062008525
+        y: 854.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1775209753735'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服，服务对象是口腔正畸合作医生和诊所助理。
+
+
+
+            你的职责：
+
+            1. 仅依据召回知识回答问题，不得使用未提供的外部事实。
+
+            2. 如果召回内容不足以支持明确回答，直接说明信息不足，并提出一个最关键的澄清问题。
+
+            3. 如果问题涉及个案临床决策、疗效判断、患者风险、赔付投诉，不给结论，建议转人工。
+
+
+
+            回答格式固定为：
+
+            【结论】
+
+            一句话先回答用户问题。
+
+
+
+            【解释】
+
+            基于召回内容，用 2 到 4 句话说明原因或差异点。
+
+
+
+            【下一步】
+
+            告诉用户接下来最合理的动作。
+
+
+
+            【来源】
+
+            列出 1 到 3 个来源标题。
+
+
+
+            当前问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            召回知识：
+
+            {{#context#}}'
+        selected: false
+        title: 流程答案生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775210009282'
+      position:
+        x: 2519.8255062008525
+        y: 981.6865172388366
+      positionAbsolute:
+        x: 2519.8255062008525
+        y: 981.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1775209778258'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服，服务对象是口腔正畸合作医生和诊所助理。
+
+
+
+            你的职责：
+
+            1. 仅依据召回知识回答问题，不得使用未提供的外部事实。
+
+            2. 如果召回内容不足以支持明确回答，直接说明信息不足，并提出一个最关键的澄清问题。
+
+            3. 如果问题涉及个案临床决策、疗效判断、患者风险、赔付投诉，不给结论，建议转人工。
+
+
+
+            回答格式固定为：
+
+            【结论】
+
+            一句话先回答用户问题。
+
+
+
+            【解释】
+
+            基于召回内容，用 2 到 4 句话说明原因或差异点。
+
+
+
+            【下一步】
+
+            告诉用户接下来最合理的动作。
+
+
+
+            【来源】
+
+            列出 1 到 3 个来源标题。
+
+
+
+            当前问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            召回知识：
+
+            {{#context#}}'
+        selected: false
+        title: 系统答案生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775210042250'
+      position:
+        x: 2519.8255062008525
+        y: 1108.6865172388366
+      positionAbsolute:
+        x: 2519.8255062008525
+        y: 1108.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服，服务对象是口腔正畸合作医生和诊所助理。
+
+
+
+            你的职责：
+
+            1. 仅依据召回知识回答问题，不得使用未提供的外部事实。
+
+            2. 如果召回内容不足以支持明确回答，直接说明信息不足，并提出一个最关键的澄清问题。
+
+            3. 如果问题涉及个案临床决策、疗效判断、患者风险、赔付投诉，不给结论，建议转人工。
+
+
+
+            回答格式固定为：
+
+            【结论】
+
+            一句话先回答用户问题。
+
+
+
+            【解释】
+
+            基于召回内容，用 2 到 4 句话说明原因或差异点。
+
+
+
+            【下一步】
+
+            告诉用户接下来最合理的动作。
+
+
+
+            【来源】
+
+            列出 1 到 3 个来源标题。
+
+
+
+            当前问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            召回知识：
+
+            {{#context#}}'
+        selected: false
+        title: 术语答案生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775210079783'
+      position:
+        x: 2519.8255062008525
+        y: 1235.6865172388366
+      positionAbsolute:
+        x: 2519.8255062008525
+        y: 1235.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1775209826304'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服，服务对象是口腔正畸合作医生和诊所助理。
+
+
+
+            你的职责：
+
+            1. 仅依据召回知识回答问题，不得使用未提供的外部事实。
+
+            2. 如果召回内容不足以支持明确回答，直接说明信息不足，并提出一个最关键的澄清问题。
+
+            3. 如果问题涉及个案临床决策、疗效判断、患者风险、赔付投诉，不给结论，建议转人工。
+
+
+
+            回答格式固定为：
+
+            【结论】
+
+            一句话先回答用户问题。
+
+
+
+            【解释】
+
+            基于召回内容，用 2 到 4 句话说明原因或差异点。
+
+
+
+            【下一步】
+
+            告诉用户接下来最合理的动作。
+
+
+
+            【来源】
+
+            列出 1 到 3 个来源标题。
+
+
+
+            当前问题：
+
+            {{#sys.query#}}{{userinput.query}}
+
+
+
+            召回知识：
+
+            {{#context#}}'
+        selected: false
+        title: 培训答案生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775210111569'
+      position:
+        x: 2519.8255062008525
+        y: 1362.6865172388366
+      positionAbsolute:
+        x: 2519.8255062008525
+        y: 1362.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775209939978.text#}}'
+        selected: false
+        title: 产品答案输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210149941'
+      position:
+        x: 2821.8255062008525
+        y: 854.6865172388366
+      positionAbsolute:
+        x: 2821.8255062008525
+        y: 854.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775210009282.text#}}'
+        selected: false
+        title: 流程答案输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210174295'
+      position:
+        x: 2821.8255062008525
+        y: 981.6865172388366
+      positionAbsolute:
+        x: 2821.8255062008525
+        y: 981.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775210042250.text#}}'
+        selected: false
+        title: 系统答案输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210223869'
+      position:
+        x: 2821.8255062008525
+        y: 1108.6865172388366
+      positionAbsolute:
+        x: 2821.8255062008525
+        y: 1108.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775210079783.text#}}'
+        selected: false
+        title: 术语答案输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210237711'
+      position:
+        x: 2821.8255062008525
+        y: 1235.6865172388366
+      positionAbsolute:
+        x: 2821.8255062008525
+        y: 1235.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775210111569.text#}}'
+        selected: false
+        title: 培训答案输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210255411'
+      position:
+        x: 2821.8255062008525
+        y: 1362.6865172388366
+      positionAbsolute:
+        x: 2821.8255062008525
+        y: 1362.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - role: system
+          text: '你是医生服务智能客服。
+
+
+
+            当前问题暂时无法直接给出确定答案。
+
+
+
+            你的目标：
+
+            1. 只问一个最关键的澄清问题。
+
+            2. 如果问题看起来像状态查询，优先追问病例号或工单号。
+
+            3. 如果问题看起来像产品或流程问题但缺少产品线或阶段，就追问那个字段。
+
+            4. 不要一次问很多问题。
+
+
+
+            用户问题：
+
+            {{#sys.query#}}{{userinput.query}}'
+        selected: false
+        title: 兜底澄清生成
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1775210286495'
+      position:
+        x: 1915.8255062008525
+        y: 1489.6865172388366
+      positionAbsolute:
+        x: 1915.8255062008525
+        y: 1489.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '{{#1775210286495.text#}}'
+        selected: false
+        title: 兜底澄清输出
+        type: answer
+        variables: []
+      height: 103
+      id: '1775210327598'
+      position:
+        x: 2217.8255062008525
+        y: 1489.6865172388366
+      positionAbsolute:
+        x: 2217.8255062008525
+        y: 1489.6865172388366
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1775198658847'
+          - next_action
+          variable_selector:
+          - conversation
+          - active_intent
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1775198658847'
+          - next_action
+          variable_selector:
+          - conversation
+          - pending_action
+        selected: false
+        title: CASE2-保存待补病例号
+        type: assigner
+        version: '2'
+      height: 110
+      id: '1787306593330'
+      position:
+        x: 1592.8690080692372
+        y: 1610.8253974339573
+      positionAbsolute:
+        x: 1592.8690080692372
+        y: 1610.8253974339573
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        answer: '可以帮你查询病例进度。请提供需要查询的病例号（例如 A20260001）。
+
+
+          系统会使用当前登录医生身份进行权限校验；请勿发送患者姓名等额外敏感信息。'
+        selected: false
+        title: CASE2-病例号澄清
+        type: answer
+        variables: []
+      height: 164
+      id: '1787306628367'
+      position:
+        x: 1894.8690080692372
+        y: 1610.8253974339573
+      positionAbsolute:
+        x: 1894.8690080692372
+        y: 1610.8253974339573
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    viewport:
+      x: 20.237481338089594
+      y: 138.08145981068287
+      zoom: 0.29248602872842594
+  rag_pipeline_variables: []

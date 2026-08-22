@@ -1,0 +1,387 @@
+[
+  {
+    "user_id": "USR-DOC-001",
+    "display_name": "模拟医生01",
+    "account_status": "active",
+    "created_at": "2024-02-02T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-002",
+    "display_name": "模拟医生02",
+    "account_status": "active",
+    "created_at": "2024-02-03T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-003",
+    "display_name": "模拟医生03",
+    "account_status": "active",
+    "created_at": "2024-02-04T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-004",
+    "display_name": "模拟医生04",
+    "account_status": "active",
+    "created_at": "2024-02-05T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-005",
+    "display_name": "模拟医生05",
+    "account_status": "active",
+    "created_at": "2024-02-06T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-006",
+    "display_name": "模拟医生06",
+    "account_status": "active",
+    "created_at": "2024-02-07T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-007",
+    "display_name": "模拟医生07",
+    "account_status": "active",
+    "created_at": "2024-02-08T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-008",
+    "display_name": "模拟医生08",
+    "account_status": "active",
+    "created_at": "2024-02-09T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-009",
+    "display_name": "模拟医生09",
+    "account_status": "active",
+    "created_at": "2024-02-10T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-010",
+    "display_name": "模拟医生10",
+    "account_status": "active",
+    "created_at": "2024-02-11T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-011",
+    "display_name": "模拟医生11",
+    "account_status": "active",
+    "created_at": "2024-02-12T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-012",
+    "display_name": "模拟医生12",
+    "account_status": "active",
+    "created_at": "2024-02-13T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-013",
+    "display_name": "模拟医生13",
+    "account_status": "active",
+    "created_at": "2024-02-14T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-014",
+    "display_name": "模拟医生14",
+    "account_status": "active",
+    "created_at": "2024-02-15T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-015",
+    "display_name": "模拟医生15",
+    "account_status": "active",
+    "created_at": "2024-02-16T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-016",
+    "display_name": "模拟医生16",
+    "account_status": "active",
+    "created_at": "2024-02-17T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-017",
+    "display_name": "模拟医生17",
+    "account_status": "active",
+    "created_at": "2024-02-18T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-018",
+    "display_name": "模拟医生18",
+    "account_status": "active",
+    "created_at": "2024-02-19T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-019",
+    "display_name": "模拟医生19",
+    "account_status": "active",
+    "created_at": "2024-02-20T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-020",
+    "display_name": "模拟医生20",
+    "account_status": "active",
+    "created_at": "2024-02-21T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-021",
+    "display_name": "模拟医生21",
+    "account_status": "active",
+    "created_at": "2024-02-22T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-022",
+    "display_name": "模拟医生22",
+    "account_status": "active",
+    "created_at": "2024-02-23T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-023",
+    "display_name": "模拟医生23",
+    "account_status": "active",
+    "created_at": "2024-02-24T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-024",
+    "display_name": "模拟医生24",
+    "account_status": "active",
+    "created_at": "2024-02-25T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-025",
+    "display_name": "模拟医生25",
+    "account_status": "active",
+    "created_at": "2024-02-26T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-026",
+    "display_name": "模拟医生26",
+    "account_status": "active",
+    "created_at": "2024-02-27T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-027",
+    "display_name": "模拟医生27",
+    "account_status": "active",
+    "created_at": "2024-02-28T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-028",
+    "display_name": "模拟医生28",
+    "account_status": "frozen",
+    "created_at": "2024-02-29T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-029",
+    "display_name": "模拟医生29",
+    "account_status": "frozen",
+    "created_at": "2024-03-01T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-DOC-030",
+    "display_name": "模拟医生30",
+    "account_status": "frozen",
+    "created_at": "2024-03-02T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-001",
+    "display_name": "模拟助理01",
+    "account_status": "active",
+    "created_at": "2024-08-20T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-002",
+    "display_name": "模拟助理02",
+    "account_status": "active",
+    "created_at": "2024-08-21T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-003",
+    "display_name": "模拟助理03",
+    "account_status": "active",
+    "created_at": "2024-08-22T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-004",
+    "display_name": "模拟助理04",
+    "account_status": "active",
+    "created_at": "2024-08-23T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-005",
+    "display_name": "模拟助理05",
+    "account_status": "active",
+    "created_at": "2024-08-24T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-006",
+    "display_name": "模拟助理06",
+    "account_status": "active",
+    "created_at": "2024-08-25T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-007",
+    "display_name": "模拟助理07",
+    "account_status": "active",
+    "created_at": "2024-08-26T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-008",
+    "display_name": "模拟助理08",
+    "account_status": "active",
+    "created_at": "2024-08-27T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-009",
+    "display_name": "模拟助理09",
+    "account_status": "active",
+    "created_at": "2024-08-28T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-010",
+    "display_name": "模拟助理10",
+    "account_status": "active",
+    "created_at": "2024-08-29T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-011",
+    "display_name": "模拟助理11",
+    "account_status": "active",
+    "created_at": "2024-08-30T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-012",
+    "display_name": "模拟助理12",
+    "account_status": "active",
+    "created_at": "2024-08-31T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-013",
+    "display_name": "模拟助理13",
+    "account_status": "active",
+    "created_at": "2024-09-01T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-014",
+    "display_name": "模拟助理14",
+    "account_status": "active",
+    "created_at": "2024-09-02T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-AST-015",
+    "display_name": "模拟助理15",
+    "account_status": "active",
+    "created_at": "2024-09-03T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-001",
+    "display_name": "模拟客服01",
+    "account_status": "active",
+    "created_at": "2024-11-28T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-002",
+    "display_name": "模拟客服02",
+    "account_status": "active",
+    "created_at": "2024-11-29T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-003",
+    "display_name": "模拟客服03",
+    "account_status": "active",
+    "created_at": "2024-11-30T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-004",
+    "display_name": "模拟客服04",
+    "account_status": "active",
+    "created_at": "2024-12-01T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-005",
+    "display_name": "模拟客服05",
+    "account_status": "active",
+    "created_at": "2024-12-02T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-006",
+    "display_name": "模拟客服06",
+    "account_status": "active",
+    "created_at": "2024-12-03T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-007",
+    "display_name": "模拟客服07",
+    "account_status": "active",
+    "created_at": "2024-12-04T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-SPT-008",
+    "display_name": "模拟客服08",
+    "account_status": "active",
+    "created_at": "2024-12-05T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-ADM-001",
+    "display_name": "模拟管理员01",
+    "account_status": "active",
+    "created_at": "2023-07-17T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  },
+  {
+    "user_id": "USR-ADM-002",
+    "display_name": "模拟管理员02",
+    "account_status": "active",
+    "created_at": "2023-07-18T09:00:00Z",
+    "updated_at": "2026-01-01T09:00:00Z"
+  }
+]
