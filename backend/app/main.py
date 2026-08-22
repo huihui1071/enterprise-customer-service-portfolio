@@ -1,14 +1,15 @@
 import asyncio
+import hashlib
 import json
 import logging
 import time
 import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import Depends, FastAPI, Header, Request, Response
+from fastapi import Body, Depends, FastAPI, Header, Request, Response
 
 from .auth import create_token, current_user_id
-from .config import APP_VERSION, ENABLE_FAULT_INJECTION, JWT_EXPIRE_MINUTES
+from .config import APP_VERSION, DEMO_USER_ID, ENABLE_DEMO_ADAPTER, ENABLE_FAULT_INJECTION, JWT_EXPIRE_MINUTES
 from .database import connection, decode_row, initialize_database
 from .errors import AppError, error_response
 from .models import TicketCreate, TokenRequest, TokenResponse
@@ -67,6 +68,11 @@ def health():
     return {"status": "ok", "version": APP_VERSION}
 
 
+def require_demo_adapter():
+    if not ENABLE_DEMO_ADAPTER:
+        raise AppError(404, "DEMO_ADAPTER_DISABLED", "Demo adapter is disabled.")
+
+
 @app.post("/v1/auth/token", response_model=TokenResponse)
 def token(payload: TokenRequest):
     with connection() as conn:
@@ -116,3 +122,45 @@ async def read_ticket(
     with connection() as conn:
         ticket = get_ticket(conn, user_id, ticket_id, request.state.trace_id)
         return {**ticket, "trace_id": request.state.trace_id}
+
+
+@app.get("/v1/demo/cases/{case_id}/status", include_in_schema=False)
+def demo_case_status(request: Request, case_id: str):
+    """Dify-only adapter for synthetic data; production clients use JWT endpoints."""
+    require_demo_adapter()
+    with connection() as conn:
+        case = authorize_case(conn, DEMO_USER_ID, case_id, request.state.trace_id)
+        data = case_response(case, request.state.trace_id)
+        return {"success": True, "data": data, "demo_identity": DEMO_USER_ID}
+
+
+@app.post("/v1/demo/tickets", include_in_schema=False)
+def demo_create_ticket(request: Request, response: Response, payload: dict = Body(...)):
+    require_demo_adapter()
+    case_id = payload.get("case_id") or None
+    risk_signal = payload.get("risk_signal") or payload.get("problem_type") or ""
+    risk_level = "high" if risk_signal else "medium"
+    normalized = TicketCreate(
+        ticket_type="clinical_risk" if risk_level == "high" else "service_request",
+        organization_id="ORG-001",
+        case_id=case_id,
+        summary=payload.get("problem_summary") or "Dify 人工服务请求",
+        description=payload.get("conversation_excerpt") or payload.get("problem_summary") or "模拟请求",
+        evidence=[value for value in [payload.get("product_line"), payload.get("current_stage")] if value],
+        risk_level=risk_level,
+        source="dify",
+    )
+    canonical = json.dumps(normalized.model_dump(), ensure_ascii=False, sort_keys=True)
+    idempotency_key = "dify-demo-" + hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:32]
+    with connection() as conn:
+        ticket, created = create_ticket(conn, DEMO_USER_ID, normalized, idempotency_key, request.state.trace_id)
+        response.status_code = 201 if created else 200
+        return {"success": True, **ticket, "data": ticket, "trace_id": request.state.trace_id}
+
+
+@app.get("/v1/demo/tickets/{ticket_id}", include_in_schema=False)
+def demo_read_ticket(request: Request, ticket_id: str):
+    require_demo_adapter()
+    with connection() as conn:
+        ticket = get_ticket(conn, DEMO_USER_ID, ticket_id, request.state.trace_id)
+        return {"success": True, **ticket, "data": ticket, "trace_id": request.state.trace_id}

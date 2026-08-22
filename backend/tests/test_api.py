@@ -98,3 +98,8 @@ def test_fault_injection(client, auth_headers):
     response = client.get("/v1/cases/CASE-2026-0025", headers=headers)
     assert response.status_code == 500
     assert response.json()["error"]["retryable"] is True
+
+
+def test_demo_adapter_is_disabled_by_default(client):
+    response = client.get("/v1/demo/cases/CASE-2026-0025/status")
+    assert response.status_code == 404

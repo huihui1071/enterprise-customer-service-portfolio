@@ -10,4 +10,6 @@ JWT_SECRET = os.getenv("JWT_SECRET", "portfolio-development-secret-change-me")
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRE_MINUTES = int(os.getenv("JWT_EXPIRE_MINUTES", "60"))
 ENABLE_FAULT_INJECTION = os.getenv("ENABLE_FAULT_INJECTION", "false").lower() == "true"
+ENABLE_DEMO_ADAPTER = os.getenv("ENABLE_DEMO_ADAPTER", "false").lower() == "true"
+DEMO_USER_ID = os.getenv("DEMO_USER_ID", "USR-DOC-001")
 APP_VERSION = "1.0.0"

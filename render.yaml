@@ -15,4 +15,7 @@ services:
         value: /tmp/customer_service.db
       - key: ENABLE_FAULT_INJECTION
         value: "false"
-
+      - key: ENABLE_DEMO_ADAPTER
+        value: "true"
+      - key: DEMO_USER_ID
+        value: USR-DOC-001
