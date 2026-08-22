@@ -1,0 +1,17 @@
+{
+  "evaluated_at": "2026-08-22T21:05:00+08:00",
+  "environment": "Dify Cloud draft + Render free web service",
+  "backend_url": "https://enterprise-customer-service-mock-api.onrender.com",
+  "results": [
+    {"case": "case_status_query", "input": "查询病例 A20260001 的当前病例状态", "expected_route": "case status API", "result": "passed", "evidence": "returned 待排产, updated_at and next_step"},
+    {"case": "product_question_no_parallel_case_prompt", "input": "时代天使冠军版和标准版有什么区别？", "expected_route": "product knowledge answer only", "result": "passed", "evidence": "ended at 产品答案输出 with no case-id prompt"},
+    {"case": "high_risk_handoff", "input": "病例 A20260001，患者佩戴后出现呼吸困难并剧烈疼痛，请立即处理", "expected_route": "P0 ticket and immediate human assignment", "result": "passed", "evidence": "ticket T20260102, P0, high-risk-support"},
+    {"case": "ticket_query", "input": "查询工单 T20260102 的处理状态", "expected_route": "ticket API", "result": "passed", "evidence": "returned open status, P0 and high-risk-support"}
+  ],
+  "summary": {"passed": 4, "total": 4, "smoke_pass_rate": 1.0},
+  "limitations": [
+    "This is a focused smoke suite, not the 150-case full AI evaluation.",
+    "Render free instances may cold-start after inactivity.",
+    "The Dify draft has not been published."
+  ]
+}
