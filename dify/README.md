@@ -31,9 +31,16 @@ The draft was autosaved on 2026-08-22 and has not been published. The cloud draf
 
 Focused Dify + Render smoke result: **4/4 passed**. This is not a substitute for the full 150-case evaluation.
 
+## Conversation Memory Draft
+
+The cloud draft now stores an authorized case ID in `confirmed_case_id` and `active_case_id`, ends the slot-filling state after a successful query, lets explicit IDs override memory, resolves a single-case reference such as “我刚刚说的那个病例”, treats “另一个病例” as a request for a new ID, and keeps high-risk rules ahead of pending clarification.
+
+Focused memory smoke result on 2026-08-23: **5/5 passed**. Multi-case ambiguity, ten-turn expiry, and authorization revocation between turns remain unimplemented release blockers; the full 15-case memory suite is not yet passed.
+
 ## Remaining Before Publish
 
 - Add explicit Dify error branches for 400/401/403/404/409/429/500 and timeout.
+- Complete multi-case ambiguity, ten-turn expiry, and authorization-change memory branches.
 - Run the full 150-case evaluation and analyze failure slices.
 - Replace the Demo Adapter's fixed identity with production-grade trusted identity propagation before any real-data use.
 - Obtain user confirmation before publishing the Dify draft.

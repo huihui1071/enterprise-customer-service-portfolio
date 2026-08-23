@@ -1,0 +1,109 @@
+[
+  {
+    "name": "missing_case_then_supply",
+    "turns": [{"role":"user","content":"帮我查一下病例进度"},{"role":"assistant","content":"请提供病例号"},{"role":"user","content":"A20260001"}],
+    "expected_route": "case_status",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"asks_for_case_id_once","value":true},{"type":"resolved_case_id_equals","value":"A20260001"},{"type":"reauthorizes_case","value":true}]
+  },
+  {
+    "name": "single_case_reference_after_topic_switch",
+    "turns": [{"role":"user","content":"查询病例 A20260001 的状态"},{"role":"assistant","content":"该病例当前待排产"},{"role":"user","content":"冠军版和标准版有什么区别"},{"role":"assistant","content":"这是一个产品咨询问题"},{"role":"user","content":"我刚刚说的那个病例什么时候生产"}],
+    "expected_route": "case_reference_resume",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"resolved_case_id_equals","value":"A20260001"},{"type":"reauthorizes_case","value":true},{"type":"response_echoes_case_id","value":true}]
+  },
+  {
+    "name": "two_cases_ambiguous_reference",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"返回病例状态"},{"role":"user","content":"再查询 A20260002"},{"role":"assistant","content":"无法访问该病例"},{"role":"user","content":"刚才那个病例进度呢"}],
+    "expected_route": "case_reference_clarification",
+    "expected_tools": [],
+    "assertions": [{"type":"must_clarify_ambiguous_reference","value":true},{"type":"tool_not_called","value":"get_case_status"}]
+  },
+  {
+    "name": "explicit_other_case_clears_reference",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"返回病例状态"},{"role":"user","content":"我想查另一个病例"}],
+    "expected_route": "case_id_clarification",
+    "expected_tools": [],
+    "assertions": [{"type":"active_case_cleared","value":true},{"type":"asks_for_case_id_once","value":true}]
+  },
+  {
+    "name": "no_memory_reference",
+    "turns": [{"role":"user","content":"帮我查刚才那个病例"}],
+    "expected_route": "case_id_clarification",
+    "expected_tools": [],
+    "assertions": [{"type":"asks_for_case_id_once","value":true},{"type":"must_not_guess_case_id","value":true}]
+  },
+  {
+    "name": "clarification_limit",
+    "turns": [{"role":"user","content":"查病例进度"},{"role":"assistant","content":"请提供病例号"},{"role":"user","content":"就是我的病例"},{"role":"assistant","content":"请提供病例号"},{"role":"user","content":"你帮我找一下"}],
+    "expected_route": "clarification_limit_fallback",
+    "expected_tools": [],
+    "assertions": [{"type":"clarify_count_equals","value":2},{"type":"must_stop_reprompting","value":true}]
+  },
+  {
+    "name": "high_risk_interrupts_clarification",
+    "turns": [{"role":"user","content":"查一下病例进度"},{"role":"assistant","content":"请提供病例号"},{"role":"user","content":"患者现在呼吸困难并且剧烈疼痛"}],
+    "expected_route": "high_risk_handoff",
+    "expected_tools": ["create_ticket"],
+    "assertions": [{"type":"ticket_priority_equals","value":"P0"},{"type":"pending_case_task_cancelled","value":true}]
+  },
+  {
+    "name": "authorization_revoked_between_turns",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"返回病例状态"},{"role":"user","content":"再查一下刚才那个病例"}],
+    "expected_route": "case_access_denied",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"reauthorizes_case","value":true},{"type":"case_memory_cleared_on_denial","value":true}],
+    "fixture": "authorization_revoked_before_final_turn"
+  },
+  {
+    "name": "memory_expires_after_ten_turns",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"返回病例状态"},{"role":"user","content":"经过十轮其他问题后，查询刚才那个病例"}],
+    "expected_route": "case_id_clarification",
+    "expected_tools": [],
+    "assertions": [{"type":"memory_age_greater_than","value":10},{"type":"must_not_guess_case_id","value":true}],
+    "fixture": "advance_turn_index_by_11"
+  },
+  {
+    "name": "explicit_case_overrides_recent_reference",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"返回病例状态"},{"role":"user","content":"改查 A20260002"}],
+    "expected_route": "case_status",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"resolved_case_id_equals","value":"A20260002"},{"type":"explicit_entity_wins","value":true}]
+  },
+  {
+    "name": "case_reference_does_not_reuse_stale_status",
+    "turns": [{"role":"user","content":"查询 A20260001"},{"role":"assistant","content":"该病例待排产"},{"role":"user","content":"刚才那个病例现在怎么样"}],
+    "expected_route": "case_reference_resume",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"tool_called_once","value":"get_case_status"},{"type":"must_not_reuse_cached_case_status","value":true}]
+  },
+  {
+    "name": "ticket_reference_is_not_case_reference",
+    "turns": [{"role":"user","content":"查询工单 T20260102"},{"role":"assistant","content":"返回工单状态"},{"role":"user","content":"刚才那个工单处理了吗"}],
+    "expected_route": "ticket_query",
+    "expected_tools": ["get_ticket"],
+    "assertions": [{"type":"resolved_ticket_id_equals","value":"T20260102"},{"type":"tool_not_called","value":"get_case_status"}]
+  },
+  {
+    "name": "case_and_ticket_explicit_same_turn",
+    "turns": [{"role":"user","content":"病例 A20260001 对应的工单 T20260102 处理到哪里了"}],
+    "expected_route": "ticket_query",
+    "expected_tools": ["get_ticket"],
+    "assertions": [{"type":"ticket_intent_wins_for_explicit_ticket_status","value":true},{"type":"tool_called_once","value":"get_ticket"}]
+  },
+  {
+    "name": "correct_candidate_case_id",
+    "turns": [{"role":"user","content":"查病例 A20260001"},{"role":"assistant","content":"确认查询 A20260001 吗"},{"role":"user","content":"不是，是 A20260002"}],
+    "expected_route": "case_status",
+    "expected_tools": ["get_case_status"],
+    "assertions": [{"type":"resolved_case_id_equals","value":"A20260002"},{"type":"old_candidate_cleared","value":true}]
+  },
+  {
+    "name": "new_conversation_cannot_restore_case",
+    "turns": [{"role":"user","content":"上次那个病例现在怎么样"}],
+    "expected_route": "case_id_clarification",
+    "expected_tools": [],
+    "assertions": [{"type":"new_conversation_has_empty_case_memory","value":true},{"type":"asks_for_case_id_once","value":true}]
+  }
+]

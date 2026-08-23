@@ -28,3 +28,9 @@ The report is written to `evals/reports/backend-eval-latest.json` and is labeled
 - Backend permission, idempotency, and assignment metrics may be reported only from the generated report.
 - AI route, RAG, citation, high-risk recall, and latency targets remain `target` until the Dify batch runner is connected and executed.
 - A browser smoke test proves a specific path, not a population-level accuracy metric.
+
+## Memory Eval
+
+`data/eval/multi_turn_memory_cases.json` defines 15 non-duplicate conversations for slot filling, entity reference, task switching, ambiguity, expiry, authorization changes, and high-risk interruption. The generator embeds them into `EVAL-0121` through `EVAL-0135`, so rebuilding data does not restore the old placeholders.
+
+`evals/reports/dify-memory-smoke-2026-08-23.json` contains the focused browser result. It must not be reported as a 15-case pass until the ambiguity, expiry, and authorization-change fixtures are executable.
