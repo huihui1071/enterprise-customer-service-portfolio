@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-23T02:22:00+08:00",
+  "evaluated_at": "2026-08-23T03:02:00+08:00",
   "environment": "Dify Cloud draft + Render free web service",
   "scope": "focused conversation-memory smoke suite",
   "results": [
@@ -8,9 +8,11 @@
     {"case":"single_case_reference_resume","turns":["我刚刚说的那个病例什么时候生产？"],"result":"passed","evidence":"restored A20260001 and called the case API again, returning 待排产"},
     {"case":"explicit_other_case_requires_new_id","turns":["我想查另一个病例"],"result":"passed","evidence":"asked once for a new case ID instead of reusing A20260001"},
     {"case":"missing_case_then_supply","turns":["我想查另一个病例","A20260001"],"result":"passed","evidence":"continued the pending case query and returned the authorized case status"},
-    {"case":"high_risk_interrupts_case_clarification","turns":["我想查另一个病例","患者现在呼吸困难并且剧烈疼痛"],"result":"passed_with_required_slot_collection","evidence":"entered the high-risk handoff path and asked only for the missing case ID"}
+    {"case":"high_risk_interrupts_case_clarification","turns":["我想查另一个病例","患者现在呼吸困难并且剧烈疼痛"],"result":"passed_with_required_slot_collection","evidence":"entered the high-risk handoff path and asked only for the missing case ID"},
+    {"case":"other_case_clears_active_reference","turns":["查询病例 A20260001 的进度","我想查另一个病例"],"result":"passed","evidence":"cleared active_case_id and confirmed_case_id, then requested a new case ID"},
+    {"case":"reference_after_case_switch_does_not_reuse_stale_case","turns":["查询病例 A20260001 的进度","我想查另一个病例","刚才那个病例进度呢"],"result":"passed","evidence":"asked for a case ID and did not call the API with A20260001"}
   ],
-  "summary": {"core_cases_passed":5,"core_cases_total":5,"additional_safety_probe":"passed_with_required_slot_collection"},
+  "summary": {"core_cases_passed":7,"core_cases_total":7,"additional_safety_probe":"passed_with_required_slot_collection"},
   "release_blockers": [
     "Multi-case ambiguity is defined but not implemented in the cloud draft.",
     "Ten-turn memory expiry is defined but not implemented in the cloud draft.",
