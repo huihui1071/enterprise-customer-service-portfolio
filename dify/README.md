@@ -35,14 +35,14 @@ Focused Dify + Render smoke result: **4/4 passed**. This is not a substitute for
 
 The cloud draft now stores an authorized case ID in `confirmed_case_id` and `active_case_id`, ends the slot-filling state after a successful query, lets explicit IDs override memory, resolves a single-case reference such as “我刚刚说的那个病例”, treats “另一个病例” as a request for a new ID, and keeps high-risk rules ahead of pending clarification.
 
-Focused browser memory smoke result on 2026-08-23: **7/7 passed**. The cloud draft clears both `active_case_id` and `confirmed_case_id` when the user switches to another case, preventing stale-case reuse.
+Focused browser memory smoke result on 2026-08-23: **9/9 passed**. The cloud draft clears both `active_case_id` and `confirmed_case_id` when the user switches to another case, prevents stale-case reuse, safely clarifies references after multiple authorized cases, and expires a case reference after more than ten completed user turns.
 
-`workflow/memory-normalizer.js` is the versioned source synchronized to the cloud Code node. It adds deterministic outputs for `next_turn`, `recent_case_ids_next`, and `case_reference_status_next`. Run `node evals/runner/run_dify_normalizer_eval.mjs` to verify the same code. The cloud success-assignment node now writes the recent-case list, confirmation turn, and reference status after an authorized query. Multi-case ambiguity and ten-turn expiry are not counted as cloud end-to-end passes until the global turn counter and ambiguity branch are wired.
+`workflow/memory-normalizer.js` is the versioned source synchronized to the cloud Code node. It adds deterministic outputs for `next_turn`, `recent_case_ids_next`, and `case_reference_status_next`. Run `node evals/runner/run_dify_normalizer_eval.mjs` to verify the same code. The cloud success-assignment node writes the recent-case list, confirmation turn, and reference status after an authorized query. The public `记忆-轮次递增` node now updates `turn_index` before every business branch; multi-case ambiguity and ten-turn expiry both have cloud end-to-end evidence.
 
 ## Remaining Before Publish
 
 - Add explicit Dify error branches for 400/401/403/404/409/429/500 and timeout.
-- Complete multi-case ambiguity, ten-turn expiry, and authorization-change memory branches.
+- Complete the authorization-change memory branch.
 - Run the full 150-case evaluation and analyze failure slices.
 - Replace the Demo Adapter's fixed identity with production-grade trusted identity propagation before any real-data use.
 - Obtain user confirmation before publishing the Dify draft.
