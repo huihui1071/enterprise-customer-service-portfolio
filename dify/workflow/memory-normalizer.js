@@ -21,7 +21,7 @@ function main(input) {
   }
 
   var caseMatch = raw.match(/\b[A-Za-z]\d{8}\b/);
-  var ticketMatch = raw.match(/\b(?:(?:TKT|WO)[-_]?[A-Za-z0-9]+|T\d{8})\b/i);
+  var ticketMatch = raw.match(/\b(?:(?:TKT|WO)(?:[-_][A-Za-z0-9]+)+|T\d{8})\b/i);
   var explicitCase = caseMatch ? caseMatch[0].toUpperCase() : "";
   var faultToken = (raw.match(/\b(?:ERR(?:400|401|403|404|409|429|500)|TIMEOUT|AUTH_REVOKED)\b/i) || [""])[0].toUpperCase();
   var faultMode = faultToken === "TIMEOUT" ? "timeout" :
@@ -53,12 +53,14 @@ function main(input) {
     isContinuation = Boolean(caseId);
   }
 
-  var statusHint = /(病例|进度|状态|生产|发货|到哪|排产|方案|佩戴|完成)/.test(raw) ||
+  var statusHint = /(病例|进度|状态|生产|发货|到哪|排产|佩戴|完成)/.test(raw) ||
+    /方案.{0,6}(进度|状态|确认|设计|到哪|完成)/.test(raw) ||
     activeIntent === "case_status";
   var needsCaseId = statusHint && !caseId;
   var riskWords = [
     "疼痛", "剧痛", "出血", "肿胀", "过敏", "呼吸困难", "吞咽困难",
-    "脱落", "误吞", "发热", "感染", "临床异常"
+    "脱落", "误吞", "吞下", "吞入", "发热", "感染", "临床异常",
+    "无法正常吞咽", "不能吞咽", "错患者", "患者错误"
   ];
   var hits = riskWords.filter(function (word) {
     return raw.indexOf(word) >= 0;

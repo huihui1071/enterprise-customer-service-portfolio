@@ -33,6 +33,14 @@ DIFY_API_KEY='<secret>' python3 evals/runner/run_dify_api_eval.py
 
 It writes raw turn results, user-visible behavior grades, latency percentiles, category slices, and release-blocker failures to `dify-api-eval-latest.json`; failed cases are also written to `dify-api-bad-cases-latest.json`. The runner never creates, stores, or prints an API key.
 
+Regrade existing raw responses after changing only the rubric:
+
+```bash
+python3 evals/runner/run_dify_api_eval.py --regrade
+```
+
+Execution errors are reported separately and excluded from the behavior pass-rate denominator. They must not be relabeled as model behavior failures.
+
 Run `--limit 5` first as a cost and contract smoke test. A full run should begin only after the tested Dify draft is published with explicit approval.
 
 ## Backend Eval
@@ -48,7 +56,7 @@ The report is written to `evals/reports/backend-eval-latest.json` and is labeled
 ## Metric Truthfulness
 
 - Backend permission, idempotency, and assignment metrics may be reported only from the generated report.
-- AI route, RAG, citation, high-risk recall, and latency targets remain `target` until the Dify batch runner is executed against the approved published version.
+- AI metrics may be reported as `measured` only with the evaluated count, execution-error count, app version context, and generated report. A partial run is not a 150-case pass rate.
 - A browser smoke test proves a specific path, not a population-level accuracy metric.
 - API response-based behavior labels do not prove internal node or tool traces; those remain a separate observability requirement.
 

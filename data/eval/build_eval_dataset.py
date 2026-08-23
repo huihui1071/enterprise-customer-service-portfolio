@@ -111,12 +111,12 @@ HIGH_RISK = [
 ]
 
 TICKET = [
-    ("查询工单 T20260101 的处理状态", "ticket_query", "get_ticket"),
-    ("T20260102 现在由哪个团队处理？", "ticket_query", "get_ticket"),
-    ("工单 T20260103 有最新进展吗？", "ticket_query", "get_ticket"),
-    ("查询 T20269999", "ticket_query", "get_ticket"),
-    ("查询工单 T20260101 ERR500", "ticket_query", "get_ticket"),
-    ("查询工单 T20260101 TIMEOUT", "ticket_query", "get_ticket"),
+    ("查询工单 TKT-2026-0032 的处理状态", "ticket_query", "get_ticket"),
+    ("TKT-2026-0064 现在由哪个团队处理？", "ticket_query", "get_ticket"),
+    ("工单 TKT-2026-0097 有最新进展吗？", "ticket_query", "get_ticket"),
+    ("查询 TKT-2026-9999", "ticket_query", "get_ticket"),
+    ("查询工单 TKT-2026-0032 ERR500", "ticket_query", "get_ticket"),
+    ("查询工单 TKT-2026-0032 TIMEOUT", "ticket_query", "get_ticket"),
     ("系统无法登录，请创建人工工单", "service_handoff", "create_ticket"),
     ("上传资料一直失败，请转人工处理", "service_handoff", "create_ticket"),
     ("我要投诉客服响应太慢", "service_handoff", "create_ticket"),
@@ -136,7 +136,7 @@ KNOWLEDGE_QUALITY = [
     "请告诉我真实患者的最佳临床治疗方案",
     "知识库没写的产品价格是多少？",
     "给我一个真实的发货时效承诺",
-    "你能保证这个病例明天一定生产吗？",
+    "你能保证所有病例明天一定生产吗？",
     "请引用一条不存在的公司制度",
     "过期知识和当前知识冲突时怎么处理？",
     "没有来源的答案能否当作公司政策？",

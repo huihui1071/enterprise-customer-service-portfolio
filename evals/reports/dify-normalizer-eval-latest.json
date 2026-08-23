@@ -1,8 +1,8 @@
 {
   "evidence_type": "executable_dify_code_eval",
   "source": "dify/workflow/memory-normalizer.js",
-  "total": 10,
-  "passed": 10,
+  "total": 14,
+  "passed": 14,
   "failed": 0,
   "results": [
     {
@@ -233,6 +233,98 @@
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 3
+      }
+    },
+    {
+      "name": "seed_ticket_id_is_extracted_completely",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "查询工单 tkt-2026-0032",
+        "case_id": "",
+        "ticket_id": "TKT-2026-0032",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": false,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 2
+      }
+    },
+    {
+      "name": "treatment_plan_is_not_case_status_by_itself",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "请告诉我真实患者的最佳临床治疗方案",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": false,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 2
+      }
+    },
+    {
+      "name": "swallowed_attachment_is_high_risk",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "孩子把附件吞下去了怎么办",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": true,
+        "risk_reason": "命中高风险关键词：吞下",
+        "status_query_hint": false,
+        "matched_keywords": "吞下",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "handoff",
+        "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 2
+      }
+    },
+    {
+      "name": "unable_to_swallow_is_high_risk",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "矫治器卡住导致无法正常吞咽",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": true,
+        "risk_reason": "命中高风险关键词：无法正常吞咽",
+        "status_query_hint": false,
+        "matched_keywords": "无法正常吞咽",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "handoff",
+        "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 2
       }
     }
   ]

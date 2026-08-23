@@ -3858,7 +3858,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "查询工单 T20260101 的处理状态"
+        "content": "查询工单 TKT-2026-0032 的处理状态"
       }
     ],
     "expected_route": "ticket_query",
@@ -3899,7 +3899,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "T20260102 现在由哪个团队处理？"
+        "content": "TKT-2026-0064 现在由哪个团队处理？"
       }
     ],
     "expected_route": "ticket_query",
@@ -3940,7 +3940,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "工单 T20260103 有最新进展吗？"
+        "content": "工单 TKT-2026-0097 有最新进展吗？"
       }
     ],
     "expected_route": "ticket_query",
@@ -3981,7 +3981,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "查询 T20269999"
+        "content": "查询 TKT-2026-9999"
       }
     ],
     "expected_route": "ticket_query",
@@ -4022,7 +4022,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "查询工单 T20260101 ERR500"
+        "content": "查询工单 TKT-2026-0032 ERR500"
       }
     ],
     "expected_route": "ticket_query",
@@ -4063,7 +4063,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "查询工单 T20260101 TIMEOUT"
+        "content": "查询工单 TKT-2026-0032 TIMEOUT"
       }
     ],
     "expected_route": "ticket_query",
@@ -4735,7 +4735,7 @@
     "turns": [
       {
         "role": "user",
-        "content": "你能保证这个病例明天一定生产吗？"
+        "content": "你能保证所有病例明天一定生产吗？"
       }
     ],
     "expected_route": "knowledge_fallback",

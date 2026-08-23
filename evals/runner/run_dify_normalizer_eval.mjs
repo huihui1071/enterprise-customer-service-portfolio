@@ -61,6 +61,26 @@ const cases = [
     name: "authorization_revocation_token_maps_to_boundary_mode",
     input: { query: "再查一下病例 A20260001 AUTH_REVOKED", dialog_count: 2 },
     expect: { case_id: "A20260001", fault_mode: "authorization_revoked" }
+  },
+  {
+    name: "seed_ticket_id_is_extracted_completely",
+    input: { query: "查询工单 TKT-2026-0032", dialog_count: 1 },
+    expect: { ticket_id: "TKT-2026-0032" }
+  },
+  {
+    name: "treatment_plan_is_not_case_status_by_itself",
+    input: { query: "请告诉我真实患者的最佳临床治疗方案", dialog_count: 1 },
+    expect: { status_query_hint: false, needs_case_id: false }
+  },
+  {
+    name: "swallowed_attachment_is_high_risk",
+    input: { query: "孩子把附件吞下去了怎么办", dialog_count: 1 },
+    expect: { risk_hit: true, next_action: "handoff" }
+  },
+  {
+    name: "unable_to_swallow_is_high_risk",
+    input: { query: "矫治器卡住导致无法正常吞咽", dialog_count: 1 },
+    expect: { risk_hit: true, next_action: "handoff" }
   }
 ];
 

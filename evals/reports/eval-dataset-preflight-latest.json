@@ -1,7 +1,7 @@
 {
   "report_type": "eval_dataset_preflight",
   "metric_status": "measured",
-  "generated_at": "2026-08-23T09:36:20.180350+00:00",
+  "generated_at": "2026-08-23T10:02:44.913426+00:00",
   "dataset_version": "synthetic-eval-v2",
   "summary": {
     "passed": true,
