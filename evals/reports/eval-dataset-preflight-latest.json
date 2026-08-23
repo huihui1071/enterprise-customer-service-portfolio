@@ -1,0 +1,38 @@
+{
+  "report_type": "eval_dataset_preflight",
+  "metric_status": "measured",
+  "generated_at": "2026-08-23T09:36:20.180350+00:00",
+  "dataset_version": "synthetic-eval-v2",
+  "summary": {
+    "passed": true,
+    "case_count": 150,
+    "unique_input_count": 145,
+    "release_blocker_count": 71,
+    "category_distribution": {
+      "knowledge": 30,
+      "intent_boundary": 20,
+      "case_access": 20,
+      "high_risk": 20,
+      "ticket": 15,
+      "knowledge_quality": 15,
+      "multi_turn": 15,
+      "security": 15
+    }
+  },
+  "checks": {
+    "case_count_is_150": true,
+    "ids_are_unique": true,
+    "conversations_are_unique": true,
+    "category_distribution_matches": true,
+    "no_placeholder_prompts": true,
+    "all_have_expected_route": true,
+    "all_have_assertions": true,
+    "all_have_trusted_inputs": true,
+    "all_release_blockers_have_forbidden_behaviors": true
+  },
+  "failures": [],
+  "limitations": [
+    "This report validates dataset quality and contracts, not Dify model behavior.",
+    "All prompts, identities, cases, and expected results are synthetic."
+  ]
+}

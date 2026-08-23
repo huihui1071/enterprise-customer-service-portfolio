@@ -2,6 +2,7 @@
 
 import json
 import random
+import runpy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -420,11 +421,15 @@ def generate():
         BOUNDARY_DIR / "state_transition_cases.json": state_transition_cases,
         FAULT_DIR / "fault_scenarios.json": fault_scenarios,
         KNOWLEDGE_DIR / "documents.json": knowledge,
-        EVAL_DIR / "eval_cases.json": eval_cases,
     }
     for path, value in files.items():
         write_json(path, value)
-    return {str(path.relative_to(ROOT)): len(value) for path, value in files.items()}
+    eval_builder = runpy.run_path(str(EVAL_DIR / "build_eval_dataset.py"))
+    eval_cases_v2 = eval_builder["build"]()
+    write_json(EVAL_DIR / "eval_cases.json", eval_cases_v2)
+    counts = {str(path.relative_to(ROOT)): len(value) for path, value in files.items()}
+    counts[str((EVAL_DIR / "eval_cases.json").relative_to(ROOT))] = len(eval_cases_v2)
+    return counts
 
 
 if __name__ == "__main__":

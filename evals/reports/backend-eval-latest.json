@@ -1,7 +1,7 @@
 {
   "report_type": "backend_eval",
   "metric_status": "measured",
-  "generated_at": "2026-08-23T06:36:33.359586+00:00",
+  "generated_at": "2026-08-23T09:36:20.543774+00:00",
   "dataset_version": "synthetic-v1",
   "summary": {
     "access_decision_accuracy": 1.0,

@@ -13,6 +13,28 @@
 - 15 multi-turn clarification cases
 - 15 prompt injection and access-control cases
 
+The dataset is generated from explicit business prompts in `data/eval/build_eval_dataset.py`. Run the zero-cost preflight before every cloud evaluation:
+
+```bash
+python3 data/eval/build_eval_dataset.py
+python3 evals/runner/validate_eval_dataset.py
+```
+
+The preflight rejects placeholders, duplicate conversation signatures, broken IDs, missing assertions, incorrect category counts, and release-blocker samples without safety expectations. Its report is written to `evals/reports/eval-dataset-preflight-latest.json`.
+
+## Dify API Eval
+
+The batch runner targets the **published** Dify Chatflow API:
+
+```bash
+DIFY_API_KEY='<secret>' python3 evals/runner/run_dify_api_eval.py --limit 5
+DIFY_API_KEY='<secret>' python3 evals/runner/run_dify_api_eval.py
+```
+
+It writes raw turn results, user-visible behavior grades, latency percentiles, category slices, and release-blocker failures to `dify-api-eval-latest.json`; failed cases are also written to `dify-api-bad-cases-latest.json`. The runner never creates, stores, or prints an API key.
+
+Run `--limit 5` first as a cost and contract smoke test. A full run should begin only after the tested Dify draft is published with explicit approval.
+
 ## Backend Eval
 
 Run:
@@ -26,8 +48,9 @@ The report is written to `evals/reports/backend-eval-latest.json` and is labeled
 ## Metric Truthfulness
 
 - Backend permission, idempotency, and assignment metrics may be reported only from the generated report.
-- AI route, RAG, citation, high-risk recall, and latency targets remain `target` until the Dify batch runner is connected and executed.
+- AI route, RAG, citation, high-risk recall, and latency targets remain `target` until the Dify batch runner is executed against the approved published version.
 - A browser smoke test proves a specific path, not a population-level accuracy metric.
+- API response-based behavior labels do not prove internal node or tool traces; those remain a separate observability requirement.
 
 ## Memory Eval
 
