@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-08-23T03:02:00+08:00",
+  "evaluated_at": "2026-08-23T03:46:00+08:00",
   "environment": "Dify Cloud draft + Render free web service",
   "scope": "focused conversation-memory smoke suite",
   "results": [
@@ -10,11 +10,11 @@
     {"case":"missing_case_then_supply","turns":["我想查另一个病例","A20260001"],"result":"passed","evidence":"continued the pending case query and returned the authorized case status"},
     {"case":"high_risk_interrupts_case_clarification","turns":["我想查另一个病例","患者现在呼吸困难并且剧烈疼痛"],"result":"passed_with_required_slot_collection","evidence":"entered the high-risk handoff path and asked only for the missing case ID"},
     {"case":"other_case_clears_active_reference","turns":["查询病例 A20260001 的进度","我想查另一个病例"],"result":"passed","evidence":"cleared active_case_id and confirmed_case_id, then requested a new case ID"},
-    {"case":"reference_after_case_switch_does_not_reuse_stale_case","turns":["查询病例 A20260001 的进度","我想查另一个病例","刚才那个病例进度呢"],"result":"passed","evidence":"asked for a case ID and did not call the API with A20260001"}
+    {"case":"reference_after_case_switch_does_not_reuse_stale_case","turns":["查询病例 A20260001 的进度","我想查另一个病例","刚才那个病例进度呢"],"result":"passed","evidence":"asked for a case ID and did not call the API with A20260001"},
+    {"case":"multiple_authorized_cases_require_clarification","turns":["查询病例 A20260001 的当前状态","再查询病例 A20260003 的当前状态","刚才那个病例进度呢"],"result":"passed","evidence":"both explicit queries succeeded; the ambiguous reference routed to CASE2-病例号澄清 without calling the case API"}
   ],
-  "summary": {"core_cases_passed":7,"core_cases_total":7,"additional_safety_probe":"passed_with_required_slot_collection"},
+  "summary": {"core_cases_passed":8,"core_cases_total":8,"additional_safety_probe":"passed_with_required_slot_collection"},
   "release_blockers": [
-    "Multi-case ambiguity is defined but not implemented in the cloud draft.",
     "Ten-turn memory expiry is defined but not implemented in the cloud draft.",
     "Authorization revocation between turns is defined but not executable in the current Dify fixture.",
     "The full 15-case memory suite and 150-case AI evaluation have not passed.",
