@@ -53,9 +53,14 @@ function main(input) {
     isContinuation = Boolean(caseId);
   }
 
-  var statusHint = /(病例|进度|状态|生产|发货|到哪|排产|佩戴|完成)/.test(raw) ||
-    /方案.{0,6}(进度|状态|确认|设计|到哪|完成)/.test(raw) ||
-    activeIntent === "case_status";
+  var generalPromise = /(所有病例|保证|承诺|一定)/.test(raw);
+  var contextualStatusHint =
+    /(查询|查看|查|看看).{0,8}(病例|进度|状态)/.test(raw) ||
+    /(?:这个|该|我的|一个)?病例.{0,10}(进度|状态|生产|发货|到哪|排产|方案|佩戴|完成|更新|下一步)/.test(raw) ||
+    /(生产|发货).{0,4}(进度|状态)/.test(raw) ||
+    /方案.{0,6}(进度|状态|确认|设计|到哪|完成)/.test(raw);
+  var statusHint = Boolean(explicitCase) || activeIntent === "case_status" ||
+    (contextualStatusHint && !generalPromise);
   var needsCaseId = statusHint && !caseId;
   var riskWords = [
     "疼痛", "剧痛", "出血", "肿胀", "过敏", "呼吸困难", "吞咽困难",

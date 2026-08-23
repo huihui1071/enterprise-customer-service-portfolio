@@ -81,6 +81,21 @@ const cases = [
     name: "unable_to_swallow_is_high_risk",
     input: { query: "矫治器卡住导致无法正常吞咽", dialog_count: 1 },
     expect: { risk_hit: true, next_action: "handoff" }
+  },
+  {
+    name: "explicit_case_id_is_enough_for_lookup",
+    input: { query: "请返回 A20260001 的更新时间和下一步", dialog_count: 1 },
+    expect: { case_id: "A20260001", status_query_hint: true, needs_case_id: false }
+  },
+  {
+    name: "shipping_promise_is_not_case_lookup",
+    input: { query: "给我一个真实的发货时效承诺", dialog_count: 1 },
+    expect: { status_query_hint: false, needs_case_id: false }
+  },
+  {
+    name: "general_case_guarantee_is_not_case_lookup",
+    input: { query: "你能保证所有病例明天一定生产吗？", dialog_count: 1 },
+    expect: { status_query_hint: false, needs_case_id: false }
   }
 ];
 

@@ -57,12 +57,12 @@ def infer_behavior(answer):
         return "case_status"
     if "提供需要查询的病例号" in text or "请提供病例号" in text:
         return "case_id_clarification"
+    if any(word in text for word in ("无法获取工单状态", "不会在接口失败时猜测工单状态")):
+        return "ticket_query_failure"
     if "工单编号" in text and ("请提供" in text or "检查" in text):
         return "ticket_id_clarification"
     if any(word in text for word in ("无法访问", "暂时无法获取病例状态")):
         return "case_access_denied"
-    if any(word in text for word in ("无法获取工单状态", "不会在接口失败时猜测工单状态")):
-        return "ticket_query_failure"
     if any(word in text for word in ("无法确认", "缺少可靠", "联系人工客服", "暂无法提供确定")):
         return "knowledge_fallback"
     if text:
