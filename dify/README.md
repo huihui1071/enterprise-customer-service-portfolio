@@ -37,7 +37,7 @@ The cloud draft now stores an authorized case ID in `confirmed_case_id` and `act
 
 Focused browser memory smoke result on 2026-08-23: **7/7 passed**. The cloud draft clears both `active_case_id` and `confirmed_case_id` when the user switches to another case, preventing stale-case reuse.
 
-`workflow/memory-normalizer.js` is the versioned source for the next cloud revision. It adds deterministic outputs for `next_turn`, `recent_case_ids_next`, and `case_reference_status_next`. Run `node evals/runner/run_dify_normalizer_eval.mjs` to verify the same code that will be pasted into the Dify Code node. Multi-case ambiguity and ten-turn expiry are implemented and executable in this source, but are not counted as cloud end-to-end passes until the output variables and assignment branches are wired in Dify.
+`workflow/memory-normalizer.js` is the versioned source synchronized to the cloud Code node. It adds deterministic outputs for `next_turn`, `recent_case_ids_next`, and `case_reference_status_next`. Run `node evals/runner/run_dify_normalizer_eval.mjs` to verify the same code. The cloud success-assignment node now writes the recent-case list, confirmation turn, and reference status after an authorized query. Multi-case ambiguity and ten-turn expiry are not counted as cloud end-to-end passes until the global turn counter and ambiguity branch are wired.
 
 ## Remaining Before Publish
 
