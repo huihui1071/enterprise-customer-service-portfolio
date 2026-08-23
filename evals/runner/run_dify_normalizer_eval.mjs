@@ -50,7 +50,7 @@ const cases = [
   {
     name: "http_fault_token_maps_to_header_value",
     input: { query: "查询病例 A20260001 ERR500", dialog_count: 1 },
-    expect: { case_id: "A20260001", fault_mode: "http_500" }
+    expect: { case_id: "A20260001", fault_mode: "http_500", empty_string: "", empty_case_list: "[]" }
   },
   {
     name: "timeout_token_maps_to_header_value",

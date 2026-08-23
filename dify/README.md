@@ -39,9 +39,11 @@ Focused browser memory smoke result on 2026-08-23: **9/9 passed**. The cloud dra
 
 `workflow/memory-normalizer.js` is the versioned source synchronized to the cloud Code node. It adds deterministic outputs for `next_turn`, `recent_case_ids_next`, and `case_reference_status_next`. Run `node evals/runner/run_dify_normalizer_eval.mjs` to verify the same code. The cloud success-assignment node writes the recent-case list, confirmation turn, and reference status after an authorized query. The public `记忆-轮次递增` node now updates `turn_index` before every business branch; multi-case ambiguity and ten-turn expiry both have cloud end-to-end evidence.
 
+The case-query HTTP node now has a five-second timeout, controlled fault-injection header, retry policy, and explicit exception branch. Failures return a deterministic fallback instead of an LLM-generated status, then clear active, confirmed, and recent case memory. Focused case-error browser smoke result: **5/5 passed**.
+
 ## Remaining Before Publish
 
-- Add explicit Dify error branches for 400/401/403/404/409/429/500 and timeout.
+- Add equivalent Dify error branches to ticket creation and ticket query; the case-query branch is complete.
 - Complete the authorization-change memory branch.
 - Run the full 150-case evaluation and analyze failure slices.
 - Replace the Demo Adapter's fixed identity with production-grade trusted identity propagation before any real-data use.

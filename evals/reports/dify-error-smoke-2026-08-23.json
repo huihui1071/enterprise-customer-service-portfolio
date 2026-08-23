@@ -1,0 +1,18 @@
+{
+  "evaluated_at": "2026-08-23T16:41:00+08:00",
+  "environment": "Dify Cloud draft + Render free web service",
+  "scope": "case-query HTTP failure and stale-memory safety smoke suite",
+  "results": [
+    {"case":"normal_case_query_unchanged","turns":["查询病例 A20260001 的当前状态"],"result":"passed","evidence":"returned 待排产 through 病例状态输出 after the error branch was added"},
+    {"case":"http_500_degrades_without_status_guess","turns":["查询病例 A20260001 ERR500"],"result":"passed","evidence":"retried, routed to the HTTP exception branch, emitted the safe fallback, and did not generate a case status"},
+    {"case":"technical_failure_clears_case_memory","turns":["查询病例 A20260001 的当前状态","查询病例 A20260001 ERR500","刚才那个病例进度呢"],"result":"passed","evidence":"the reference after failure routed to CASE2-病例号澄清 instead of reusing A20260001"},
+    {"case":"access_denial_clears_previous_case_memory","turns":["查询病例 A20260001 的状态","查询病例 A20260002 的状态","刚才那个病例进度呢"],"result":"passed","evidence":"A20260002 used the protected failure response; the next reference requested a case ID and did not restore A20260001"},
+    {"case":"read_timeout_degrades_without_status_guess","turns":["查询病例 A20260001 TIMEOUT"],"result":"passed","evidence":"the 12-second backend delay exceeded Dify's 5-second read timeout, then the exception branch returned the safe fallback and cleared memory"}
+  ],
+  "summary": {"passed":5,"total":5},
+  "remaining_scope": [
+    "Add equivalent exception branches to ticket creation and ticket query.",
+    "A same-case authorization revocation fixture is still not dynamically executable in the public demo.",
+    "The Dify draft has not been published."
+  ]
+}

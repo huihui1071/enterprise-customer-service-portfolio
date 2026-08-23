@@ -21,6 +21,8 @@
         "is_task_continuation": false,
         "next_action": "",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
         "next_turn": 4
@@ -42,6 +44,8 @@
         "is_task_continuation": true,
         "next_action": "",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "resolved",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 6
@@ -63,6 +67,8 @@
         "is_task_continuation": false,
         "next_action": "collect_case_id",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "ambiguous",
         "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
         "next_turn": 6
@@ -84,6 +90,8 @@
         "is_task_continuation": false,
         "next_action": "collect_case_id",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 13
@@ -105,6 +113,8 @@
         "is_task_continuation": false,
         "next_action": "collect_case_id",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 3
@@ -126,6 +136,8 @@
         "is_task_continuation": false,
         "next_action": "",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 3
@@ -147,6 +159,8 @@
         "is_task_continuation": false,
         "next_action": "handoff",
         "fault_mode": "",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 3
@@ -168,6 +182,8 @@
         "is_task_continuation": false,
         "next_action": "",
         "fault_mode": "http_500",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 2
@@ -189,6 +205,8 @@
         "is_task_continuation": false,
         "next_action": "",
         "fault_mode": "timeout",
+        "empty_string": "",
+        "empty_case_list": "[]",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 2

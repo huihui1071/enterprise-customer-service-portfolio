@@ -88,6 +88,8 @@ function main(input) {
     is_task_continuation: isContinuation,
     next_action: riskHit ? "handoff" : (needsCaseId ? "collect_case_id" : ""),
     fault_mode: faultMode,
+    empty_string: "",
+    empty_case_list: "[]",
     case_reference_status_next: referenceStatus,
     recent_case_ids_next: JSON.stringify(nextRecent),
     next_turn: nextTurn
