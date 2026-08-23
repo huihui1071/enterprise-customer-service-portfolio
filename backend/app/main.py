@@ -77,6 +77,7 @@ def require_demo_adapter():
 DEMO_CASE_ALIASES = {
     "A20260001": "CASE-2026-0025",
     "A20260002": "CASE-2026-0019",
+    "A20260003": "CASE-2026-0049",
 }
 
 

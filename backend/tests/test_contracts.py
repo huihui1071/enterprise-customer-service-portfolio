@@ -49,5 +49,6 @@ def test_untrusted_identity_fields_cannot_override_token(client, auth_headers):
 
 def test_demo_adapter_aliases_are_reversible():
     assert DEMO_CASE_ALIASES["A20260001"] == "CASE-2026-0025"
+    assert DEMO_CASE_ALIASES["A20260003"] == "CASE-2026-0049"
     assert demo_ticket_alias("TKT-RUN-00101") == "T20260101"
     assert internal_ticket_id("T20260101") == "TKT-RUN-00101"
