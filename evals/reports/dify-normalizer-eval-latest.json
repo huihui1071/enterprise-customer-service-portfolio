@@ -1,0 +1,149 @@
+{
+  "evidence_type": "executable_dify_code_eval",
+  "source": "dify/workflow/memory-normalizer.js",
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "results": [
+    {
+      "name": "explicit_case_wins",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "改查 a20260002",
+        "case_id": "A20260002",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": false,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
+        "next_turn": 4
+      }
+    },
+    {
+      "name": "single_recent_reference_resolves",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "刚才那个病例进度呢",
+        "case_id": "A20260001",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": true,
+        "next_action": "",
+        "case_reference_status_next": "resolved",
+        "recent_case_ids_next": "[\"A20260001\"]",
+        "next_turn": 6
+      }
+    },
+    {
+      "name": "multiple_recent_cases_are_ambiguous",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "刚才那个病例进度呢",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": true,
+        "is_task_continuation": false,
+        "next_action": "collect_case_id",
+        "case_reference_status_next": "ambiguous",
+        "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
+        "next_turn": 6
+      }
+    },
+    {
+      "name": "memory_expires_after_ten_turns",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "刚才那个病例进度呢",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": true,
+        "is_task_continuation": false,
+        "next_action": "collect_case_id",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 13
+      }
+    },
+    {
+      "name": "other_case_clears_candidates",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "我想查另一个病例",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": true,
+        "is_task_continuation": false,
+        "next_action": "collect_case_id",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 3
+      }
+    },
+    {
+      "name": "pending_slot_accepts_case_id",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "a20260001",
+        "case_id": "A20260001",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[\"A20260001\"]",
+        "next_turn": 3
+      }
+    },
+    {
+      "name": "high_risk_interrupts_pending_task",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "患者呼吸困难并且剧痛",
+        "case_id": "",
+        "ticket_id": "",
+        "risk_hit": true,
+        "risk_reason": "命中高风险关键词：剧痛、呼吸困难",
+        "status_query_hint": true,
+        "matched_keywords": "剧痛,呼吸困难",
+        "needs_case_id": true,
+        "is_task_continuation": false,
+        "next_action": "handoff",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[]",
+        "next_turn": 3
+      }
+    }
+  ]
+}
