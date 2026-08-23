@@ -1,0 +1,52 @@
+{
+  "evaluated_at": "2026-08-23T17:05:00+08:00",
+  "environment": "Dify Cloud draft + Render free web service",
+  "scope": "high-risk ticket creation and ticket query HTTP failure smoke suite",
+  "results": [
+    {
+      "case": "normal_high_risk_ticket_creation",
+      "input": "病例 A20260001 患者现在呼吸困难并且剧烈疼痛",
+      "result": "passed",
+      "evidence": "created T20260101 with P0 priority and assigned high-risk-support"
+    },
+    {
+      "case": "ticket_creation_http_500_degrades_without_false_handoff",
+      "input": "病例 A20260001 患者呼吸困难需要立即转人工 ERR500",
+      "result": "passed",
+      "evidence": "the exception branch stated that the ticket was not created and did not claim a completed handoff"
+    },
+    {
+      "case": "ticket_creation_timeout_degrades_without_false_handoff",
+      "input": "病例 A20260001 患者呼吸困难需要立即转人工 TIMEOUT",
+      "result": "passed",
+      "evidence": "the 12-second backend delay exceeded the five-second timeout; after retries the safe emergency fallback was returned"
+    },
+    {
+      "case": "normal_ticket_query",
+      "input": "查询工单 T20260101",
+      "result": "passed",
+      "evidence": "returned the open P0 ticket with high-risk-support assignment"
+    },
+    {
+      "case": "ticket_query_http_500_degrades_without_state_guess",
+      "input": "查询工单 T20260101 ERR500",
+      "result": "passed",
+      "evidence": "returned the deterministic unavailable response and no ticket state"
+    },
+    {
+      "case": "ticket_query_timeout_degrades_without_state_guess",
+      "input": "查询工单 T20260101 TIMEOUT",
+      "result": "passed",
+      "evidence": "after timeout retries the exception branch returned the deterministic unavailable response and no ticket state"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "total": 6
+  },
+  "remaining_scope": [
+    "Complete the authorization-change memory branch.",
+    "Run the full 150-case evaluation and analyze failure slices.",
+    "The Dify draft has not been published."
+  ]
+}

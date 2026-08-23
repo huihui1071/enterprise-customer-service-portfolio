@@ -41,9 +41,10 @@ Focused browser memory smoke result on 2026-08-23: **9/9 passed**. The cloud dra
 
 The case-query HTTP node now has a five-second timeout, controlled fault-injection header, retry policy, and explicit exception branch. Failures return a deterministic fallback instead of an LLM-generated status, then clear active, confirmed, and recent case memory. Focused case-error browser smoke result: **5/5 passed**.
 
+The high-risk ticket-creation and ticket-query HTTP nodes now use the same controlled fault header, five-second connect/read/write timeouts, three retries, and explicit exception branches. Ticket creation failures state that handoff has not completed and retain emergency guidance; ticket-query failures never infer a ticket state. Focused ticket-error browser smoke result: **6/6 passed**.
+
 ## Remaining Before Publish
 
-- Add equivalent Dify error branches to ticket creation and ticket query; the case-query branch is complete.
 - Complete the authorization-change memory branch.
 - Run the full 150-case evaluation and analyze failure slices.
 - Replace the Demo Adapter's fixed identity with production-grade trusted identity propagation before any real-data use.
