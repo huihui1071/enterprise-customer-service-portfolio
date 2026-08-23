@@ -1,0 +1,311 @@
+{
+  "evidence_type": "deterministic_contract_eval",
+  "scope": "memory policy and state transitions; not a Dify end-to-end score",
+  "total": 15,
+  "passed": 15,
+  "failed": 0,
+  "results": [
+    {
+      "name": "missing_case_then_supply",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_status",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "A20260001",
+          "recent_case_ids": [
+            "A20260001"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 2,
+          "last_case_confirmed_turn": 2
+        }
+      }
+    },
+    {
+      "name": "single_case_reference_after_topic_switch",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_reference_resume",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "A20260001",
+          "recent_case_ids": [
+            "A20260001"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 1,
+          "last_case_confirmed_turn": 1
+        }
+      }
+    },
+    {
+      "name": "two_cases_ambiguous_reference",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_reference_clarification",
+        "tools": [],
+        "state": {
+          "active_case_id": "A20260002",
+          "recent_case_ids": [
+            "A20260001",
+            "A20260002"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 2,
+          "last_case_confirmed_turn": 2
+        }
+      }
+    },
+    {
+      "name": "explicit_other_case_clears_reference",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_id_clarification",
+        "tools": [],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": true,
+          "clarify_count": 0,
+          "turn_index": 1,
+          "last_case_confirmed_turn": 1
+        }
+      }
+    },
+    {
+      "name": "no_memory_reference",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_id_clarification",
+        "tools": [],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "clarification_limit",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "clarification_limit_fallback",
+        "tools": [],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 2,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "high_risk_interrupts_clarification",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "high_risk_handoff",
+        "tools": [
+          "create_ticket"
+        ],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "authorization_revoked_between_turns",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_access_denied",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 1,
+          "last_case_confirmed_turn": 1
+        }
+      }
+    },
+    {
+      "name": "memory_expires_after_ten_turns",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_id_clarification",
+        "tools": [],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 12,
+          "last_case_confirmed_turn": 1
+        }
+      }
+    },
+    {
+      "name": "explicit_case_overrides_recent_reference",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_status",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "A20260002",
+          "recent_case_ids": [
+            "A20260001",
+            "A20260002"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 2,
+          "last_case_confirmed_turn": 2
+        }
+      }
+    },
+    {
+      "name": "case_reference_does_not_reuse_stale_status",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_reference_resume",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "A20260001",
+          "recent_case_ids": [
+            "A20260001"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 1,
+          "last_case_confirmed_turn": 1
+        }
+      }
+    },
+    {
+      "name": "ticket_reference_is_not_case_reference",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "ticket_query",
+        "tools": [
+          "get_ticket"
+        ],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "T20260102",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "case_and_ticket_explicit_same_turn",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "ticket_query",
+        "tools": [
+          "get_ticket"
+        ],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "T20260102",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "correct_candidate_case_id",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_status",
+        "tools": [
+          "get_case_status"
+        ],
+        "state": {
+          "active_case_id": "A20260002",
+          "recent_case_ids": [
+            "A20260002"
+          ],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    },
+    {
+      "name": "new_conversation_cannot_restore_case",
+      "result": "passed",
+      "failures": [],
+      "actual": {
+        "route": "case_id_clarification",
+        "tools": [],
+        "state": {
+          "active_case_id": "",
+          "recent_case_ids": [],
+          "active_ticket_id": "",
+          "pending_case": false,
+          "clarify_count": 0,
+          "turn_index": 0,
+          "last_case_confirmed_turn": 0
+        }
+      }
+    }
+  ]
+}

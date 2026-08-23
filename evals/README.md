@@ -34,3 +34,11 @@ The report is written to `evals/reports/backend-eval-latest.json` and is labeled
 `data/eval/multi_turn_memory_cases.json` defines 15 non-duplicate conversations for slot filling, entity reference, task switching, ambiguity, expiry, authorization changes, and high-risk interruption. The generator embeds them into `EVAL-0121` through `EVAL-0135`, so rebuilding data does not restore the old placeholders.
 
 `evals/reports/dify-memory-smoke-2026-08-23.json` contains the focused browser result. It must not be reported as a 15-case pass until the ambiguity, expiry, and authorization-change fixtures are executable.
+
+Run the deterministic memory-policy contract suite with:
+
+```bash
+python3 evals/runner/run_memory_contract_eval.py
+```
+
+The resulting `memory-contract-eval-latest.json` verifies all 15 policy and state-transition contracts without an LLM. It is deliberately reported separately from Dify browser smoke tests: a contract pass proves the intended policy is internally consistent, while only a Dify run proves the workflow wiring and integrations.
