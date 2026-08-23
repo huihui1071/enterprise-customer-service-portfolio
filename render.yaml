@@ -14,7 +14,7 @@ services:
       - key: DATABASE_PATH
         value: /tmp/customer_service.db
       - key: ENABLE_FAULT_INJECTION
-        value: "false"
+        value: "true"
       - key: ENABLE_DEMO_ADAPTER
         value: "true"
       - key: DEMO_USER_ID

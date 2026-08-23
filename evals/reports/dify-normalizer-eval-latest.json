@@ -1,8 +1,8 @@
 {
   "evidence_type": "executable_dify_code_eval",
   "source": "dify/workflow/memory-normalizer.js",
-  "total": 7,
-  "passed": 7,
+  "total": 9,
+  "passed": 9,
   "failed": 0,
   "results": [
     {
@@ -20,6 +20,7 @@
         "needs_case_id": false,
         "is_task_continuation": false,
         "next_action": "",
+        "fault_mode": "",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
         "next_turn": 4
@@ -40,6 +41,7 @@
         "needs_case_id": false,
         "is_task_continuation": true,
         "next_action": "",
+        "fault_mode": "",
         "case_reference_status_next": "resolved",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 6
@@ -60,6 +62,7 @@
         "needs_case_id": true,
         "is_task_continuation": false,
         "next_action": "collect_case_id",
+        "fault_mode": "",
         "case_reference_status_next": "ambiguous",
         "recent_case_ids_next": "[\"A20260001\",\"A20260002\"]",
         "next_turn": 6
@@ -80,6 +83,7 @@
         "needs_case_id": true,
         "is_task_continuation": false,
         "next_action": "collect_case_id",
+        "fault_mode": "",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 13
@@ -100,6 +104,7 @@
         "needs_case_id": true,
         "is_task_continuation": false,
         "next_action": "collect_case_id",
+        "fault_mode": "",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 3
@@ -120,6 +125,7 @@
         "needs_case_id": false,
         "is_task_continuation": false,
         "next_action": "",
+        "fault_mode": "",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[\"A20260001\"]",
         "next_turn": 3
@@ -140,9 +146,52 @@
         "needs_case_id": true,
         "is_task_continuation": false,
         "next_action": "handoff",
+        "fault_mode": "",
         "case_reference_status_next": "none",
         "recent_case_ids_next": "[]",
         "next_turn": 3
+      }
+    },
+    {
+      "name": "http_fault_token_maps_to_header_value",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "查询病例 a20260001 err500",
+        "case_id": "A20260001",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "fault_mode": "http_500",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[\"A20260001\"]",
+        "next_turn": 2
+      }
+    },
+    {
+      "name": "timeout_token_maps_to_header_value",
+      "result": "passed",
+      "failure": "",
+      "actual": {
+        "query_norm": "查询病例 a20260001 timeout",
+        "case_id": "A20260001",
+        "ticket_id": "",
+        "risk_hit": false,
+        "risk_reason": "",
+        "status_query_hint": true,
+        "matched_keywords": "",
+        "needs_case_id": false,
+        "is_task_continuation": false,
+        "next_action": "",
+        "fault_mode": "timeout",
+        "case_reference_status_next": "none",
+        "recent_case_ids_next": "[\"A20260001\"]",
+        "next_turn": 2
       }
     }
   ]

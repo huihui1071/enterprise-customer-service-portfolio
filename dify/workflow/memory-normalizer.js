@@ -21,8 +21,11 @@ function main(input) {
   }
 
   var caseMatch = raw.match(/\b[A-Za-z]\d{8}\b/);
-  var ticketMatch = raw.match(/\b(?:TKT|WO|T)[-_]?[A-Za-z0-9]+\b/i);
+  var ticketMatch = raw.match(/\b(?:(?:TKT|WO)[-_]?[A-Za-z0-9]+|T\d{8})\b/i);
   var explicitCase = caseMatch ? caseMatch[0].toUpperCase() : "";
+  var faultToken = (raw.match(/\b(?:ERR(?:400|401|403|404|409|429|500)|TIMEOUT)\b/i) || [""])[0].toUpperCase();
+  var faultMode = faultToken === "TIMEOUT" ? "timeout" :
+    (faultToken ? "http_" + faultToken.slice(3) : "");
   var asksOther = /(另一个|其他|换一个).{0,6}病例/.test(raw);
   var refersPrevious = /(刚刚|刚才|之前|上面).{0,5}(那个|提到的)?病例|那个病例/.test(raw);
   var memoryFresh = Boolean(confirmed) && currentTurn - confirmedTurn <= 10;
@@ -84,6 +87,7 @@ function main(input) {
     needs_case_id: needsCaseId,
     is_task_continuation: isContinuation,
     next_action: riskHit ? "handoff" : (needsCaseId ? "collect_case_id" : ""),
+    fault_mode: faultMode,
     case_reference_status_next: referenceStatus,
     recent_case_ids_next: JSON.stringify(nextRecent),
     next_turn: nextTurn

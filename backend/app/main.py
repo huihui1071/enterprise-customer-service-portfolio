@@ -146,9 +146,14 @@ async def read_ticket(
 
 @app.get("/v1/demo/cases/{case_id}", include_in_schema=False)
 @app.get("/v1/demo/cases/{case_id}/status", include_in_schema=False)
-def demo_case_status(request: Request, case_id: str):
+async def demo_case_status(
+    request: Request,
+    case_id: str,
+    x_fault_mode: str = Header(default=None),
+):
     """Dify-only adapter for synthetic data; production clients use JWT endpoints."""
     require_demo_adapter()
+    await maybe_inject_fault(x_fault_mode)
     internal_case_id = DEMO_CASE_ALIASES.get(case_id, case_id)
     with connection() as conn:
         case = authorize_case(conn, DEMO_USER_ID, internal_case_id, request.state.trace_id)
@@ -158,8 +163,14 @@ def demo_case_status(request: Request, case_id: str):
 
 
 @app.post("/v1/demo/tickets", include_in_schema=False)
-def demo_create_ticket(request: Request, response: Response, payload: dict = Body(...)):
+async def demo_create_ticket(
+    request: Request,
+    response: Response,
+    payload: dict = Body(...),
+    x_fault_mode: str = Header(default=None),
+):
     require_demo_adapter()
+    await maybe_inject_fault(x_fault_mode)
     raw_case_id = str(payload.get("case_id") or "")
     case_match = re.search(r"(?:[AB]\d{8}|CASE-\d{4}-\d{4})", raw_case_id, re.IGNORECASE)
     display_case_id = case_match.group(0).upper() if case_match else None
@@ -187,8 +198,13 @@ def demo_create_ticket(request: Request, response: Response, payload: dict = Bod
 
 
 @app.get("/v1/demo/tickets/{ticket_id}", include_in_schema=False)
-def demo_read_ticket(request: Request, ticket_id: str):
+async def demo_read_ticket(
+    request: Request,
+    ticket_id: str,
+    x_fault_mode: str = Header(default=None),
+):
     require_demo_adapter()
+    await maybe_inject_fault(x_fault_mode)
     internal_id = internal_ticket_id(ticket_id)
     with connection() as conn:
         ticket = get_ticket(conn, DEMO_USER_ID, internal_id, request.state.trace_id)

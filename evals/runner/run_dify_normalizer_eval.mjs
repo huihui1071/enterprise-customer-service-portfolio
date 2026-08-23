@@ -46,6 +46,16 @@ const cases = [
     name: "high_risk_interrupts_pending_task",
     input: { query: "患者呼吸困难并且剧痛", active_intent: "case_status", pending_action: "collect_case_id", dialog_count: 2 },
     expect: { risk_hit: true, next_action: "handoff" }
+  },
+  {
+    name: "http_fault_token_maps_to_header_value",
+    input: { query: "查询病例 A20260001 ERR500", dialog_count: 1 },
+    expect: { case_id: "A20260001", fault_mode: "http_500" }
+  },
+  {
+    name: "timeout_token_maps_to_header_value",
+    input: { query: "查询病例 A20260001 TIMEOUT", dialog_count: 1 },
+    expect: { case_id: "A20260001", ticket_id: "", fault_mode: "timeout" }
   }
 ];
 

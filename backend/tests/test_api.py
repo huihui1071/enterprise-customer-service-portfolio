@@ -100,6 +100,17 @@ def test_fault_injection(client, auth_headers):
     assert response.json()["error"]["retryable"] is True
 
 
+def test_demo_adapter_fault_injection(client, monkeypatch):
+    monkeypatch.setattr("app.main.ENABLE_DEMO_ADAPTER", True)
+    response = client.get(
+        "/v1/demo/cases/A20260001/status",
+        headers={"X-Fault-Mode": "http_429"},
+    )
+    assert response.status_code == 429
+    assert response.json()["error"]["code"] == "INJECTED_429"
+    assert response.json()["error"]["retryable"] is True
+
+
 def test_demo_adapter_is_disabled_by_default(client):
     response = client.get("/v1/demo/cases/CASE-2026-0025/status")
     assert response.status_code == 404
