@@ -43,9 +43,10 @@ The case-query HTTP node now has a five-second timeout, controlled fault-injecti
 
 The high-risk ticket-creation and ticket-query HTTP nodes now use the same controlled fault header, five-second connect/read/write timeouts, three retries, and explicit exception branches. Ticket creation failures state that handoff has not completed and retain emergency guidance; ticket-query failures never infer a ticket state. Focused ticket-error browser smoke result: **6/6 passed**.
 
+Authorization-change memory safety is now executable through the demo-only `AUTH_REVOKED` boundary token. A previously authorized case is rechecked by the Backend, the simulated revocation returns the same public `CASE_UNAVAILABLE` denial used by object authorization, and the Dify failure branch clears active, confirmed, and recent case memory. Focused browser sequence result: **3/3 turns passed**.
+
 ## Remaining Before Publish
 
-- Complete the authorization-change memory branch.
 - Run the full 150-case evaluation and analyze failure slices.
 - Replace the Demo Adapter's fixed identity with production-grade trusted identity propagation before any real-data use.
 - Obtain user confirmation before publishing the Dify draft.

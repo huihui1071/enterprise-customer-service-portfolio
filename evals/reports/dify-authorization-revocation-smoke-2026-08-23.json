@@ -1,0 +1,44 @@
+{
+  "evaluated_at": "2026-08-23T17:25:00+08:00",
+  "environment": "Dify Cloud draft + Render free web service",
+  "scope": "same-case authorization revocation and memory clearing sequence",
+  "fixture": {
+    "token": "AUTH_REVOKED",
+    "backend_mode": "authorization_revoked",
+    "availability": "demo only when ENABLE_FAULT_INJECTION=true",
+    "persistent_data_mutation": false
+  },
+  "turns": [
+    {
+      "input": "查询病例 A20260001 的当前状态",
+      "result": "passed",
+      "evidence": "the authorized request returned production_pending / 待排产 and wrote confirmed case memory"
+    },
+    {
+      "input": "再查一下病例 A20260001 AUTH_REVOKED",
+      "result": "passed",
+      "evidence": "the Backend returned 403 CASE_UNAVAILABLE; Dify emitted the deterministic unavailable response and no case status"
+    },
+    {
+      "input": "刚才那个病例进度呢",
+      "result": "passed",
+      "evidence": "the request routed to CASE2-病例号澄清 and did not reuse A20260001"
+    }
+  ],
+  "assertions": {
+    "reauthorizes_same_case": true,
+    "does_not_reuse_cached_status_after_denial": true,
+    "clears_active_case_id": true,
+    "clears_confirmed_case_id": true,
+    "clears_recent_case_ids": true
+  },
+  "summary": {
+    "passed": 3,
+    "total": 3
+  },
+  "remaining_scope": [
+    "Run the complete 15-case memory dataset through one reproducible Dify end-to-end runner.",
+    "Run the full 150-case evaluation and analyze failure slices.",
+    "The Dify draft has not been published."
+  ]
+}
