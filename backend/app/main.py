@@ -62,6 +62,8 @@ async def maybe_inject_fault(mode):
         raise AppError(status, f"INJECTED_{status}", "测试故障已注入。", retryable=status in (429, 500))
     if mode == "database_unavailable":
         raise AppError(503, "DEPENDENCY_UNAVAILABLE", "服务暂时不可用，请稍后重试。", retryable=True)
+    if mode == "authorization_revoked":
+        raise AppError(403, "CASE_UNAVAILABLE", "无法访问该病例，请检查病例编号或联系管理员。")
 
 
 @app.get("/health")

@@ -111,6 +111,19 @@ def test_demo_adapter_fault_injection(client, monkeypatch):
     assert response.json()["error"]["retryable"] is True
 
 
+def test_demo_adapter_authorization_revocation_boundary(client, monkeypatch):
+    monkeypatch.setattr("app.main.ENABLE_DEMO_ADAPTER", True)
+    allowed = client.get("/v1/demo/cases/A20260001/status")
+    revoked = client.get(
+        "/v1/demo/cases/A20260001/status",
+        headers={"X-Fault-Mode": "authorization_revoked"},
+    )
+    assert allowed.status_code == 200
+    assert revoked.status_code == 403
+    assert revoked.json()["error"]["code"] == "CASE_UNAVAILABLE"
+    assert revoked.json()["error"]["retryable"] is False
+
+
 def test_demo_adapter_is_disabled_by_default(client):
     response = client.get("/v1/demo/cases/CASE-2026-0025/status")
     assert response.status_code == 404

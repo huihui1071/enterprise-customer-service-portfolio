@@ -56,6 +56,11 @@ const cases = [
     name: "timeout_token_maps_to_header_value",
     input: { query: "查询病例 A20260001 TIMEOUT", dialog_count: 1 },
     expect: { case_id: "A20260001", ticket_id: "", fault_mode: "timeout" }
+  },
+  {
+    name: "authorization_revocation_token_maps_to_boundary_mode",
+    input: { query: "再查一下病例 A20260001 AUTH_REVOKED", dialog_count: 2 },
+    expect: { case_id: "A20260001", fault_mode: "authorization_revoked" }
   }
 ];
 
